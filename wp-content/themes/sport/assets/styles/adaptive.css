@@ -1,0 +1,73 @@
+/* ************************************************************************ */
+/* Header                                                                   */
+/* ************************************************************************ */
+@media (max-width: 770px) {
+    .header-contacts {
+        justify-content: center;
+    }
+    .header-phone,
+    .header-mail
+    {
+        margin-right: 10px;
+    }
+    .ss {
+        margin-right: 4px;
+    }
+}
+
+/* ************************************************************************ */
+/* Content                                                                  */
+/* ************************************************************************ */
+@media (max-width: 770px) {
+    .tab-control {
+        margin-left: 30px;
+        margin-right: 30px;
+
+        background-color: transparent;
+        border: none;
+    }
+    .tab-list {
+        display: block;
+        border: none
+    }
+    .tab-list:before, 
+    .tab-list:after {
+        content: '';
+        display: table;
+    }
+    .tab-button {
+        /* display: block; */
+        margin-top: 10px;
+        padding-left: 26px;
+        width: 100%;
+
+        background-color: #F4F4F4;
+        border: 1px solid #DDDDDD;
+    }
+    .tab-button:before {
+        display: block;
+    }
+    .tab-item.open .tab-button:before {
+        transform: rotate(0);
+    }
+    .tab-item.open:first-child .tab-button {
+        border-left: 1px solid #DDDDDD;
+    }
+    .tab-item.open .tab-button {
+        color: #006183;
+    
+        background-color: #F4F4F4;
+        border-bottom: none;
+    }
+    .tab-button:hover {
+        color: #636363;
+    }
+    .tab-content {
+        /* float: left;
+        left: 0; */
+        margin: 0;
+        width: 100%;
+        
+        border: 1px solid #DDDDDD;
+    }
+}

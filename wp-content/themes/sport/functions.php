@@ -14,6 +14,8 @@ $sport = (object)[
     ],
 
     // Функционал
-    'main'        => require 'includes/sport-class.php',
-    'functions'   => require 'includes/sport-functions.php'
+    'constants'  => require 'includes/sport-constants.php',
+    'setup'      => require 'includes/sport-setup.php',
+    'main'       => require 'includes/sport-functions.php',
+    'shortcodes' => require 'includes/sport-shortcodes.php'
 ];

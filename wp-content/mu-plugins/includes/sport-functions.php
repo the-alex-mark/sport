@@ -1,9 +1,7 @@
 <?php
 
-// Инициализация глобальных переменных и констант
-define('ROOT',      get_template_directory_uri());
-define('STYLES',    ROOT . '/assets/styles');
-define('SCRIPTS',   ROOT . '/assets/scripts');
-define('PLUGINS',   ROOT . '/assets/plugins');
-define('FONTS',     ROOT . '/assets/fonts');
-define('RESOURCES', ROOT . '/assets/resources');
+// Работа шорткодов
+add_filter('the_content', 'do_shortcode');
+add_filter('widget_text', 'do_shortcode');
+add_filter('the_content', 'do_shortcode', 11);
+add_filter('widget_text', 'shortcode_unautop');

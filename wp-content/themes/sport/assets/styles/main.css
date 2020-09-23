@@ -30,6 +30,11 @@ body {
 }
 
 
+/* .slider.slider-for,.slider.slider-nav{max-width: 305px}
+.slider-for img{height: 301px;}
+.slider-nav .item {width: 88px;height: 88px;margin: 0 10px; overflow: hidden; cursor: pointer;}
+.slider-nav{margin-left:-10px; margin-right: -10px} */
+
 /* ************************************************************************ */
 /* Header                                                                   */
 /* ************************************************************************ */
@@ -450,7 +455,7 @@ img.header-logo {
 	font-weight: bold;
 }
 
-.content-404 h1 {
+.error-404 h1 {
 	margin: 0;
 	margin-top: 20px;
 	margin-bottom: 20px;

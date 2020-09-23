@@ -1,5 +1,11 @@
 <?php
 
+// Отображение дополнительных полей у различных типов записей
+add_action('init', function () {
+    add_post_type_support('page', [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ]);
+    add_post_type_support('post', [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ]);
+});
+
 // Создание дополнительных колонок
 add_filter('manage_posts_columns', 'add_column', 5);
 add_filter('manage_pages_columns', 'add_column', 5);

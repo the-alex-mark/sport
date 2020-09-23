@@ -9,11 +9,11 @@
 
 // Подключение необходимых файлов
 $sport = (object)[
-    
-    // Функционал
     'main'        => require 'includes/sport-functions.php',
     'helpers'     => require 'includes/sport-helpers.php',
+    'shortcodes'  => require 'includes/sport-shortcodes.php',
     'admin'       => require 'includes/admin/sport-admin.php',
+    'security'    => require 'includes/admin/sport-security.php',
     'taxonomies'  => require 'includes/admin/sport-taxonomies.php',
-    'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php',
+    'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php'
 ];

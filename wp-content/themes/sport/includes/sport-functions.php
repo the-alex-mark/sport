@@ -1,5 +1,8 @@
 <?php
 
+if (!defined('ABSPATH'))
+    exit;
+
 /**
  * Вызывает функцию шорткода по имени тега.
  * 
@@ -63,12 +66,3 @@ function sport_get_logo_url() {
 
     return $image[0];
 }
-
-// Обновление количества добавленных товаров в корзину
-add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
-    ob_start();
-    ?><span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span><?php
-    $fragments['li a span.cart-count'] = ob_get_clean();
-
-    return $fragments;
-});

@@ -29,7 +29,19 @@ body {
     font-size: 14px;
 }
 
-
+.woocommerce-product-gallery {
+	width: 40%;
+}
+ol.flex-control-nav {
+	list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ol.flex-control-nav li {
+	margin: 0 5px 0 5px;
+}
 /* .slider.slider-for,.slider.slider-nav{max-width: 305px}
 .slider-for img{height: 301px;}
 .slider-nav .item {width: 88px;height: 88px;margin: 0 10px; overflow: hidden; cursor: pointer;}

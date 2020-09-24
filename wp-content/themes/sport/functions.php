@@ -1,5 +1,8 @@
 <?php
 
+if (!defined('ABSPATH'))
+    exit;
+
 // Описание темы
 $theme = wp_get_theme('sport');
 
@@ -14,8 +17,9 @@ $sport = (object)[
     ],
 
     // Функционал
-    'constants'  => require 'includes/sport-constants.php',
-    'setup'      => require 'includes/sport-setup.php',
-    'main'       => require 'includes/sport-functions.php',
-    'shortcodes' => require 'includes/sport-shortcodes.php'
+    'constants'   => require 'includes/sport-constants.php',
+    'setup'       => require 'includes/sport-setup.php',
+    'main'        => require 'includes/sport-functions.php',
+    'shortcodes'  => require 'includes/sport-shortcodes.php',
+    'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php'
 ];

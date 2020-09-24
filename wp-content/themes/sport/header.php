@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH'))
+    exit;
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
@@ -34,6 +41,8 @@
 							)
 						);
 					}
+
+					wp_reset_postdata();
 				?>
 			</div>
 
@@ -86,3 +95,5 @@
 				</div>
 			</form>
 		</header>
+
+		<?php get_breadcrumb(); ?>

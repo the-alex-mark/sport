@@ -91,3 +91,9 @@ if ( ! function_exists( 'sport_wc_the_cart_url' ) ) {
         echo sport_wc_get_cart_url();
 	}
 }
+
+// Скрытие нулей после запятой в цене
+add_filter('woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1);
+function wc_hide_trailing_zeros($trim) {
+    return false;
+}

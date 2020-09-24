@@ -138,13 +138,34 @@ if (!function_exists('get_num_ending')) {
 		return $ending;
 	}
 }
+
 if (!function_exists('add_admin_menu_separator')) {
 
 	/**
+	 * Добавляет разделитель в меню панели администратора.
 	 * 
+	 * @param string $index Позиция вставки разделителя
 	 */
-	function add_admin_menu_separator($position) {
+	function add_admin_menu_separator($index) {
 		global $menu;
-    	array_splice($menu, $position, 0, [ [ '', 'read', "separator", '', 'wp-menu-separator' ] ]);
+    	array_splice($menu, $index, 0, [ [ '', 'read', "separator", '', 'wp-menu-separator' ] ]);
 	}
+}
+
+/**
+ * Вызывает функцию шорткода по имени тега.
+ * 
+ * @param string $tag     Шорткод
+ * @param array  $atts    Атрибуры для передачи в функцию
+ * @param array  $content Содержание
+ *
+ * @return string|bool
+ */
+function sport_do_shortcode($tag, array $atts = [], $content = null) {
+	global $shortcode_tags;
+
+	if (!isset($shortcode_tags[$tag]))
+		return false;
+
+	return call_user_func($shortcode_tags[$tag], $atts, $content, $tag);
 }

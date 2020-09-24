@@ -4,24 +4,6 @@ if (!defined('ABSPATH'))
     exit;
 
 /**
- * Вызывает функцию шорткода по имени тега.
- * 
- * @param string $tag     Шорткод
- * @param array  $atts    Атрибуры для передачи в функцию
- * @param array  $content Содержание
- *
- * @return string|bool
- */
-function sport_do_shortcode($tag, array $atts = [], $content = null) {
-	global $shortcode_tags;
-
-	if (!isset($shortcode_tags[$tag]))
-		return false;
-
-	return call_user_func($shortcode_tags[$tag], $atts, $content, $tag);
-}
-
-/**
  * Возвращает пункты указанного меню.
  * 
  * @param string $slug Имя или ID зарегистрированного меню

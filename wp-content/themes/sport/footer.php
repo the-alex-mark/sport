@@ -1,3 +1,10 @@
+<?php
+
+if (!defined('ABSPATH'))
+    exit;
+
+?>
+		
 		<footer class="footer">
 			<div class="footer-container">
 				<div class="footer-top">

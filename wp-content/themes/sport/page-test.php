@@ -1,8 +1,10 @@
 <?php
-
 /**
-* Template Name: Тестовая страница
-*/
+ * Template Name: Тестовая страница
+ */
+
+if (!defined('ABSPATH'))
+    exit;
 
 $attributes = [
     [

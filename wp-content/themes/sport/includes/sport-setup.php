@@ -68,7 +68,18 @@ class Sport {
      * 
      */
     public function widgets() {
-        
+
+        // Регистрация боковой панели магазина
+        register_sidebar([
+            'name'          => 'Боковая панель',
+            'id'            => "sidebar_shop",
+            'description'   => 'Боковая панель для магазина',
+            'class'         => 'sidebar-shop',
+            'before_widget' => '',
+            'after_widget'  => "",
+            'before_title'  => '',
+            'after_title'   => "",
+        ]);
     }
 
     /**

@@ -16,10 +16,13 @@ $sport = (object)[
         'version'     => $theme['Version'],
     ],
 
-    // Функционал
-    'constants'   => require 'includes/sport-constants.php',
-    'setup'       => require 'includes/sport-setup.php',
-    'main'        => require 'includes/sport-functions.php',
-    'shortcodes'  => require 'includes/sport-shortcodes.php',
-    'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php'
+    // Функционал темы
+    'constants'    => require 'includes/sport-constants.php',
+    'setup'        => require 'includes/sport-setup.php',
+    'main'         => require 'includes/sport-functions.php',
+    'shortcodes'   => require 'includes/sport-shortcodes.php',
+
+    // Функционал плагина "WooCommerce"
+    'wc'           => require 'includes/woocommerce/sport-wc.php',
+    'wc_templates' => require 'includes/woocommerce/sport-wc-templates.php'
 ];

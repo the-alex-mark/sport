@@ -10,3 +10,6 @@ define('SCRIPTS',   ROOT . '/assets/scripts');
 define('PLUGINS',   ROOT . '/assets/plugins');
 define('FONTS',     ROOT . '/assets/fonts');
 define('RESOURCES', ROOT . '/assets/resources');
+
+// Расположение файлов шаблонов
+define('TEMPLATES', get_template_directory() . '/templates/');

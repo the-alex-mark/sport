@@ -8,6 +8,7 @@ if (!defined('ABSPATH'))
 <?php do_action('page_content__before'); ?>
 
 	<div class="content">
+		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
 	</div>
 

@@ -5,9 +5,8 @@ if (!defined('ABSPATH'))
 
 ?>
 
-<?php get_header(); ?>
+<?php do_action('page_content__before'); ?>
 
-<main class="container">
 	<div class="content error-404">
 		<center>
 			<img src="<?php assets('resources/404-robot.jpg'); ?>" alt="">
@@ -20,6 +19,5 @@ if (!defined('ABSPATH'))
 			</p>
 		</center>
 	</div>
-</main>
 
-<?php get_footer(); ?>
+<?php do_action('page_content__after'); ?>

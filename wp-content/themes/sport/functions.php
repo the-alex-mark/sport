@@ -20,6 +20,7 @@ $sport = (object)[
     'constants'    => require 'includes/sport-constants.php',
     'setup'        => require 'includes/sport-setup.php',
     'main'         => require 'includes/sport-functions.php',
+    'templates'    => require 'includes/sport-templates.php',
     'shortcodes'   => require 'includes/sport-shortcodes.php',
 
     // Функционал плагина "WooCommerce"

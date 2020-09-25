@@ -25,6 +25,12 @@ function add_custom_sort_by_name($args) {
 		$args['order']    = 'ASC';
 		$args['meta_key'] = '';
     }
+
+	if ('name-desc' == $orderby_value) {
+		$args['orderby']  = 'name';
+		$args['order']    = 'DESC';
+		$args['meta_key'] = '';
+    }
     
 	return $args;
 }
@@ -37,7 +43,7 @@ function add_custom_sort_by_availability($args) {
         ? wc_clean($_GET['orderby'])
         : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
 
-	if ('availability-asc' == $orderby_value) {
+	if ('availability' == $orderby_value) {
 		$args['orderby']  = 'meta_value_num wp_posts.ID';
 		$args['order']    = 'ASC';
 		$args['meta_key'] = '_stock';
@@ -66,8 +72,10 @@ function edit_custom_sort($orderby) {
 
     // Присвоение имён вариантам сортировки
     $orderby = [
-        'name'  => 'Название',
-        'price' => 'Цена'
+        'name'       => 'Название',
+        'name-desc'  => 'Название (по убыванию)',
+        'price'      => 'Цена',
+        'price-desc' => 'Цена (по убыванию)'
     ];
 
     return $orderby;

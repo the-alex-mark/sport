@@ -7,7 +7,6 @@ global $product;
 
 ?>
 
-<main class="container">
 		<div class="content">
 			<div class="row">
 				<div class="col product-photo">
@@ -62,7 +61,6 @@ global $product;
 				<div class="item"><img src="http://sport/wp-content/uploads/2020/09/aga_8775-1.jpg" alt=""></div>
 			</div>
 		</div>
-	</main>
 
 <!-- <main class="content">
 	

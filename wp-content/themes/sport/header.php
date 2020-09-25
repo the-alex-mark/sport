@@ -96,4 +96,4 @@ if (!defined('ABSPATH'))
 			</form>
 		</header>
 
-		<?php get_breadcrumb(); ?>
+		<?php do_action('page_content__breadcrumb'); ?>

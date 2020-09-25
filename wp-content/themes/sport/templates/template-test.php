@@ -5,7 +5,7 @@
 
 if (!defined('ABSPATH'))
     exit;
-
+    
 $attributes = [
     [
         'name' => 'Accessories Size',

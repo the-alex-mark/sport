@@ -61,7 +61,7 @@ class Sport {
         // });
 
         // Полное отключение стилей плагина "WooCommerce"
-        // add_filter('woocommerce_enqueue_styles', '__return_false');
+        add_filter('woocommerce_enqueue_styles', '__return_false');
     }
 
     /**
@@ -88,22 +88,22 @@ class Sport {
     public function assets() {
         
         // Подключение шрифтов
-        wp_enqueue_style('font-fontello',   FONTS   . '/fontello/stylesheet.css');
-        wp_enqueue_style('font-probapro',   FONTS   . '/probapro/stylesheet.css');
-        wp_enqueue_style('font-peacesans',  FONTS   . '/peacesans/stylesheet.css');
+        wp_enqueue_style('font-fontello',   SPORT_FONTS   . '/fontello/stylesheet.css');
+        wp_enqueue_style('font-probapro',   SPORT_FONTS   . '/probapro/stylesheet.css');
+        wp_enqueue_style('font-peacesans',  SPORT_FONTS   . '/peacesans/stylesheet.css');
 
         // Подключение стилей
-        wp_enqueue_style('slick',           PLUGINS . '/slick/slick.css');
-        // wp_enqueue_style('slick',           PLUGINS . '/slick/slick-theme.css');
-        wp_enqueue_style('woocommerce',     STYLES  . '/woocommerce.css');
-        wp_enqueue_style('main',            STYLES  . '/main.css');
-        wp_enqueue_style('adaptive',        STYLES  . '/adaptive.css');
+        wp_enqueue_style('slick',           SPORT_PLUGINS . '/slick/slick.css');
+        // wp_enqueue_style('slick',           SPORT_PLUGINS . '/slick/slick-theme.css');
+        // wp_enqueue_style('woocommerce',     SPORT_STYLES  . '/woocommerce.css');
+        wp_enqueue_style('main',            SPORT_STYLES  . '/main.css');
+        wp_enqueue_style('adaptive',        SPORT_STYLES  . '/adaptive.css');
         
         // Подключение Скриптов
         // wp_deregister_script('jquery');
         wp_enqueue_script('jquery-migrate',          '//code.jquery.com/jquery-migrate-1.2.1.min.js');
-        wp_enqueue_script('slick',          PLUGINS . '/slick/slick.min.js');
-        wp_enqueue_script('main',           SCRIPTS . '/main.js', [], null, true);
+        wp_enqueue_script('slick',          SPORT_PLUGINS . '/slick/slick.min.js');
+        wp_enqueue_script('main',           SPORT_SCRIPTS . '/main.js', [], null, true);
     }
 }
 

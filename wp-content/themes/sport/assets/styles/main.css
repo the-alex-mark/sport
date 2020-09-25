@@ -443,6 +443,9 @@ a.breadcrumb-item:hover {
 .content {
 	width: 100%;
 }
+.error-404 {
+	padding-top: 30px;
+}
 
 .content-options {
 	display: block;

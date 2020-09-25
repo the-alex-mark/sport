@@ -22,7 +22,8 @@ add_action('page_content__sidebar', function($name) {
 // Хлебные крошки
 add_action('page_content__breadcrumb', function () {
 
-    get_breadcrumb();
+    if (!is_404())
+        get_breadcrumb();
 });
 
 // Подвал

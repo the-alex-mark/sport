@@ -9,6 +9,8 @@
 
 // Подключение необходимых файлов
 $sport = (object)[
+
+    // Функционал
     'main'        => require 'includes/sport-functions.php',
     'helpers'     => require 'includes/sport-helpers.php',
     'shortcodes'  => require 'includes/sport-shortcodes.php',

@@ -44,7 +44,7 @@ add_action('init', function () {
 			'edit_item'          => 'Редактирование сотрудника',
 			'new_item'           => 'Новый сотрудник',
 			'view_item'          => 'Смотреть сотрудника',
-			'search_items'       => 'Искать сотрудника',
+			'search_items'       => 'Поиск сотрудников',
 			'not_found'          => 'Не найдено',
 			'not_found_in_trash' => 'Не найдено',
 			'menu_name'          => 'Персонал',
@@ -78,7 +78,7 @@ add_action('init', function () {
 		'labels'                 => [
 			'name'               => 'Должности',
 			'singular_name'      => 'Должность',
-			'search_items'       => 'Поиск должности',
+			'search_items'       => 'Поиск должностей',
 			'all_items'          => 'Все должности',
 			'view_item'          => 'Просмотреть должность',
 			'parent_item'        => 'Родительская должность',
@@ -93,7 +93,7 @@ add_action('init', function () {
 		],
 		'description'            => '',
 		'public'                 => true,
-        'hierarchical'           => false,
+        'hierarchical'           => true,
 		'show_admin_column'      => true,
         'rewrite'                => true
     ]);
@@ -107,7 +107,7 @@ add_action('init', function () {
 		'labels'                 => [
 			'name'               => 'Отделы',
 			'singular_name'      => 'Отдел',
-			'search_items'       => 'Поиск отдела',
+			'search_items'       => 'Поиск отделов',
 			'all_items'          => 'Все отделы',
 			'view_item'          => 'Просмотреть отдел',
 			'parent_item'        => 'Родительская отдел',

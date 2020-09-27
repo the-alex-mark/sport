@@ -35,6 +35,32 @@ if (!function_exists('get_breadcrumb')) {
     }
 }
 
+if (!function_exists('get_pagination')) {
+
+    /**
+     * 
+     */
+    function get_pagination() {
+        if (!wc_get_loop_prop('is_paginated') || !woocommerce_products_will_display())
+            return;
+    
+        $args = [
+            'total'   => wc_get_loop_prop( 'total_pages' ),
+            'current' => wc_get_loop_prop( 'current_page' ),
+            'base'    => esc_url_raw( add_query_arg( 'product-page', '%#%', false ) ),
+            'format'  => '?product-page=%#%',
+        ];
+    
+        if (!wc_get_loop_prop('is_shortcode')) {
+            $args['format'] = '';
+            $args['base']   = esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false))));
+        }
+    
+        // wc_get_template('loop/pagination.php', $args);
+        get_template_part(SPORT_TEMPLATES_PARTS . '/product-pagination', $args);
+    }
+}
+
 /**
  * 
  */
@@ -82,7 +108,7 @@ function sport_catalog_ordering() {
     }
 
     get_template_part(
-        SPORT_TEMPLATES_PARTS . "/form-orderby",
+        SPORT_TEMPLATES_PARTS . "/product-orderby",
         null,
         [
             'catalog_orderby_options' => $catalog_orderby_options,
@@ -91,3 +117,14 @@ function sport_catalog_ordering() {
         ]
     );
 }
+
+// Переопределение отображения изображения товара
+remove_filter('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
+add_filter('woocommerce_before_single_product_summary', function () {
+    get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'gallery');
+}, 20);
+
+remove_filter('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+add_filter('woocommerce_single_product_summary', function () {
+    get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'add_to_cart');
+}, 30);

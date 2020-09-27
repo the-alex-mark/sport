@@ -1,10 +1,160 @@
-/*
-    Theme Name:  Фирма "Стек-Спорт" Classic
-    Author:      Компания "Стек"
-    Author URI:  https://stack-it.ru
-    Description: Тема официального сайта фирмы "Стек-Спорт"
-    Version:     1.0
-    Text Domain: sport
-    Tags:        e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support, footer-widgets, sticky-post, theme-options, editor-style
-*/
+/**
+ * Theme Name:  Фирма "Стек-Спорт" Classic
+ * Author:      Компания "Стек"
+ * Author URI:  https://stack-it.ru
+ * Description: Тема официального сайта фирмы "Стек-Спорт"
+ * Version:     1.0
+ * Text Domain: sport
+ * Tags:        e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support, footer-widgets, sticky-post, theme-options, editor-style
+ */
 
+
+/* ************************************************************************ */
+/* Global                                                                   */
+/* ************************************************************************ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+
+	font-size: 14px;
+	line-height: 1.5;
+
+	background-color: #FFFFFF;
+	overflow-x: hidden;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	max-width: 1250px;
+	width: 100%;
+}
+
+.sidebar {
+	width: 34%;
+}
+.sidebar + .content {
+	margin-left: 20px;
+}
+.content + .sidebar {
+	margin-left: 20px;
+}
+
+.content {
+	width: 100%;
+}
+
+.text-align__left { text-align: left; }
+.text-align__center { text-align: center; }
+.text-align__right { text-align: right; }
+.text-align__justify { text-align: justify; }
+
+
+/* ************************************************************************ */
+/* Typography                                                               */
+/* ************************************************************************ */
+h1 {
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	
+    font-size: 26px;
+    font-weight: normal;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+	line-height: 1.2;
+    color: #ffc01b;
+}
+.error-404 h1 {
+	color: #006183;
+}
+h2 {
+	margin: 0;
+    margin-top: 20px;
+	margin-bottom: 25px;
+	
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+	line-height: 1.2;
+    color: #006183;
+}
+h3 {
+	margin: 0;
+    margin-top: 20px;
+	margin-bottom: 25px;
+	
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+	line-height: 1.2;
+    color: #006183;
+}
+h4 {
+    margin: 0;
+    margin-top: 20px;
+	margin-bottom: 25px;
+	
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+	text-rendering: optimizeLegibility;
+	line-height: 1.2;
+    color: #636363;
+}
+
+p {
+    margin: 0;
+	margin-bottom: 10px;
+	
+    font-size: 18px;
+	text-align: justify;
+	line-height: 1.5;
+    color: #636363;
+}
+p.indent {
+	text-indent: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: #006183;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* ************************************************************************ */
+/* Forms                                                                    */
+/* ************************************************************************ */
+button {
+	display: inline-block;
+	margin: 0;
+	padding: 7px 15px;
+
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFFFFF;
+
+	background-color: #F44336;
+	border: none;
+	outline: none;
+}
+button:hover {
+	background-color: #D93C37;
+}

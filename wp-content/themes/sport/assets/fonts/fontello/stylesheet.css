@@ -49,3 +49,5 @@
 
 .icon-phone:before { content: '\e805'; }
 .icon-mail:before { content: '\f0e0'; }
+.icon-zoom:before { content: '\e801'; }
+.icon-resize:before { content: '\e802'; }

@@ -1,11 +1,17 @@
 <?php
 /**
- * Template Name: Тестовая страница
+ * Template Name: Тестирование
  */
 
 if (!defined('ABSPATH'))
     exit;
     
+// Проверяет страницу поста на защищённость паролем
+if (post_password_required()) {
+	echo get_the_password_form();
+	return;
+}
+
 $attributes = [
     [
         'name' => 'Accessories Size',

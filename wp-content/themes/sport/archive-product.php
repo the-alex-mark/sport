@@ -7,10 +7,12 @@
 		<div class="content-options">
 			<div class="oprion-wrapper">
 				<?php sport_catalog_ordering(); ?>
+				<?php get_pagination(); ?>
 			</div>
 		</div>
 
 		<div class="product-list grid">
+			<!-- <?php woocommerce_product_loop_start(); ?> -->
 			<?php if (wc_get_loop_prop('total')): ?>
 				<?php while (have_posts()): the_post(); global $product; ?>
 
@@ -41,6 +43,7 @@
 
 				<?php endwhile; ?>
 			<?php endif; ?>
+			<!-- <?php woocommerce_product_loop_end(); ?> -->
 		</div>
 
 		<div class="content-options">
@@ -49,5 +52,27 @@
 			</div>
 		</div>
 	</div>
+
+
+<?php
+// if ( woocommerce_product_loop() ) {
+
+// 	/**
+// 	 * Hook: woocommerce_before_shop_loop.
+// 	 *
+// 	 * @hooked woocommerce_output_all_notices - 10
+// 	 * @hooked woocommerce_result_count - 20
+// 	 * @hooked woocommerce_catalog_ordering - 30
+// 	 */
+// 	do_action( 'woocommerce_before_shop_loop' );
+
+// 	/**
+// 	 * Hook: woocommerce_after_shop_loop.
+// 	 *
+// 	 * @hooked woocommerce_pagination - 10
+// 	 */
+// 	do_action( 'woocommerce_after_shop_loop' );
+// }
+?>
 
 <?php do_action('page_content__after'); ?>

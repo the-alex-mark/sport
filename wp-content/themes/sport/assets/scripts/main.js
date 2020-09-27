@@ -29,6 +29,7 @@
             /* ************************************************************************ */
 
             $('.no-text a').html('&#160;');
+            // $('.woocommerce-product-gallery__trigger').html('&#160;');
             
             // ↓ Работа с поиском
             $('.icon-search').on('click', function () {

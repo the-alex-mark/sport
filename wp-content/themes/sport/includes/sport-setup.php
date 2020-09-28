@@ -103,8 +103,8 @@ class Sport {
         
         // Подключение Скриптов
         // wp_deregister_script('jquery');
-        wp_enqueue_script('jquery-migrate',                  '//code.jquery.com/jquery-migrate-1.2.1.min.js');
-        wp_enqueue_script('slick',          SPORT_PLUGINS  . '/slick/slick.min.js');
+        wp_enqueue_script('jquery-migrate',                  '//code.jquery.com/jquery-migrate-1.2.1.min.js', [], null, true);
+        wp_enqueue_script('slick',          SPORT_PLUGINS  . '/slick/slick.min.js', [], null, true);
         wp_enqueue_script('main',           SPORT_SCRIPTS  . '/main.js', [], null, true);
     }
 }

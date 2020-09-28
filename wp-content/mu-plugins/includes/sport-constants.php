@@ -8,7 +8,7 @@ define('SPORT_PLUGIN',                   dirname(dirname(__FILE__)));
 define('SPORT_PLUGIN_URL',               plugin_dir_url(dirname(__FILE__)));
 
 // Расположение файлов в папке "assets"
-define('SPORT_PLUGIN_ASSETS',            SPORT_PLUGIN_URL       . '/assets');
+define('SPORT_PLUGIN_ASSETS',            SPORT_PLUGIN_URL       . 'assets');
 define('SPORT_PLUGIN_STYLES',            SPORT_PLUGIN_ASSETS    . '/styles');
 define('SPORT_PLUGIN_SCRIPTS',           SPORT_PLUGIN_ASSETS    . '/scripts');
 define('SPORT_PLUGIN_PLUGINS',           SPORT_PLUGIN_ASSETS    . '/plugins');

@@ -1,0 +1,48 @@
+.sport-plugin {
+    margin-left: -20px;
+
+	font-size: 14px;
+	line-height: 2;
+}
+.sport-plugin .row {
+    margin-bottom: 20px;
+}
+.sport-plugin .description {
+    margin-left: 10px;
+}
+
+.sport-plugin .page-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.sport-plugin .row-title {
+    margin: 0;
+}
+
+.sport-plugin .row-input_text {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+.sport-plugin .row-textarea {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+
+    line-height: 2;
+}
+
+.sport-plugin p.submit {
+    margin-top: 40px;
+}
+.sport-plugin .margin-left-auto {
+    margin-left: auto;
+}
+.sport-plugin input[type="submit"] {
+    width: 100%;
+}
+.sport-plugin textarea {
+    padding-left: 8px;
+    padding-right: 8px;
+}

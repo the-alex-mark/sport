@@ -44,6 +44,46 @@ add_action('init', function () {
 			'with_front'         => false,
 			'hierarchical'       => false
 		]
+	]);
+	
+	// Создание пользовательского типа записи "Персонал"
+	register_post_type('staff', [
+		'label'                  => null,
+		'labels'                 => [
+			'name'               => 'Персонал',
+            'singular_name'      => 'Сотрудник',
+            'all_items'          => 'Все сотрудники',
+			'add_new'            => 'Добавить нового',
+			'add_new_item'       => 'Добавление сотрудника',
+			'edit_item'          => 'Редактирование сотрудника',
+			'new_item'           => 'Новый сотрудник',
+			'view_item'          => 'Смотреть сотрудника',
+			'search_items'       => 'Поиск сотрудников',
+			'not_found'          => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено',
+			'menu_name'          => 'Персонал',
+        ],
+		'description'            => '',
+		'public'                 => true,
+		'publicly_queryable'     => true,
+		'exclude_from_search'    => false,
+		'show_ui'                => true,
+		'show_in_nav_menus'      => true,
+		'show_in_menu'           => true,
+		'show_in_admin_bar'      => true,
+		'show_in_rest'           => true,
+		'rest_base'              => null,
+		'menu_position'          => 2,
+		'menu_icon'              => 'dashicons-groups',
+		'hierarchical'           => false,
+		'supports'               => [ 'title', 'editor', 'thumbnail' ],
+		'taxonomies'             => [ 'position', 'department' ],
+		'has_archive'            => false,
+		'rewrite'                => [
+			'slug'               => 'staff',
+			'with_front'         => false,
+			'hierarchical'       => false
+		]
     ]);
     
     // Создание пользовательской таксономии "Должности"

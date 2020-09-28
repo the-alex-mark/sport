@@ -146,7 +146,7 @@ if (!function_exists('add_admin_menu_separator')) {
 	 * 
 	 * @param string $index Позиция вставки разделителя
 	 */
-	function add_admin_menu_separator($index) {
+	function add_menu_separator($index) {
 		global $menu;
     	array_splice($menu, $index, 0, [ [ '', 'read', "separator", '', 'wp-menu-separator' ] ]);
 	}

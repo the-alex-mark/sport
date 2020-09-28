@@ -33,7 +33,7 @@ add_action('init', function () {
 		'show_in_admin_bar'      => true,
 		'show_in_rest'           => true,
 		'rest_base'              => null,
-		'menu_position'          => 2,
+		'menu_position'          => 3,
 		'menu_icon'              => 'dashicons-groups',
 		'hierarchical'           => false,
 		'supports'               => [ 'title', 'editor', 'thumbnail' ],
@@ -46,47 +46,8 @@ add_action('init', function () {
 		]
 	]);
 	
-	// Создание пользовательского типа записи "Персонал"
-	register_post_type('staff', [
-		'label'                  => null,
-		'labels'                 => [
-			'name'               => 'Персонал',
-            'singular_name'      => 'Сотрудник',
-            'all_items'          => 'Все сотрудники',
-			'add_new'            => 'Добавить нового',
-			'add_new_item'       => 'Добавление сотрудника',
-			'edit_item'          => 'Редактирование сотрудника',
-			'new_item'           => 'Новый сотрудник',
-			'view_item'          => 'Смотреть сотрудника',
-			'search_items'       => 'Поиск сотрудников',
-			'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Персонал',
-        ],
-		'description'            => '',
-		'public'                 => true,
-		'publicly_queryable'     => true,
-		'exclude_from_search'    => false,
-		'show_ui'                => true,
-		'show_in_nav_menus'      => true,
-		'show_in_menu'           => true,
-		'show_in_admin_bar'      => true,
-		'show_in_rest'           => true,
-		'rest_base'              => null,
-		'menu_position'          => 2,
-		'menu_icon'              => 'dashicons-groups',
-		'hierarchical'           => false,
-		'supports'               => [ 'title', 'editor', 'thumbnail' ],
-		'taxonomies'             => [ 'position', 'department' ],
-		'has_archive'            => false,
-		'rewrite'                => [
-			'slug'               => 'staff',
-			'with_front'         => false,
-			'hierarchical'       => false
-		]
-    ]);
-    
-    // Создание пользовательской таксономии "Должности"
+	// Создание пользовательской таксономии "Должности"
+	register_taxonomy_for_object_type('position', 'staff');
     register_taxonomy('position', [ 'staff' ], [ 
 		'label'                  => null,
 		'labels'                 => [
@@ -111,11 +72,9 @@ add_action('init', function () {
 		'show_admin_column'      => true,
         'rewrite'                => true
     ]);
-    
-    // Привязка таксономии "Должности" к пользовательскому типу записи "Персонал"
-    register_taxonomy_for_object_type('position', 'staff');
 
-    // Создание пользовательской таксономии "Отделы"
+	// Создание пользовательской таксономии "Отделы"
+	register_taxonomy_for_object_type('department', 'staff');
     register_taxonomy('department', [ 'staff' ], [ 
 		'label'                  => null,
 		'labels'                 => [
@@ -139,10 +98,47 @@ add_action('init', function () {
         'hierarchical'           => false,
         'show_admin_column'      => true,
         'rewrite'                => true,
-    ]);
-    
-    // Привязка таксономии "Отделы" к пользовательскому типу записи "Персонал"
-    register_taxonomy_for_object_type('department', 'staff');
+	]);
+	
+	// Создание пользовательского типа записи "FAQ"
+	register_post_type('faq', [
+		'label'                  => null,
+		'labels'                 => [
+			'name'               => 'FAQ',
+            'singular_name'      => 'Вопрос',
+            'all_items'          => 'Все вопросы',
+			'add_new'            => 'Добавить новый',
+			'add_new_item'       => 'Добавление вопроса',
+			'edit_item'          => 'Редактирование вопроса',
+			'new_item'           => 'Новый вопрос',
+			'view_item'          => 'Смотреть вопрос',
+			'search_items'       => 'Поиск вопросов',
+			'not_found'          => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено',
+			'menu_name'          => 'FAQ',
+        ],
+		'description'            => '',
+		'public'                 => true,
+		'publicly_queryable'     => true,
+		'exclude_from_search'    => false,
+		'show_ui'                => true,
+		'show_in_nav_menus'      => true,
+		'show_in_menu'           => true,
+		'show_in_admin_bar'      => true,
+		'show_in_rest'           => true,
+		'rest_base'              => null,
+		'menu_position'          => 6,
+		'menu_icon'              => 'dashicons-format-chat',
+		'hierarchical'           => false,
+		'supports'               => [ 'title', 'editor', 'thumbnail' ],
+		'taxonomies'             => [ ],
+		'has_archive'            => false,
+		'rewrite'                => [
+			'slug'               => 'faq',
+			'with_front'         => false,
+			'hierarchical'       => false
+		]
+	]);
 });
 
 // Сортировка колонок у пользовательского типа записи "Персонал"

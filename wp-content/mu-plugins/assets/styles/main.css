@@ -11,12 +11,20 @@
     margin-left: 10px;
 }
 
+.sport-plugin hr {
+    display: block;
+    margin-top: 50px;
+}
+
 .sport-plugin .page-title {
     margin-bottom: 50px;
     text-align: center;
 }
 .sport-plugin .row-title {
+    display: block;
     margin: 0;
+
+    text-align: right;
 }
 
 .sport-plugin .row-input_text {
@@ -34,7 +42,9 @@
 }
 
 .sport-plugin p.submit {
-    margin-top: 40px;
+    /* margin-top: 40px; */
+    margin: 10px 0 0 0;
+    padding: 0;
 }
 .sport-plugin .margin-left-auto {
     margin-left: auto;

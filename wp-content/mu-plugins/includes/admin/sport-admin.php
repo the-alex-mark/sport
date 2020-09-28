@@ -59,7 +59,7 @@ function edit_column_css() {
 	if (get_current_screen()->base == 'edit') {
 
         // "Миниатюра"
-        echo '<style type="text/css"> .column-thumbnail { width: 80px; } </style>';
+        echo '<style type="text/css"> .column-thumbnail { width: 100px; } </style>';
 
         // "ID"
         echo '<style type="text/css"> .column-id { width: 8%; } </style>';

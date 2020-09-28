@@ -25,19 +25,49 @@ add_action('admin_menu', function () {
     // Подпункт "Информация"
     add_submenu_page(
 		'sport_org.php',
-		'Информация об организации',
+		'Основная информация',
 		'Информация',
 		'manage_options',
 		'org_info',
 		function () {
 			add_option('org_info__name');
 			add_option('org_info__desc');
+			add_option('org_info__phone1');
+			add_option('org_info__phone2');
+			add_option('org_info__phone3');
+			add_option('org_info__address');
+			add_option('org_info__email');
+			add_option('org_info__skype');
 
 			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_info.php';
 		}
 	);
 
-    // Подпункт "График работы"
+	// Подпункт "Реквизиты"
+    add_submenu_page(
+		'sport_org.php',
+		'Реквизиты',
+		'Реквизиты',
+		'manage_options',
+		'org_requisites',
+		function () {
+			add_option('org_requisites__inn');
+			add_option('org_requisites__okopf');
+			add_option('org_requisites__kpp');
+			add_option('org_requisites__okfs');
+			add_option('org_requisites__okpo');
+			add_option('org_requisites__okdp');
+			add_option('org_requisites__ogrn');
+			add_option('org_requisites__okato');
+			add_option('org_requisites__okved');
+			add_option('org_requisites__rs');
+			add_option('org_requisites__bank');
+
+			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_requisites.php';
+		}
+	);
+
+	// Подпункт "График работы"
     add_submenu_page(
 		'sport_org.php',
 		'График работы',

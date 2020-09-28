@@ -1,5 +1,8 @@
 <?php
 
+if (!defined('ABSPATH'))
+    exit;
+
 add_action('init', function () {
 	global $wp_rewrite;
 	$wp_rewrite->flush_rules();

@@ -1,33 +1,7 @@
 <?php
 
-// Добавление разделителей меню
-add_action('admin_init', function () {
-    add_admin_menu_separator(1);
-});
-
-// Добавление пункта меню "Организация"
-add_action('admin_menu', function () {
-
-    // Основная страница пункта
-    add_menu_page('Организация', 'Организация', 'manage_options', 'org.php', 'org', 'dashicons-building', 2);
-
-    // Подпункт "Информация"
-    add_submenu_page('org.php', 'Информация', 'Информация', 'manage_options', 'org_info.php', 'org_info');
-    function org_info() {
-        echo "<h2>Информация</h2><hr><p>Изменить</p><hr>";
-    }
-
-    // Подпункт "График работы"
-    add_submenu_page('org.php', 'График работы', 'График работы', 'manage_options', 'org_chart.php', 'org_chart');
-    function org_chart() {
-        echo "<h2>График работы</h2><hr><p>Изменить</p><hr>";
-    }
-});
-
-// Удаление страницы "Организация"
-add_action('admin_menu', function () {
-    remove_submenu_page('org.php', 'org.php');
-}, 9999);
+if (!defined('ABSPATH'))
+    exit;
 
 // Добавление пользовательского типа записи "Персонал" и таксономий к ней
 add_action('init', function () {

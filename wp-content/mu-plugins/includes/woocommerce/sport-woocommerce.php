@@ -1,5 +1,8 @@
 <?php
 
+if (!defined('ABSPATH'))
+    exit;
+
 if (!function_exists('sport_wc_is_activated')) {
 
 	/**

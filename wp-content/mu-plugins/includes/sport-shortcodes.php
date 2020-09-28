@@ -1,5 +1,8 @@
 <?php
 
+if (!defined('ABSPATH'))
+    exit;
+
 add_shortcode('helloworld', function ($attrs) {
     $params = shortcode_atts([
         'color' => 'red',

@@ -97,7 +97,7 @@ class Sport {
         
         wp_enqueue_style('normalize',       SPORT_STYLES   . '/normalize.css');
         wp_enqueue_style('woocommerce',     SPORT_STYLES   . '/woocommerce.css');
-        wp_enqueue_style('default',         SPORT_ROOT_URL . '/style.css');
+        wp_enqueue_style('default',         SPORT_THEME_URL . '/style.css');
         wp_enqueue_style('main',            SPORT_STYLES   . '/main.css');
         wp_enqueue_style('adaptive',        SPORT_STYLES   . '/adaptive.css');
         

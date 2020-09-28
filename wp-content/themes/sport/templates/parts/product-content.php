@@ -21,12 +21,15 @@ global $product;
 			<span class="product-info_price"><?php echo round($product->price); ?> руб.</span>
 		</div>
 
-		<span class="product-info_rating">1 2 3 4 5</span>
+		<!-- <span class="product-info_rating">1 2 3 4 5</span> -->
+		<span class="product-info_rating">
+			<?php /* do_action('woocommerce_product_get_rating_html'); */ ?>
+		</span>
 
 		<div class="product-info_reviews">
-			<a href="#" class="product-info_reviews-count"></a>
-			<span class="product-info_delimiter">|</span>
-			<a href="#" class="product-info_reviews-add"></a>
+			<a href="#" class="product-info_reviews-count">Отзывов (0)</a>
+			<span class="product-reviews_delimiter">|</span>
+			<a href="#" class="product-info_reviews-add">Добавьте ваш отзыв</a>
 		</div>
 
 		<?php
@@ -51,13 +54,11 @@ global $product;
 
 		<div class="single-product_col col-order">
 			<div class="product-order_purchase">
-				<button class="button-product product-order_order">Заказать</button>
-				<button class="button-product product-order_topay">Оплатить</button>
+				<button class="product-order_order">Заказать</button>
+				<button class="product-order_topay">Оплатить</button>
 			</div>
 
-			<div class="product-order_card">
-				<?php get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'add_to_cart'); ?>
-			</div>
+			<?php get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'add_to_cart'); ?>
 		</div>
 
 	<?php endif; ?>

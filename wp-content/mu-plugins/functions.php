@@ -11,11 +11,13 @@
 $sport = (object)[
 
     // Функционал
+    'constants'   => require 'includes/sport-constants.php',
     'main'        => require 'includes/sport-functions.php',
     'helpers'     => require 'includes/sport-helpers.php',
     'shortcodes'  => require 'includes/sport-shortcodes.php',
+    'taxonomies'  => require 'includes/sport-taxonomies.php',
     'admin'       => require 'includes/admin/sport-admin.php',
     'security'    => require 'includes/admin/sport-security.php',
-    'taxonomies'  => require 'includes/admin/sport-taxonomies.php',
+    'menu'        => require 'includes/admin/sport-menu.php',
     'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php'
 ];

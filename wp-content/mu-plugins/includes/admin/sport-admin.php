@@ -1,5 +1,8 @@
 <?php
 
+if (!defined('ABSPATH'))
+    exit;
+
 // Отображение дополнительных полей у различных типов записей
 add_action('init', function () {
     add_post_type_support('page', [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ]);

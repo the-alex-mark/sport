@@ -3,6 +3,24 @@
 if (!defined('ABSPATH'))
     exit;
 
+add_filter('woocommerce_product_get_rating_html', 'sport_get_rating', 10, 2);
+function sport_get_rating($rating_html, $rating) {
+
+    if ($rating > 0) {
+        $title = sprintf(__( 'Rated %s out of 5', 'woocommerce' ), $rating);
+    }
+    else {
+        $title = 'Not yet rated';
+        $rating = 0;
+    }
+
+    $rating_html  = '<div class="star-rating" title="' . $title . '">';
+    $rating_html .= '<span style="width:' . (($rating / 5) * 100) . '%"><strong class="rating">' . $rating . '</strong> ' . __('out of 5', 'woocommerce') . '</span>';
+    $rating_html .= '</div>';
+
+    return $rating_html;
+}
+
 // Обновление количества добавленных товаров в корзину (без перезагрузки страницы)
 add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
     ob_start();

@@ -19,7 +19,5 @@ $sport = (object)[
     'admin'       => require 'includes/admin/sport-admin.php',
     'security'    => require 'includes/admin/sport-security.php',
     'menu'        => require 'includes/admin/sport-menu.php',
-    'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php',
-
-    'test' => require 'includes/admin/test.php'
+    'woocommerce' => require 'includes/woocommerce/sport-woocommerce.php'
 ];

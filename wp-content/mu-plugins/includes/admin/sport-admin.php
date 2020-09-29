@@ -25,7 +25,7 @@ function add_column($columns) {
         if ($i == 2) $out['thumbnail'] = __('Миниатюра');
 
         // "ID"
-        if ($i == 3) $out['id'] = __('ID');
+        // if ($i == 3) $out['id'] = __('ID');
 
 		$out[$column] = $name;
 	}

@@ -25,6 +25,12 @@
 ?>
 
 <div class="sport-plugin">
+
+    <?php
+        if ($_POST['message'] == 'true')
+            require SPORT_PLUGIN_TEMPLATES_PARTS . '/message.php';
+    ?>
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -94,6 +100,7 @@
                         </div>
 
                         <hr>
+                        <input type="hidden" name="message" value="true">
 
                         <div class="row row-submit">
                             <div class="col-3 margin-left-auto">

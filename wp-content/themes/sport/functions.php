@@ -23,7 +23,7 @@ $sport = (object)[
     'templates'    => require 'includes/sport-templates.php',
     'shortcodes'   => require 'includes/sport-shortcodes.php',
 
-    // Функционал плагина "WooCommerce"
+    // Плагин "WooCommerce"
     'wc'           => require 'includes/woocommerce/sport-wc.php',
-    'wc_templates' => require 'includes/woocommerce/sport-wc-templates.php'
+    'wc_functions' => require 'includes/woocommerce/sport-wc-functions.php'
 ];

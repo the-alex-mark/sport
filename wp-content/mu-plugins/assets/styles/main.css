@@ -11,6 +11,10 @@
     margin-left: 10px;
 }
 
+.sport-plugin #message {
+    margin-top: 15px;
+}
+
 .sport-plugin hr {
     display: block;
     margin-top: 50px;
@@ -24,7 +28,7 @@
     display: block;
     margin: 0;
 
-    text-align: right;
+    /* text-align: right; */
 }
 
 .sport-plugin .row-input_text {
@@ -55,4 +59,5 @@
 .sport-plugin textarea {
     padding-left: 8px;
     padding-right: 8px;
+    min-height: 30px;
 }

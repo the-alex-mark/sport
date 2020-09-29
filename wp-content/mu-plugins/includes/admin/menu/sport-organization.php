@@ -11,6 +11,16 @@ add_action('admin_init', function () {
 // Добавление пункта меню "Организация"
 add_action('admin_menu', function () {
 
+	// Подключение стилей
+	wp_enqueue_style('bootstrap-grid',  SPORT_PLUGIN_PLUGINS . '/bootstrap/css/bootstrap-grid.min.css');
+	wp_enqueue_style('main',            SPORT_PLUGIN_STYLES  . '/main.css');
+	wp_enqueue_style('adaptive',        SPORT_PLUGIN_STYLES  . '/adaptive.css');
+
+	// Подключение скриптов
+	wp_enqueue_script('main',           SPORT_PLUGIN_SCRIPTS . '/main.js', [], null, true);
+
+	// **************************************************************************
+
     // Основная страница пункта
     add_menu_page(
 		'Организация',
@@ -66,26 +76,6 @@ add_action('admin_menu', function () {
 			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_requisites.php';
 		}
 	);
-
-	// Подпункт "График работы"
-    add_submenu_page(
-		'sport_org.php',
-		'График работы',
-		'График работы',
-		'manage_options',
-		'org_chart',
-		function () {
-			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_chart.php';
-		}
-	);
-
-	// Подключение стилей
-	wp_enqueue_style('bootstrap-grid',  SPORT_PLUGIN_PLUGINS . '/bootstrap/css/bootstrap-grid.min.css');
-	wp_enqueue_style('main',            SPORT_PLUGIN_STYLES  . '/main.css');
-	wp_enqueue_style('adaptive',        SPORT_PLUGIN_STYLES  . '/adaptive.css');
-
-	// Подключение скриптов
-	wp_enqueue_script('main',           SPORT_PLUGIN_SCRIPTS . '/main.js', [], null, true);
 });
 
 // Удаление страницы "Организация"

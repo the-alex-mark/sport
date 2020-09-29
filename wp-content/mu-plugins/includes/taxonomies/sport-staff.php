@@ -99,46 +99,6 @@ add_action('init', function () {
         'show_admin_column'      => true,
         'rewrite'                => true,
 	]);
-	
-	// Создание пользовательского типа записи "FAQ"
-	register_post_type('faq', [
-		'label'                  => null,
-		'labels'                 => [
-			'name'               => 'FAQ',
-            'singular_name'      => 'Вопрос',
-            'all_items'          => 'Все вопросы',
-			'add_new'            => 'Добавить новый',
-			'add_new_item'       => 'Добавление вопроса',
-			'edit_item'          => 'Редактирование вопроса',
-			'new_item'           => 'Новый вопрос',
-			'view_item'          => 'Смотреть вопрос',
-			'search_items'       => 'Поиск вопросов',
-			'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'FAQ',
-        ],
-		'description'            => '',
-		'public'                 => true,
-		'publicly_queryable'     => true,
-		'exclude_from_search'    => false,
-		'show_ui'                => true,
-		'show_in_nav_menus'      => true,
-		'show_in_menu'           => true,
-		'show_in_admin_bar'      => true,
-		'show_in_rest'           => true,
-		'rest_base'              => null,
-		'menu_position'          => 6,
-		'menu_icon'              => 'dashicons-format-chat',
-		'hierarchical'           => false,
-		'supports'               => [ 'title', 'editor', 'thumbnail' ],
-		'taxonomies'             => [ ],
-		'has_archive'            => false,
-		'rewrite'                => [
-			'slug'               => 'faq',
-			'with_front'         => false,
-			'hierarchical'       => false
-		]
-	]);
 });
 
 // Сортировка колонок у пользовательского типа записи "Персонал"

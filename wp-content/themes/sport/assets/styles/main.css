@@ -738,7 +738,7 @@ a.breadcrumb-item:hover {
 
 .woocommerce-notices-wrapper,
 .product {
-	display: none;
+	/* display: none; */
 }
 
 .single-product-info {

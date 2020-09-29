@@ -21,62 +21,71 @@ if (!defined('ABSPATH'))
 	<body>
 
 		<header class="header">
-			<div class="header-contacts">
-				<div class="header-phone icon-phone">
-					<a href="tel:+74852429095" class="header-link">+7 (4852) 42-90-95</a>
-					<span class="header-comma">,</span>
-					<a href="tel:+79301118238" class="header-link">+7 (930) 111-82-38</a>
-				</div>
+			<div class="header-contacts_wrapper">
+				<div class="container">
+					<div class="header-contacts">
+						<div class="header-phone icon-phone">
+							<a href="tel:+74852429095" class="header-link">+7 (4852) 42-90-95</a>
+							<span class="header-comma">,</span>
+							<a href="tel:+79301118238" class="header-link">+7 (930) 111-82-38</a>
+						</div>
 
-				<div class="header-mail icon-mail">
-					<a href="mailto:robot@stack-sport.ru" class="header-link">robot@stack-sport.ru</a>
-				</div>
+						<div class="header-mail icon-mail">
+							<a href="mailto:robot@stack-sport.ru" class="header-link">robot@stack-sport.ru</a>
+						</div>
 
-				<?php
-					if (has_nav_menu('social')) {
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'social',
-								'container_class' => 'header-social social',
-							)
-						);
-					}
-
-					wp_reset_postdata();
-				?>
-			</div>
-
-			<div class="header-menu no-select">
-				<a href="<?php echo site_url(); ?>" class="header-logo">
-					<img src="<?php echo sport_get_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" class="header-logo">
-				</a>
-
-				<nav class="header-navigation primary-navigation">
-				<ul id="menu-main" class="menu">
-				
 						<?php
-							wp_nav_menu([
-								'theme_location'  => 'primary',
-								'container'       => '',
-								'items_wrap'      => '%3$s'
-							]);
+							if (has_nav_menu('social')) {
+								wp_nav_menu(
+									array(
+										'theme_location'  => 'social',
+										'container_class' => 'header-social social',
+									)
+								);
+							}
+
+							wp_reset_postdata();
 						?>
 
-						<li class="margin-left-auto text-transform-uppercase font-weight-600 menu-item-forum icon-forum menu-item">
-							<a href="#">Форум</a>
-						</li>
+					</div>
+				</div>
+			</div>
 
-						<li class="menu-item-search icon-search menu-item">
-							<a href="#">&#160;</a>
-						</li>
-
-						<li class="menu-item-cart icon-cart menu-item">
-							<a href="<?php sport_wc_the_cart_url(); ?>">&#160;
-								<span class="cart-count"><?php sport_wc_the_cart_count(); ?></span>
-							</a>
-						</li>
-					</ul>
-				</nav>
+			<div class="header-menu_wrapper">
+				<div class="container">
+					<div class="header-menu no-select">
+						<a href="<?php echo site_url(); ?>" class="header-logo">
+							<img src="<?php echo sport_get_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" class="header-logo">
+						</a>
+		
+						<nav class="header-navigation primary-navigation">
+							<ul id="menu-main" class="menu">
+						
+								<?php
+									wp_nav_menu([
+										'theme_location'  => 'primary',
+										'container'       => '',
+										'items_wrap'      => '%3$s'
+									]);
+								?>
+		
+								<li class="margin-left-auto text-transform-uppercase font-weight-600 menu-item-forum icon-forum menu-item">
+									<a href="#">Форум</a>
+								</li>
+		
+								<li class="menu-item-search icon-search menu-item">
+									<a href="#">&#160;</a>
+								</li>
+		
+								<li class="menu-item-cart icon-cart menu-item">
+									<a href="<?php echo sport_wc_cart_url(); ?>">&#160;
+										<span class="cart-count"><?php echo sport_wc_cart_count(); ?></span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
 			</div>
 
 			<form action="#" method="get" onsubmit="return validate_search()" class="header-search">
@@ -96,4 +105,7 @@ if (!defined('ABSPATH'))
 			</form>
 		</header>
 
-		<?php do_action('page_content__breadcrumb'); ?>
+		<?php
+			if (!is_404())
+				get_breadcrumb();
+		?>

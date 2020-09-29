@@ -9,6 +9,7 @@ if (!function_exists('get_breadcrumb')) {
      * Вывод хлебных крошек
      */
     function get_breadcrumb($args = []) {
+        $breadcrumbs = new WC_Breadcrumb();
         $args = wp_parse_args(
             $args,
             apply_filters(
@@ -24,8 +25,6 @@ if (!function_exists('get_breadcrumb')) {
             )
         );
 
-        $breadcrumbs = new WC_Breadcrumb();
-
         if (!empty($args['home']))
             $breadcrumbs->add_crumb($args['home'], apply_filters('woocommerce_breadcrumb_home_url', home_url()));
 
@@ -38,7 +37,7 @@ if (!function_exists('get_breadcrumb')) {
 if (!function_exists('get_pagination')) {
 
     /**
-     * 
+     * Вывод пагинации
      */
     function get_pagination() {
         if (!wc_get_loop_prop('is_paginated') || !woocommerce_products_will_display())
@@ -55,8 +54,7 @@ if (!function_exists('get_pagination')) {
             $args['format'] = '';
             $args['base']   = esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false))));
         }
-    
-        // wc_get_template('loop/pagination.php', $args);
+        
         get_template_part(SPORT_TEMPLATES_PARTS . '/product-pagination', $args);
     }
 }

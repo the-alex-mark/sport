@@ -1,6 +1,6 @@
-<?php do_action('page_content__before'); ?>
+<?php do_action('sport_page_before'); ?>
 
-	<?php do_action('page_content__sidebar', 'shop'); ?>
+	<?php do_action('sport_content_sidebar', 'shop'); ?>
 
 	<div class="content">
 		<h1 class="product-title"><?php woocommerce_page_title(); ?></h1>
@@ -75,4 +75,4 @@
 // }
 ?>
 
-<?php do_action('page_content__after'); ?>
+<?php do_action('sport_page_after'); ?>

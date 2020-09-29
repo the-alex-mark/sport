@@ -7,6 +7,7 @@ if (!defined('ABSPATH'))
 
 <?php if (!empty($args['breadcrumb'])): ?>
 	<div class="breadcrumb">
+		<div class="container">
 		<?php foreach ($args['breadcrumb'] as $key => $crumb): ?>
 
 			<?php if (!empty($crumb[1]) && sizeof($args['breadcrumb']) !== $key + 1): ?>
@@ -20,5 +21,6 @@ if (!defined('ABSPATH'))
 			<?php endif; ?>
 
 		<?php endforeach; ?>
+		</div>
 	</div>
 <?php endif; ?>

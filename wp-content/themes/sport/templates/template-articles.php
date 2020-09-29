@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
 
 ?>
 
-<?php do_action('page_content__before'); ?>
+<?php do_action('sport_page_before'); ?>
 
     <div class="content">
         <?php the_content(); ?>
@@ -23,4 +23,4 @@ if (!defined('ABSPATH'))
         </ul>
     </div>
 
-<?php do_action('page_content__after'); ?>
+<?php do_action('sport_page_after'); ?>

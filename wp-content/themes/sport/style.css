@@ -30,7 +30,7 @@ body {
 	overflow-x: hidden;
 }
 
-.container {
+/* .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -39,7 +39,7 @@ body {
 	margin-bottom: 30px;
 	max-width: 1250px;
 	width: 100%;
-}
+} */
 
 .sidebar {
 	width: 34%;

@@ -3,94 +3,67 @@
 if (!defined('ABSPATH'))
     exit;
 
-if (!function_exists('sport_wc_is_activated')) {
-
-	/**
-	 * 
-	 */
-	function sport_wc_is_activated() {
-		return class_exists('WooCommerce') ? true : false;
-	}
+/**
+ * Проверяет доступность плагина "WooCommerce".
+ */
+function sport_wc_is_activated() {
+    return class_exists('WooCommerce') ? true : false;
 }
 
-if ( ! function_exists( 'sport_wc_cart_available' ) ) {
-    
-    /**
-     * 
-     */
-	function sport_wc_cart_available() {
-		$woo = WC();
-		return $woo instanceof \WooCommerce && $woo->cart instanceof \WC_Cart;
-	}
+/**
+ * Проверяет доступность страницы "Корзина".
+ */
+function sport_wc_cart_available() {
+    $woo = WC();
+    return $woo instanceof \WooCommerce && $woo->cart instanceof \WC_Cart;
 }
 
-if (!function_exists('sport_wc_get_cart_count')) {
-
-    /**
-     * 
-     */
-    function sport_wc_get_cart_count() {
-        if (!sport_wc_cart_available())
-            return 0;
-            
-        return WC()->cart->get_cart_contents_count();
-    }
+/**
+ * Возвращает сумарное количество добавленных товаров в корзину.
+ */
+function sport_wc_cart_count() {
+    if (!sport_wc_cart_available())
+        return 0;
+        
+    return WC()->cart->get_cart_contents_count();
 }
 
-if (!function_exists('sport_wc_the_cart_count')) {
-
-    /**
-     * 
-     */
-    function sport_wc_the_cart_count() {
-        echo sport_wc_get_cart_count();
-    }
+/**
+ * Возвращает сумарную стоимость добавленных товаров в корзину.
+ */
+function sport_wc_cart_subtotal() {
+    if (!sport_wc_cart_available())
+        return 0;
+        
+    // return wp_kses_post(WC()->cart->get_cart_subtotal());
+    // return WC()->cart->get_total();
+    return WC()->cart->total;
 }
 
-if ( ! function_exists( 'sport_wc_get_cart_subtotal' ) ) {
-    
-    /**
-     * 
-     */
-	function sport_wc_get_cart_subtotal() {
-		if (!sport_wc_cart_available())
-            return 0;
-            
-        // return wp_kses_post(WC()->cart->get_cart_subtotal());
-        // return WC()->cart->get_total();
-        return WC()->cart->total;
-	}
+/**
+ * Возвращает путь до страницы "Корзина".
+ */
+function sport_wc_cart_url() {
+    if (!sport_wc_cart_available())
+        return '#';
+        
+    return esc_url(wc_get_cart_url());
 }
 
-if ( ! function_exists( 'sport_wc_the_cart_subtotal' ) ) {
-    
-    /**
-     * 
-     */
-	function sport_wc_the_cart_subtotal() {            
-        echo sport_wc_get_cart_subtotal();
-	}
+/**
+ * Проверяет доступность страницы "Оформление заказа".
+ */
+function sport_wc_checkout_available() {
+    $woo = WC();
+    return $woo instanceof \WooCommerce && $woo->checkout instanceof \WC_Checkout;
 }
 
-if ( ! function_exists( 'sport_wc_get_cart_url' ) ) {
-    
-    /**
-     * 
-     */
-	function sport_wc_get_cart_url() {
-		if (!sport_wc_cart_available())
-            return '#';
-            
-        return esc_url(wc_get_cart_url());
-	}
-}
-
-if ( ! function_exists( 'sport_wc_the_cart_url' ) ) {
-    
-    /**
-     * 
-     */
-	function sport_wc_the_cart_url() {
-        echo sport_wc_get_cart_url();
-	}
+/**
+ * Возвращает путь до страницы "Оформление заказа".
+ */
+function sport_wc_checkout_url() {
+    if (!sport_wc_checkout_available())
+        return '#';
+        
+    return esc_url(wc_get_checkout_url());
 }

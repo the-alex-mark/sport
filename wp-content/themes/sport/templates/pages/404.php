@@ -5,7 +5,7 @@ if (!defined('ABSPATH'))
 
 ?>
 
-<?php do_action('page_content__before'); ?>
+<?php do_action('sport_page_before'); ?>
 
 	<div class="content error-404">
 		<center>
@@ -20,4 +20,4 @@ if (!defined('ABSPATH'))
 		</center>
 	</div>
 
-<?php do_action('page_content__after'); ?>
+<?php do_action('sport_page_after'); ?>

@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
 ?>
 		
 		<footer class="footer">
-			<div class="footer-container">
+			<div class="container">
 				<div class="footer-top">
 					<span class="footer-text">Оставайся с нами на связи</span>
 

@@ -28,6 +28,18 @@ body {
 	line-height: 1.5;
 }
 
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 30px;
+
+	max-width: 1540px;
+	width: 100%;
+}
+.main {
+	display: flex;
+}
+
 
 /* ************************************************************************ */
 /* Header                                                                   */
@@ -69,18 +81,24 @@ body {
 }
 
 /* Контактная информация */
+.header-contacts_wrapper {
+	/* padding: 0 30px; */
+	background-color: #00384D;
+}
+.header-contacts_wrapper .container {
+	margin-left: auto;
+	margin-right: auto;
+}
 .header-contacts {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	align-items: center;
 	padding: 0;
-	padding-right: 33px;
+	/* padding-right: 33px; */
 
 	font-size: 16px;
 	color: #FFFFFF;
-
-	background-color: #00384D;
 }
 .header-comma {
 	margin-right: 10px;
@@ -110,12 +128,18 @@ body {
 }
 
 /* Основное меню */
+.header-menu_wrapper {
+	/* padding: 0 30px; */
+	background-color: #006183;
+}
+.header-menu_wrapper .container {
+	margin-left: auto;
+	margin-right: auto;
+}
 .header-menu {
 	display: flex;
 	align-items: center;
-	padding: 14px 33px;
-
-	background-color: #006183;
+	padding: 14px 0;
 }
 
 a.header-logo {
@@ -335,10 +359,6 @@ img.header-logo {
 .breadcrumb {
 	display: flex;
 	align-items: center;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1250px;
-	width: 100%;
 	
 	margin-top: 14px;
 	margin-bottom: 14px;
@@ -359,22 +379,6 @@ a.breadcrumb-item:hover {
 	margin-left: 5px;
 	margin-right: 5px;
 }
-
-
-/* ************************************************************************ */
-/* Container                                                                */
-/* ************************************************************************ */
-.container {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 30px;
-	max-width: 1250px;
-	width: 100%;
-}
-
 
 /* ************************************************************************ */
 /* Sidebar                                                                  */
@@ -421,10 +425,14 @@ a.breadcrumb-item:hover {
 /* Content                                                                  */
 /* ************************************************************************ */
 .content {
+	margin-bottom: 30px;
 	width: 100%;
 }
 .error-404 {
 	padding-top: 30px;
+}
+.error-404 * {
+	text-align: center;
 }
 
 .content-options {
@@ -576,10 +584,6 @@ a.breadcrumb-item:hover {
 	box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.1);
 
 	z-index: 800;
-}
-.footer-container {
-	margin: auto;
-	max-width: 1140px;
 }
 
 .footer-top {

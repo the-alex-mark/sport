@@ -1,4 +1,4 @@
-<?php $message = 'Данные обновлены'; ?>
+<?php $message = 'Данные обновлены.'; ?>
 
 <div id="message" class="updated notice notice-success is-dismissible">
     <p><?php echo $message; ?></p>

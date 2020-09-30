@@ -1,0 +1,24 @@
+.php-info { margin-right: 20px; color: #222222; /* font-family: sans-serif; */ font-size: 16px; }
+.php-info pre { margin: 0; font-family: monospace; }
+.php-info a { color: #222222; }
+.php-info a:link { color: #000099; text-decoration: none; background-color: #FFFFFF; }
+.php-info a:hover { text-decoration: underline; }
+.php-info table { border-collapse: collapse; border: 0; max-width: 934px; width: 100%; box-shadow: 1px 2px 3px #CCCCCC; }
+.php-info .center { text-align: center; }
+.php-info .center table { margin: 1em auto; text-align: left; }
+.php-info .center th { text-align: center !important; }
+.php-info td, .php-info th { border: 1px solid #666666; font-size: 75%; vertical-align: baseline; padding: 4px 5px; }
+.php-info th { position: sticky; top: 0; background: inherit; }
+.php-info h1 { font-size: 200%; font-weight: bold; }
+.php-info h2 { font-size: 125%; font-weight: bold; }
+.php-info .p { font-size: 250%; text-align: left;}
+.php-info .e { background-color: #ccf; width: 300px; font-weight: bold; }
+.php-info .h { background-color: #99c; font-weight: bold; }
+.php-info .v { background-color: #ddd; max-width: 300px; overflow-x: auto; word-wrap: break-word; }
+.php-info .v i { color: #999999; }
+.php-info img { display: block; float: right; border: 0; }
+.php-info hr { max-width: 934px; width: 100%; background-color: #ccc; border: 0; height: 1px; }
+
+@media screen and (max-width: 782px) {
+    .php-info { margin-right: 10px; }
+}

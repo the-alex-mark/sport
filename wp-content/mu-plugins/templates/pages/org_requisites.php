@@ -1,42 +1,23 @@
 <?php
-    if ($_POST['org_requisites__inn'])
-        update_option('org_requisites__inn', stripslashes($_POST['org_requisites__inn']));
-
-    if ($_POST['org_requisites__okopf'])
+    if ($_POST) {
+        update_option('org_requisites__inn',   stripslashes($_POST['org_requisites__inn']));
         update_option('org_requisites__okopf', stripslashes($_POST['org_requisites__okopf']));
-
-    if ($_POST['org_requisites__kpp'])
-        update_option('org_requisites__kpp', stripslashes($_POST['org_requisites__kpp']));
-
-    if ($_POST['org_requisites__okfs'])
-        update_option('org_requisites__okfs', stripslashes($_POST['org_requisites__okfs']));
-
-    if ($_POST['org_requisites__okpo'])
-        update_option('org_requisites__okpo', stripslashes($_POST['org_requisites__okpo']));
-
-    if ($_POST['org_requisites__okdp'])
-        update_option('org_requisites__okdp', stripslashes($_POST['org_requisites__okdp']));
-
-    if ($_POST['org_requisites__ogrn'])
-        update_option('org_requisites__ogrn', stripslashes($_POST['org_requisites__ogrn']));
-
-    if ($_POST['org_requisites__okato'])
+        update_option('org_requisites__kpp',   stripslashes($_POST['org_requisites__kpp']));
+        update_option('org_requisites__okfs',  stripslashes($_POST['org_requisites__okfs']));
+        update_option('org_requisites__okpo',  stripslashes($_POST['org_requisites__okpo']));
+        update_option('org_requisites__okdp',  stripslashes($_POST['org_requisites__okdp']));
+        update_option('org_requisites__ogrn',  stripslashes($_POST['org_requisites__ogrn']));
         update_option('org_requisites__okato', stripslashes($_POST['org_requisites__okato']));
-
-    if ($_POST['org_requisites__okved'])
         update_option('org_requisites__okved', stripslashes($_POST['org_requisites__okved']));
-
-    if ($_POST['org_requisites__rs'])
-        update_option('org_requisites__rs', stripslashes($_POST['org_requisites__rs']));
-
-    if ($_POST['org_requisites__bank'])
-        update_option('org_requisites__bank', stripslashes($_POST['org_requisites__bank']));
+        update_option('org_requisites__rs',    stripslashes($_POST['org_requisites__rs']));
+        update_option('org_requisites__bank',  stripslashes($_POST['org_requisites__bank']));
+    }
 ?>
 
 <div class="sport-plugin">
     
     <?php
-        if ($_POST['message'] == 'true')
+        if ($_POST && $_POST['message'] == 'true')
             require SPORT_PLUGIN_TEMPLATES_PARTS . '/message.php';
     ?>
 

@@ -22,6 +22,7 @@ $sport = (object)[
 
     // Пользовательское меню панели администратора
     'menu_organization' => require 'includes/admin/menu/sport-organization.php',
+    'menu_tools'        => require 'includes/admin/menu/sport-tools.php',
 
     // Пользовательские таксономии
     'taxonomy_staff'    => require 'includes/taxonomies/sport-staff.php',

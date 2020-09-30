@@ -16,9 +16,6 @@ add_action('admin_menu', function () {
 	wp_enqueue_style('main',            SPORT_PLUGIN_STYLES  . '/main.css');
 	wp_enqueue_style('adaptive',        SPORT_PLUGIN_STYLES  . '/adaptive.css');
 
-	// Подключение скриптов
-	wp_enqueue_script('main',           SPORT_PLUGIN_SCRIPTS . '/main.js', [], null, true);
-
 	// **************************************************************************
 
     // Основная страница пункта

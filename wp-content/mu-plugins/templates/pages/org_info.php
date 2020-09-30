@@ -1,36 +1,21 @@
 <?php
-    if ($_POST['org_info__name'])
-        update_option('org_info__name', stripslashes($_POST['org_info__name']));
-
-    if ($_POST['org_info__desc'])
-        update_option('org_info__desc', stripslashes($_POST['org_info__desc']));
-
-    if ($_POST['org_info__phone1'])
-        update_option('org_info__phone1', stripslashes($_POST['org_info__phone1']));
-
-    if ($_POST['org_info__phone2'])
-        update_option('org_info__phone2', stripslashes($_POST['org_info__phone2']));
-
-    if ($_POST['org_info__phone3'])
-        update_option('org_info__phone3', stripslashes($_POST['org_info__phone3']));
-
-    if ($_POST['org_info__address'])
+    if ($_POST) {
+        update_option('org_info__name',    stripslashes($_POST['org_info__name']));
+        update_option('org_info__desc',    stripslashes($_POST['org_info__desc']));
+        update_option('org_info__phone1',  stripslashes($_POST['org_info__phone1']));
+        update_option('org_info__phone2',  stripslashes($_POST['org_info__phone2']));
+        update_option('org_info__phone3',  stripslashes($_POST['org_info__phone3']));
         update_option('org_info__address', stripslashes($_POST['org_info__address']));
-
-    if ($_POST['org_info__email'])
-        update_option('org_info__email', stripslashes($_POST['org_info__email']));
-
-    if ($_POST['org_info__skype'])
-        update_option('org_info__skype', stripslashes($_POST['org_info__skype']));
-
-    if ($_POST['org_info__forum'])
-        update_option('org_info__forum', stripslashes($_POST['org_info__forum']));
+        update_option('org_info__email',   stripslashes($_POST['org_info__email']));
+        update_option('org_info__skype',   stripslashes($_POST['org_info__skype']));
+        update_option('org_info__forum',   stripslashes($_POST['org_info__forum']));
+    }
 ?>
 
 <div class="sport-plugin">
 
     <?php
-        if ($_POST['message'] == 'true')
+        if ($_POST && $_POST['message'] == 'true')
             require SPORT_PLUGIN_TEMPLATES_PARTS . '/message.php';
     ?>
 

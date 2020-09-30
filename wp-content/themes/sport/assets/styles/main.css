@@ -26,6 +26,7 @@ body {
     font-family: 'Proba Pro', sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+	color: #636363;
 }
 
 .container {
@@ -638,12 +639,12 @@ a.breadcrumb-item:hover {
 	display: flex;
 	flex-wrap: wrap;
 	padding-bottom: 3%;
-	width: 103%;
+	width: 102%;
 }
 .product-list.grid .product-card {
 	margin: 0;
-	margin-right: 3%;
-	margin-bottom: 3%;
+	margin-right: 2%;
+	margin-bottom: 2%;
 	/* padding: 3%; */
 	/* flex-grow: 1; */
   	/* flex-basis: 23%; */
@@ -742,7 +743,7 @@ a.breadcrumb-item:hover {
 
 .woocommerce-notices-wrapper,
 .product {
-	/* display: none; */
+	display: none;
 }
 
 .single-product-info {
@@ -822,3 +823,112 @@ a.breadcrumb-item:hover {
 	width: 100%;
 }
 
+
+
+
+
+
+/* Пагинация */
+ul.page-numbers {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.page-numbers span,
+ul.page-numbers a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0, 10px;
+	min-width: 25px;
+	width: 100%;
+	height: 30px;
+	
+	text-decoration: none;
+	color: #006183;
+}
+ul.page-numbers span.current {
+	min-width: 30px;
+
+	color: #636363;
+
+    background-color: #FFFFFF;
+    border: 1px solid #cccccc;
+}
+ul.page-numbers a:not(.prev):not(.next):hover {
+	text-decoration: underline;
+}
+
+ul.page-numbers a.prev,
+ul.page-numbers a.next {
+	font-size: 8px;
+}
+ul.page-numbers a.prev:hover,
+ul.page-numbers a.next:hover {
+	border: 1px solid #23A3C4;
+}
+
+
+.product-options {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 10px;
+	padding: 5px 12px;
+	width: 100%;
+	min-height: 47px;
+
+	background-color: #ECECEC;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+.product-options .option-separator {
+	display: block;
+	margin-left: auto;
+	width: 0;
+	height: 100%;
+}
+
+.form-option:not(:last-child) {
+	margin-right: 20px;
+}
+.form-option label {
+	display: inline-block;
+	margin-right: 5px;
+
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #687171;
+}
+.form-option select {
+	margin: 0;
+	padding-left: 2px;
+	padding-right: 2px;
+
+	font-family: inherit;
+	color: inherit;
+}
+
+.option-orderby .link-orderby {
+	display: inline-block;
+	margin: 0;
+	padding: 0 5px;
+	height: 100%;
+
+	font-size: 12px;
+	text-decoration: none;
+	color: #636363;
+}
+.option-orderby .link-orderby:hover {
+	color: #23A3C4;
+}
+
+.option-result-count {
+	display: inline-block;
+	margin-right: 20px;
+}

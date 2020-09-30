@@ -31,7 +31,8 @@
     /* text-align: right; */
 }
 
-.sport-plugin .row-input_text {
+.sport-plugin .row-input_text,
+.sport-plugin .row-input_link {
     display: block;
     margin: 0;
     width: 100%;
@@ -46,7 +47,6 @@
 }
 
 .sport-plugin p.submit {
-    /* margin-top: 40px; */
     margin: 10px 0 0 0;
     padding: 0;
 }

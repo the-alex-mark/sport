@@ -21,6 +21,7 @@ if (!defined('ABSPATH'))
 
             <?php endforeach; wp_reset_postdata(); ?>
         </ul>
+
     </div>
 
 <?php do_action('sport_page_after'); ?>

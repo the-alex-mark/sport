@@ -4,11 +4,20 @@
 
 	<div class="content">
 		<h1 class="product-title"><?php woocommerce_page_title(); ?></h1>
-		<div class="content-options">
-			<div class="oprion-wrapper">
-				<?php sport_catalog_ordering(); ?>
-				<?php get_pagination(); ?>
-			</div>
+
+
+
+		<div class="product-options">
+			<?php sport_wc_ordering(); ?>
+
+			<hr class="option-separator">
+
+			<?php
+				remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+				do_action('woocommerce_before_shop_loop',);
+			?>
+
+			<?php sport_wc_pagination(); ?>
 		</div>
 
 		<div class="product-list grid">
@@ -46,10 +55,17 @@
 			<!-- <?php woocommerce_product_loop_end(); ?> -->
 		</div>
 
-		<div class="content-options">
-			<div class="oprion-wrapper">
-				<?php sport_catalog_ordering(); ?>
-			</div>
+		<div class="product-options">
+			<?php sport_wc_ordering(); ?>
+
+			<hr class="option-separator">
+
+			<?php
+				remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+				do_action('woocommerce_before_shop_loop',);
+			?>
+
+			<?php sport_wc_pagination(); ?>
 		</div>
 	</div>
 

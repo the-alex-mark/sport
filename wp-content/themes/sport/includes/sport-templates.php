@@ -38,7 +38,7 @@ function edit_locate_template($templates) {
         foreach ($temp as $item)
             array_unshift($templates, SPORT_TEMPLATES_PAGES . "/$item");
     }
-
+    
     // dd($templates);
 	return $templates;
 }

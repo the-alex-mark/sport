@@ -70,7 +70,7 @@ if (!defined('ABSPATH'))
 								?>
 		
 								<li class="margin-left-auto text-transform-uppercase font-weight-600 menu-item-forum icon-forum menu-item">
-									<a href="#">Форум</a>
+									<a href="<?php echo esc_html(get_option('org_info__forum')); ?>" target="_blank">Форум</a>
 								</li>
 		
 								<li class="menu-item-search icon-search menu-item">
@@ -107,5 +107,5 @@ if (!defined('ABSPATH'))
 
 		<?php
 			if (!is_404())
-				get_breadcrumb();
+				sport_wc_breadcrumb();
 		?>

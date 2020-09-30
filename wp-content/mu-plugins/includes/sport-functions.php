@@ -9,10 +9,10 @@ add_action('init', function () {
 });
 
 // Удаление "/page/" при пагинации
-add_filter('generate_rewrite_rules', function ($wp_rewrite) {
-	$new_rules = array('(.+)/page/(.+)/?' => 'index.php?category_name='.$wp_rewrite->preg_index(1).'&paged='.$wp_rewrite->preg_index(2));
-	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-});
+// add_filter('generate_rewrite_rules', function ($wp_rewrite) {
+// 	$new_rules = array('(.+)/page/(.+)/?' => 'index.php?category_name='.$wp_rewrite->preg_index(1).'&paged='.$wp_rewrite->preg_index(2));
+// 	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+// });
 
 // Удаление "/category/" из постоянных ссылок
 add_filter('user_trailingslashit', function ($link) {

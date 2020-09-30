@@ -3,66 +3,38 @@
 if (!defined('ABSPATH'))
     exit;
 
-if (!function_exists('get_breadcrumb')) {
+/**
+ * Выводит навигацию, настроенную плагином "WooCommerce".
+ */
+function sport_wc_breadcrumb($args = []) {
+    $breadcrumbs = new WC_Breadcrumb();
+    $args = wp_parse_args(
+        $args,
+        apply_filters(
+            'woocommerce_breadcrumb_defaults',
+            [
+                'delimiter'   => '&nbsp;&#47;&nbsp;',
+                'wrap_before' => '<nav class="woocommerce-breadcrumb">',
+                'wrap_after'  => '</nav>',
+                'before'      => '',
+                'after'       => '',
+                'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+            ]
+        )
+    );
 
-    /**
-     * Вывод хлебных крошек
-     */
-    function get_breadcrumb($args = []) {
-        $breadcrumbs = new WC_Breadcrumb();
-        $args = wp_parse_args(
-            $args,
-            apply_filters(
-                'woocommerce_breadcrumb_defaults',
-                [
-                    'delimiter'   => '&nbsp;&#47;&nbsp;',
-                    'wrap_before' => '<nav class="woocommerce-breadcrumb">',
-                    'wrap_after'  => '</nav>',
-                    'before'      => '',
-                    'after'       => '',
-                    'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-                ]
-            )
-        );
+    if (!empty($args['home']))
+        $breadcrumbs->add_crumb($args['home'], apply_filters('woocommerce_breadcrumb_home_url', home_url()));
 
-        if (!empty($args['home']))
-            $breadcrumbs->add_crumb($args['home'], apply_filters('woocommerce_breadcrumb_home_url', home_url()));
+    $args['breadcrumb'] = $breadcrumbs->generate();
 
-        $args['breadcrumb'] = $breadcrumbs->generate();
-
-        get_template_part(SPORT_TEMPLATES_GLOBAL . '/breadcrumb', null, $args);
-    }
-}
-
-if (!function_exists('get_pagination')) {
-
-    /**
-     * Вывод пагинации
-     */
-    function get_pagination() {
-        if (!wc_get_loop_prop('is_paginated') || !woocommerce_products_will_display())
-            return;
-    
-        $args = [
-            'total'   => wc_get_loop_prop( 'total_pages' ),
-            'current' => wc_get_loop_prop( 'current_page' ),
-            'base'    => esc_url_raw( add_query_arg( 'product-page', '%#%', false ) ),
-            'format'  => '?product-page=%#%',
-        ];
-    
-        if (!wc_get_loop_prop('is_shortcode')) {
-            $args['format'] = '';
-            $args['base']   = esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false))));
-        }
-        
-        get_template_part(SPORT_TEMPLATES_PARTS . '/product-pagination', $args);
-    }
+    get_template_part(SPORT_TEMPLATES_GLOBAL . '/breadcrumb', null, $args);
 }
 
 /**
- * 
+ * Выводит форму сортировки товаров, настроенную плагинов "WooCommerce"
  */
-function sport_catalog_ordering() {
+function sport_wc_ordering() {
     if (!wc_get_loop_prop('is_paginated') || !woocommerce_products_will_display())
         return;
 
@@ -106,8 +78,7 @@ function sport_catalog_ordering() {
     }
 
     get_template_part(
-        SPORT_TEMPLATES_PARTS . "/product-orderby",
-        null,
+        SPORT_TEMPLATES_WOOCOMMERCE . '/product/product', 'orderby',
         [
             'catalog_orderby_options' => $catalog_orderby_options,
             'orderby'                 => $orderby,
@@ -116,13 +87,38 @@ function sport_catalog_ordering() {
     );
 }
 
+/**
+ * Выводит пагинацию, настроенную плагином "WooCommerce".
+ */
+function sport_wc_pagination() {
+    if (!wc_get_loop_prop('is_paginated') || !woocommerce_products_will_display())
+        return;
+
+    $args = [
+        'total'   => wc_get_loop_prop('total_pages'),
+        'current' => wc_get_loop_prop('current_page'),
+        'base'    => esc_url_raw(add_query_arg('product-page', '%#%', false)),
+        'format'  => '?product-page=%#%',
+    ];
+
+    if (!wc_get_loop_prop('is_shortcode')) {
+        $args['format'] = '';
+        $args['base']   = esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false))));
+    }
+    
+    get_template_part(
+        SPORT_TEMPLATES_WOOCOMMERCE . '/product/product', 'pagination',
+        $args);
+}
+
 // Переопределение отображения изображения товара
 remove_filter('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
 add_filter('woocommerce_before_single_product_summary', function () {
-    get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'gallery');
+    get_template_part(SPORT_TEMPLATES_WOOCOMMERCE . '/product/product', 'gallery');
 }, 20);
 
+// Переопределение отображения кнопки добавления товара в корзину
 remove_filter('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 add_filter('woocommerce_single_product_summary', function () {
-    get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'add_to_cart');
+    get_template_part(SPORT_TEMPLATES_WOOCOMMERCE . '/product/product', 'add_to_cart');
 }, 30);

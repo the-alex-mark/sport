@@ -22,6 +22,9 @@
 
     if ($_POST['org_info__skype'])
         update_option('org_info__skype', stripslashes($_POST['org_info__skype']));
+
+    if ($_POST['org_info__forum'])
+        update_option('org_info__forum', stripslashes($_POST['org_info__forum']));
 ?>
 
 <div class="sport-plugin">
@@ -96,6 +99,14 @@
                             <div class="col-9">
                                 <input type="text" name="org_info__skype" value="<?php echo esc_html(get_option('org_info__skype')); ?>" class="row-input row-input_text">
                                 <span class='description'>Ярлык: <strong>org_info__skype</strong></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3"><span class="row-title">Ссылка на форум:</span></div>
+                            <div class="col-9">
+                                <input type="text" name="org_info__forum" value="<?php echo esc_html(get_option('org_info__forum')); ?>" class="row-input row-input_link">
+                                <span class='description'>Ярлык: <strong>org_info__forum</strong></span>
                             </div>
                         </div>
 

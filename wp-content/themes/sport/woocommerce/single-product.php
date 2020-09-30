@@ -9,7 +9,7 @@ if (!defined('ABSPATH'))
 
 	<div class="content">
 		<?php while (have_posts()): the_post(); ?>
-			<?php get_template_part(SPORT_TEMPLATES_PARTS . '/product', 'content'); ?>
+			<?php get_template_part(SPORT_TEMPLATES_WOOCOMMERCE . '/product/content'); ?>
 		<?php endwhile; ?>
 	</div>
 

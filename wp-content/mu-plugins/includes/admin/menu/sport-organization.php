@@ -48,6 +48,7 @@ add_action('admin_menu', function () {
 			add_option('org_info__address');
 			add_option('org_info__email');
 			add_option('org_info__skype');
+			add_option('org_info__forum');
 
 			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_info.php';
 		}

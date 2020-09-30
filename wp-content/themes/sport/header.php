@@ -68,10 +68,15 @@ if (!defined('ABSPATH'))
 										'items_wrap'      => '%3$s'
 									]);
 								?>
+
+								<?php $forum_link = esc_html(get_option('org_info__forum')); ?>
+								<?php if ($forum_link): ?>
 		
-								<li class="margin-left-auto text-transform-uppercase font-weight-600 menu-item-forum icon-forum menu-item">
-									<a href="<?php echo esc_html(get_option('org_info__forum')); ?>" target="_blank">Форум</a>
-								</li>
+									<li class="margin-left-auto text-transform-uppercase font-weight-600 menu-item-forum icon-forum menu-item">
+										<a href="<?php echo $forum_link; ?>" target="_blank">Форум</a>
+									</li>
+
+								<?php endif; ?>
 		
 								<li class="menu-item-search icon-search menu-item">
 									<a href="#">&#160;</a>

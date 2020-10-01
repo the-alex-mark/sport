@@ -3,12 +3,12 @@
 if (!defined('ABSPATH'))
     exit;
 
-add_shortcode('helloworld', function ($attrs) {
-    $params = shortcode_atts([
-        'color' => 'red',
-        'left'  => '0'
-    ],
-    $attrs);
-
-    return "<p style='color:{$params['color']};padding-left:{$params['left']}'>Hello, World!!!</p>";
+// Шорткод для вывода руководителей проекта "Стек-Спорт"
+add_shortcode('staff', function ($args) {
+    ob_start();
+    require SPORT_PLUGIN_TEMPLATES_PARTS . '/staff.php';
+    $part = ob_get_contents();
+    ob_end_clean();
+    
+    return $part;
 });

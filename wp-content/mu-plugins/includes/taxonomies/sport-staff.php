@@ -45,7 +45,7 @@ add_action('init', function () {
 			'hierarchical'       => false
 		]
 	]);
-	
+
 	// Создание пользовательской таксономии "Должности"
 	register_taxonomy_for_object_type('position', 'staff');
     register_taxonomy('position', [ 'staff' ], [ 
@@ -72,37 +72,28 @@ add_action('init', function () {
 		'show_admin_column'      => true,
         'rewrite'                => true
     ]);
-
-	// Создание пользовательской таксономии "Отделы"
-	register_taxonomy_for_object_type('department', 'staff');
-    register_taxonomy('department', [ 'staff' ], [ 
-		'label'                  => null,
-		'labels'                 => [
-			'name'               => 'Отделы',
-			'singular_name'      => 'Отдел',
-			'search_items'       => 'Поиск отделов',
-			'all_items'          => 'Все отделы',
-			'view_item'          => 'Просмотреть отдел',
-			'parent_item'        => 'Родительская отдел',
-			'parent_item_colon'  => 'Родительская отдел:',
-			'edit_item'          => 'Редактировать одтел',
-			'update_item'        => 'Обновить отдел',
-			'add_new_item'       => 'Добавить новый отдел',
-            'new_item_name'      => 'Новое имя отдела',
-            'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Отделы',
-		],
-		'description'            => '',
-		'public'                 => true,
-        'hierarchical'           => false,
-        'show_admin_column'      => true,
-        'rewrite'                => true,
-	]);
 });
 
-// Сортировка колонок у пользовательского типа записи "Персонал"
-add_filter('manage_edit-toilet_sortable_columns', function () {
+// Добавление дополнительных колонок
+add_filter('manage_edit-staff_columns', function ($columns) {
+	$result = [];
+	foreach ($columns as $column => $name) {
+        ++$i;
+
+        // "Миниатюра"
+        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+
+        // "ID"
+        if ($i == 3) $result['id'] = 'ID';
+
+		$result[$column] = $name;
+	}
+
+	return $result;
+});
+
+// Сортировка дополнительных колонок
+add_filter('manage_edit-staff_sortable_columns', function () {
     $columns['title'] = 'title_title';
     $columns['id'] = 'id_id';
     $columns['taxonomy-position'] = 'taxonomy-position_taxonomy-position';

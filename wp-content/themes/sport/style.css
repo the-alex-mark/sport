@@ -30,31 +30,6 @@ body {
 	overflow-x: hidden;
 }
 
-/* .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 30px;
-	max-width: 1250px;
-	width: 100%;
-} */
-
-.sidebar {
-	width: 34%;
-}
-.sidebar + .content {
-	margin-left: 20px;
-}
-.content + .sidebar {
-	margin-left: 20px;
-}
-
-.content {
-	width: 100%;
-}
-
 .text-align__left { text-align: left; }
 .text-align__center { text-align: center; }
 .text-align__right { text-align: right; }

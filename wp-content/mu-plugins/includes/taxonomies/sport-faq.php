@@ -37,7 +37,7 @@ add_action('init', function () {
 		'menu_icon'              => 'dashicons-format-chat', // 'dashicons-editor-help', 'dashicons-warning'
 		'hierarchical'           => false,
 		'supports'               => [ 'title', 'editor', 'thumbnail' ],
-		'taxonomies'             => [ ],
+		'taxonomies'             => [ 'themes' ],
 		'has_archive'            => false,
 		'rewrite'                => [
 			'slug'               => 'faq',
@@ -74,19 +74,35 @@ add_action('init', function () {
     ]);
 });
 
-// Сортировка колонок у пользовательского типа записи "Персонал"
-add_filter('manage_edit-toilet_sortable_columns', function () {
+// Добавление дополнительных колонок
+add_filter('manage_edit-faq_columns', function ($columns) {
+	$result = [];
+	foreach ($columns as $column => $name) {
+        ++$i;
+
+        // "Миниатюра"
+        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+
+        // "ID"
+        if ($i == 3) $result['id'] = 'ID';
+
+		$result[$column] = $name;
+	}
+
+	return $result;
+});
+
+// Сортировка дополнительных колонок
+add_filter('manage_edit-faq_sortable_columns', function () {
     $columns['title'] = 'title_title';
     $columns['id'] = 'id_id';
-    $columns['taxonomy-position'] = 'taxonomy-position_taxonomy-position';
-    $columns['taxonomy-department'] = 'taxonomy-department_taxonomy-department';
+    $columns['taxonomy-themes'] = 'taxonomy-themes_taxonomy-themes';
 	return $columns;
 });
 
 // Правка ширины колонок через CSS
 add_action('admin_head', function () {
 	if (get_current_screen()->base == 'edit') {
-        echo '<style type="text/css"> .column-taxonomy-position { width: 12%; } </style>';
-        echo '<style type="text/css"> .column-taxonomy-department { width: 12%; } </style>';    
+        echo '<style type="text/css"> .column-taxonomy-themes { width: 12%; } </style>';
     }
 });

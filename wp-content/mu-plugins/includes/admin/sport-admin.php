@@ -9,29 +9,50 @@ add_action('init', function () {
     add_post_type_support('post', [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats' ]);
 });
 
-// Создание дополнительных колонок
-add_filter('manage_posts_columns', 'add_column', 5);
-add_filter('manage_pages_columns', 'add_column', 5);
-function add_column($columns) {
+// Удаление колонок
+add_filter('manage_posts_columns', 'del_column', 5);
+add_filter('manage_pages_columns', 'del_column', 5);
+function del_column($columns) {
     
     // Удаление колонки "Автор"
     unset($columns['author']);
 
-	$out = [];
+	return $columns;
+}
+
+// Создание дополнительных колонок у типа записи "Страница"
+add_filter('manage_edit-page_columns', function ($columns) {
+    $result = [];
+	foreach ($columns as $column => $name) {
+        ++$i;
+
+        // "ID"
+        if ($i == 3) $result['id'] = 'ID';
+
+		$result[$column] = $name;
+	}
+
+	return $result;
+});
+
+// Создание дополнительных колонок у типа записи "Пост"
+add_filter('manage_edit-post_columns', function ($columns) {
+    
+	$result = [];
 	foreach ($columns as $column => $name) {
         ++$i;
 
         // "Миниатюра"
-        if ($i == 2) $out['thumbnail'] = __('Миниатюра');
+        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
 
         // "ID"
-        // if ($i == 3) $out['id'] = __('ID');
+        if ($i == 3) $result['id'] = 'ID';
 
-		$out[$column] = $name;
+		$result[$column] = $name;
 	}
 
-	return $out;
-}
+	return $result;
+});
 
 // Заполнение колонок данными
 add_filter('manage_posts_column', 'fill_column');
@@ -41,12 +62,8 @@ add_filter('manage_pages_custom_column', 'fill_column', 5, 2);
 function fill_column($column_name, $post_id) {
 
     // "Миниатюра"
-    if ($column_name === 'thumbnail') {
-        $alt_image = get_post_meta($post_id, 'image', true);
-
-        $image_url = (($alt_image) ? $alt_image : get_the_post_thumbnail_url());
-        echo '<a href="' . $image_url . '" target="_blank"><img src="' . $image_url . '" width="80" style="display: block;"></a>';
-    }
+    if ($column_name === 'thumbnail') 
+        echo '<a href="' . get_edit_post_link($post_id, '') . '" target="_blank"><img src="' . get_the_post_thumbnail_url() . '" style="display: block;"></a>';
     
     // "ID"
     if ($column_name === 'id')
@@ -60,6 +77,7 @@ function edit_column_css() {
 
         // "Миниатюра"
         echo '<style type="text/css"> .column-thumbnail { width: 100px; } </style>';
+        echo '<style type="text/css"> .column-thumbnail img { width: 100%; } </style>';
 
         // "ID"
         echo '<style type="text/css"> .column-id { width: 8%; } </style>';

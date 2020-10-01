@@ -5,7 +5,7 @@
 
 <br>
 
-### Содержание
+<b>Содержание</b>
 - [Функционал](wp-content/mu-plugins)
 - [Темы](wp-content/themes)
 - [Плагины](wp-content/plugins)

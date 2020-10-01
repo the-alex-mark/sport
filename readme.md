@@ -1,6 +1,8 @@
 # Интернет магазин фирмы "Стек-Спорт"
 
-Содержание
+<br>
+
+## Содержание
 - [Функционал](wp-content/mu-plugins)
 - [Темы](wp-content/themes)
 - [Плагины](wp-content/plugins)

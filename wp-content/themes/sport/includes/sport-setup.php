@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
 /**
  * 
  */
-class Sport {
+class sport {
 
     /**
      * 
@@ -109,4 +109,4 @@ class Sport {
     }
 }
 
-return new Sport();
+return new sport();

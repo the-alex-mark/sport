@@ -16,6 +16,9 @@ $sport = (object)[
     'main'                => require 'includes/sport-functions.php',
     'shortcodes'          => require 'includes/sport-shortcodes.php',
 
+    // Классы
+    'class_organization'  => require 'includes/classes/sport-class-organization.php',
+
     // Настройка панели администратора
     'admin'               => require 'includes/admin/sport-admin.php',
     'admin_security'      => require 'includes/admin/sport-security.php',

@@ -7,10 +7,10 @@ if (!defined('ABSPATH'))
 
 <?php do_action('sport_page_before'); ?>
 
-	<div class="content cart">
+	<div class="content">
 		<form action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post" class="form-cart">
 
-			<div class="product-list">
+			<div class="product-cart">
 				<?php foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item): ?>
 					<?php
 						$_product    = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
@@ -66,7 +66,11 @@ if (!defined('ABSPATH'))
 							</a>
 
 							<figcaption class="product-info">
-								<h2 class="product-name"><a href="<?php echo $_product_url; ?>"><?php echo $_product_name; ?></a></h2>
+								<div class="product-info_block">
+									<h2 class="product-name"><a href="<?php echo $_product_url; ?>"><?php echo $_product_name; ?></a></h2>
+									
+								</div>
+
 							</figcaption>
 						</figure>
 

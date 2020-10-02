@@ -982,21 +982,25 @@ ul.page-numbers a.next:hover {
 
 
 
-.cart .product-list .product-card a {
-}
-.cart .product-list .product-card {
+.product-cart .product-card {
 	display: flex;
+	margin: 0;
+	padding: 15px 0;
 	width: 100%;
 
-	border: 1px solid red;
+	border-bottom: 1px solid #EBEBEB;
 }
-.cart .product-list .product-image {
+.product-cart .product-card:last-child {
+	border-bottom: none;
+}
+.product-cart .product-image {
 	display: block;
-	max-height: 168px;
+	width: 100%;
+	max-width: 140px;
 }
-.cart .product-list .product-info {
-	
+.product-cart .product-info {
+	min-height: auto;
 }
-.cart .product-list .product-name {
+.product-cart .product-name {
 
 }

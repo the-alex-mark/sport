@@ -979,3 +979,24 @@ ul.page-numbers a.next:hover {
 	display: inline-block;
 	margin-right: 20px;
 }
+
+
+
+.cart .product-list .product-card a {
+}
+.cart .product-list .product-card {
+	display: flex;
+	width: 100%;
+
+	border: 1px solid red;
+}
+.cart .product-list .product-image {
+	display: block;
+	max-height: 168px;
+}
+.cart .product-list .product-info {
+	
+}
+.cart .product-list .product-name {
+
+}

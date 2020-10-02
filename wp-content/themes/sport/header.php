@@ -111,6 +111,6 @@ if (!defined('ABSPATH'))
 		</header>
 
 		<?php
-			if (!is_404())
+			if (!is_page([ 'cart', 'checkout' ]) && !is_404())
 				sport_wc_breadcrumb();
 		?>

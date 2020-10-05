@@ -1,0 +1,53 @@
+:root {
+
+    /* Цвета */
+    --color-h1: #FFC01B;
+    --color-h2: #006183;
+    --color-h3: #006183;
+    --color-h4: #636363;
+    --color-text: #636363;
+    --color-link: #006183;
+    --color-button: #D93C37;
+
+    /* Размеры */
+    --width-content: 1140px;
+    --width-content: 1520px;
+}
+
+/* Разное */
+.no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+.v-none { display: none !important; }
+.v-block { display: block; }
+.v-flex { display: flex; }
+
+/* Позиционирование */
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+
+/* -- Настройки Grid -- */
+.grid { margin: 0 !important; width: 102% !important; }
+.grid-item { margin: 0 2% 2% 0 !important; }
+.grid-col-1 .grid-item { width: 98% !important; }
+.grid-col-2 .grid-item { width: 48% !important; }
+.grid-col-3 .grid-item { width: 31.3% !important; }
+.grid-col-4 .grid-item { width: 23% !important; }
+.grid-col-5 .grid-item { width: 18% !important; }
+.grid-col-6 .grid-item { width: 14.66% !important; }
+.grid-col-7 .grid-item { width: 12.28% !important; }
+.grid-col-8 .grid-item { width: 10.5% !important; }
+
+/* Типографика */
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+.tt-uppercase { text-transform: uppercase; }
+.tt-lowercase { text-transform: lowercase; }
+.tt-capitalize { text-transform: capitalize; }

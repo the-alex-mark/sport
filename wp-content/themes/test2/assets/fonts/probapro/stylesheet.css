@@ -1,0 +1,17 @@
+/* -- Proba Pro -- */
+
+@font-face {
+	font-family: 'Proba Pro';
+    src: url('Proba Pro - Regular.otf');
+
+    font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proba Pro';
+    src: url('Proba Pro - Italic.otf');
+
+    font-weight: normal;
+	font-style: italic;
+}

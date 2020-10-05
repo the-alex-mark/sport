@@ -75,10 +75,10 @@ class sport {
             'id'            => "sidebar_shop",
             'description'   => 'Боковая панель для магазина',
             'class'         => 'sidebar-shop',
-            'before_widget' => '',
-            'after_widget'  => "",
-            'before_title'  => '',
-            'after_title'   => "",
+            'before_widget' => '<div id="%1$s" class="sidebar-filter no-select %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<span class="filter-title">',
+            'after_title'   => '</span>',
         ]);
     }
 

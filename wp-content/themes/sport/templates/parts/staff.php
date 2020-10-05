@@ -3,11 +3,9 @@
 if (!defined('ABSPATH'))
 	exit;
 
-    get_post_thumbnail_id($post->ID);
-
 ?>
 
-<div class="grid">
+<div class="staff-grid grid">
     <?php $staff = get_posts([ 'post_type' => 'staff', 'order' => 'ASC' ]); ?>
     <?php foreach ($staff as $item): setup_postdata($item); ?>
 

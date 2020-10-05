@@ -27,3 +27,11 @@ $sport = (object)[
     'wc'           => require 'includes/woocommerce/sport-wc.php',
     'wc_functions' => require 'includes/woocommerce/sport-wc-functions.php'
 ];
+
+// add_filter('widget_title','my_widget_title'); 
+// function my_widget_title($title)
+// {
+
+//     // return null;
+//     return '<span class="filter-title">' . $title . '</span>';
+// }

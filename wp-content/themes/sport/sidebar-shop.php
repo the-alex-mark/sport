@@ -41,4 +41,9 @@ if (!defined('ABSPATH'))
 
     <a href="#" class="block-link">Сравнить тренажер с импортными аналогами</a>
 
+    <?php
+        if (is_active_sidebar('sidebar_shop'))
+            dynamic_sidebar('sidebar_shop');
+    ?>
+
 </article>

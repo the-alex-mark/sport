@@ -92,11 +92,16 @@ a:hover {
 /* FORMS                                                                    */
 /* ************************************************************************ */
 
+label {
+	font-size: 15px;
+}
+
 .button,
 button {
     display: block;
     padding: 6px 16px;
     text-decoration: none;
+    text-align: center;
     color: #FFFFFF;
     background-color: #F44336;
     border-radius: 4px;
@@ -105,4 +110,21 @@ button {
 button:hover {
     background-color: #D93C37;
     text-decoration: none;
+}
+
+input[type='email'],
+input[type='tel'],
+input[type='text'] {
+	padding: 1px 8px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+}
+
+textarea {
+	padding: 1px 8px;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 27px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
 }

@@ -10,6 +10,7 @@
         <meta name="description" content="">
 
         <!-- Подключение шрифтов -->
+        <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="assets/fonts/fontello/stylesheet.css">
         <link rel="stylesheet" href="assets/fonts/peacesans/stylesheet.css">
         <link rel="stylesheet" href="assets/fonts/probapro/stylesheet.css">
@@ -30,10 +31,12 @@
         <main class="main-wrapper">
             <div class="container">
                 <div class="main">
-                    <?php /* require 'sidebar.php';  */?>
+                    <?php /* require 'sidebar.php'; */ ?>
 
                     <article class="content">
-                        <?php require 'cart.php'; ?>
+                        <?php /* require 'cart.php'; */ ?>
+                        <?php /* require 'checkout.php'; */ ?>
+                        <?php require 'product.php'; ?>
                     </article>
                 </div>
             </div>
@@ -43,6 +46,7 @@
         
         <!-- Подключение скриптов -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="assets/plugins/zoom-master/jquery.zoom.min.js"></script>
         <script src="assets/scripts/main.js"></script>
     </body>
 </html>

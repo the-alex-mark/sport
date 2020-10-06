@@ -74,12 +74,12 @@
 
             // ↓ Работа с контроллом количества товара в корзине
             $('<button class="quantity-button quantity-down">&#8722;</button>')
-                .insertBefore('.product-count_quantity input');
+                .insertBefore('.product-quantity input');
                 
             $('<button class="quantity-button quantity-up">+</button>')
-                .insertAfter('.product-count_quantity input');
+                .insertAfter('.product-quantity input');
             
-            $('.product-count_quantity').each(function () {
+            $('.product-quantity').each(function () {
                 let control = $(this);
                 let elem_inputNumber = control.find('input[type="number"]');
                 let elem_buttonUp    = control.find('.quantity-up');
@@ -99,6 +99,25 @@
                     control.find("input").val((value <= minimum) ? value : value - 1);
                     control.find("input").trigger("change");
                 });
+            });
+
+
+
+
+
+
+
+            // ↓ Зум изображения товара
+            $('.product-image-large').zoom();
+            $('.product-image-small').on('click', function (e) {
+                e.preventDefault();
+
+                $('.product-image-large').find('img').attr(
+                    'src',
+                    $(this).find('img').attr('src'));
+
+                $('.product-image-large').trigger('zoom.destroy');
+                $('.product-image-large').zoom();
             });
 
         });

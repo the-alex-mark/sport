@@ -45,4 +45,11 @@
         <a href="http://sport?action=yith-woocompare-remove-product&amp;id=all" data-product_id="all" class="clear-all" rel="nofollow">Очистить всё</a>
         <a href="http://sport/products/compare" class="compare-widget button" rel="nofollow">Сравнить</a>
     </div>
+
+    <div id="custom_html-2" class="widget_text sidebar-filter no-select widget_custom_html">
+        <div class="textwidget custom-html-widget">
+            <a href="#" class="filter-title call-ec-widget">Рассчитать доставку</a>
+            <script id="dcsbl" src="https://dostavka.sbl.su/api/delivery.js?comp=0&amp;startCt=Ярославль&amp;startCntr=RU&amp;btn=no&amp;dopLathing=1&amp;dopInsure=1&amp;startPick=1"></script>
+        </div>
+    </div>
 </aside>

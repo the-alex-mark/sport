@@ -98,6 +98,7 @@ class sport {
         wp_enqueue_style('normalize',       SPORT_ASSETS_STYLES   . '/normalize.css');
         wp_enqueue_style('woocommerce',     SPORT_ASSETS_STYLES   . '/woocommerce.css');
         wp_enqueue_style('style',           get_stylesheet_uri());
+        wp_enqueue_style('dashicons');
         wp_enqueue_style('main',            SPORT_ASSETS_STYLES   . '/main.css');
         wp_enqueue_style('adaptive',        SPORT_ASSETS_STYLES   . '/adaptive.css');
         

@@ -67,3 +67,38 @@ function sport_wc_checkout_url() {
         
     return esc_url(wc_get_checkout_url());
 }
+
+/**
+ * Выводит HTML звёздного рейтинга.
+ */
+function sport_wc_star_rating($args = []) {
+	$parsed_args = wp_parse_args($args, [
+		'rating'     => 0,
+		'type'       => 'rating',
+		'count'      => 5,
+        'echo'       => true,
+    ]);
+
+	// Преобразование значения рейтинга при строчном представлении
+	$rating = (float)str_replace(',', '.', $parsed_args['rating']);
+
+    // Преобразование процента в звёздный рейтинг (0..5) с шагом 5
+	if ('percent' === $parsed_args['type'])
+		$rating = round($rating / 10, 0) / 2;
+
+    // Вычисление количества звезд каждого типа
+	$stars_full  = floor($rating);
+	$stars_half  = ceil($rating - $stars_full);
+	$stars_empty = $parsed_args['count'] - $stars_full - $stars_half;
+
+    $output  = '<div class="star-rating">';
+	$output .= str_repeat('<div class="star star-full" aria-hidden="true"></div>', $stars_full);
+	$output .= str_repeat('<div class="star star-half" aria-hidden="true"></div>', $stars_half);
+	$output .= str_repeat('<div class="star star-empty" aria-hidden="true"></div>', $stars_empty);
+	$output .= '</div>';
+
+	if ($parsed_args['echo'])
+		echo $output;
+
+	return $output;
+}

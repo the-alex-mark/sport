@@ -23,7 +23,7 @@ global $product;
 
 		<!-- <span class="product-info_rating">1 2 3 4 5</span> -->
 		<span class="product-info_rating">
-			<?php /* do_action('woocommerce_product_get_rating_html'); */ ?>
+			<?php sport_wc_star_rating([ 'rating' => $product->get_average_rating() ]); ?>
 		</span>
 
 		<div class="product-info_reviews">

@@ -3,7 +3,7 @@
 if (!defined('ABSPATH'))
     exit;
 
-// Шорткод для вывода руководителей проекта "Стек-Спорт"
+// Список руководителей проекта
 add_shortcode('staff', function ($args) {
     ob_start();
     require SPORT_THEME_DIR . SPORT_TEMPLATES_PARTS . '/staff.php';
@@ -12,3 +12,16 @@ add_shortcode('staff', function ($args) {
     
     return $part;
 });
+
+// elementor_load_plugin_textdomain
+
+// if (!is_front_page()) {
+    // remove_accents('elementor_load_plugin_textdomain');
+    // remove_action('elementor_load_plugin_textdomain', 99999);
+    // add_action( 'elementor/loaded', function () {
+    //     return false;
+    // } );
+
+    // remove_action( 'plugins_loaded', 'elementor_load_plugin_textdomain' );
+    // remove_all_actions( 'plugins_loaded', 1 );
+// }

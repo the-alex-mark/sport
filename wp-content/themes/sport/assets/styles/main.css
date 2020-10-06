@@ -1004,3 +1004,43 @@ ul.page-numbers a.next:hover {
 .product-cart .product-name {
 
 }
+
+
+
+
+
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.order-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    color: inherit;
+}
+
+
+/* .widget_text .call-ec-widget {
+	display: flex;
+	align-items: center;
+	min-height: 47px;
+    margin-top: 10px;
+    padding: 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 1;
+    color: #f69d01;
+    background-color: #F4F4F4;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+.widget_text .call-ec-widget:hover {
+	background-color: #ECECEC;
+} */

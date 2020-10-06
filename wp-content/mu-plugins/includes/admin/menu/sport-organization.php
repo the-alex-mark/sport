@@ -51,13 +51,13 @@ add_action('admin_menu', function () {
 		}
 	);
 
-	// Подпункт "Реквизиты"
+	// Подпункт "Режим работы"
     add_submenu_page(
 		'sport_org.php',
-		'Реквизиты',
-		'Реквизиты',
+		'Режим работы',
+		'Режим работы',
 		'manage_options',
-		'org_requisites',
+		'org_operating-mode',
 		function () {
 			add_option('org_requisites__inn');
 			add_option('org_requisites__okopf');
@@ -70,6 +70,20 @@ add_action('admin_menu', function () {
 			add_option('org_requisites__okved');
 			add_option('org_requisites__rs');
 			add_option('org_requisites__bank');
+
+			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_operating-mode.php';
+		}
+	);
+
+	// Подпункт "Реквизиты"
+    add_submenu_page(
+		'sport_org.php',
+		'Реквизиты',
+		'Реквизиты',
+		'manage_options',
+		'org_requisites',
+		function () {
+			add_option('org_time');
 
 			require SPORT_PLUGIN_TEMPLATES_PAGES . '/org_requisites.php';
 		}

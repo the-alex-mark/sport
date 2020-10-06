@@ -61,7 +61,7 @@ class sport {
         // });
 
         // Полное отключение стилей плагина "WooCommerce"
-        add_filter('woocommerce_enqueue_styles', '__return_false');
+        // add_filter('woocommerce_enqueue_styles', '__return_false');
     }
 
     /**

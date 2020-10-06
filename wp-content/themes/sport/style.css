@@ -117,6 +117,11 @@ a:hover {
 /* ************************************************************************ */
 /* Forms                                                                    */
 /* ************************************************************************ */
+
+label {
+	font-size: 15px;
+}
+
 button {
 	display: inline-block;
 	margin: 0;
@@ -132,4 +137,44 @@ button {
 }
 button:hover {
 	background-color: #D93C37;
+}
+
+input[type='email'],
+input[type='tel'],
+input[type='text'] {
+	padding: 1px 8px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+}
+
+textarea {
+	padding: 1px 8px;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 27px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+	border-top: none;
+	border-left: 3px solid #006183;
+}
+.woocommerce-NoticeGroup strong {
+	color: #006183;
 }

@@ -2,7 +2,7 @@
     margin-left: -20px;
 
 	font-size: 14px;
-	line-height: 2;
+    line-height: 2;
 }
 .sport-plugin .row {
     margin-bottom: 20px;
@@ -54,10 +54,69 @@
     margin-left: auto;
 }
 .sport-plugin input[type="submit"] {
+    display: block;
     width: 100%;
 }
 .sport-plugin textarea {
     padding-left: 8px;
     padding-right: 8px;
     min-height: 30px;
+}
+
+.sport-plugin .form-row {
+    display: flex;
+    /* justify-content: center; */
+}
+.sport-plugin .form-row * {
+    flex-grow: 1;
+}
+.sport-plugin .input-separator {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0;
+    text-align: center;
+}
+
+.sport-plugin .ta-left > * {
+    text-align: left;
+}
+.sport-plugin .ta-center > * {
+    text-align: center;
+}
+.sport-plugin .ta-right > * {
+    text-align: right;
+}
+
+.form-block {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    padding-top: 80px;
+    padding-bottom: 0;
+    background-color: #F4F4F4;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+.form-block .form-name {
+    position: absolute;
+    margin: 0;
+    padding: 8px 30px;
+    font-size: 16px;
+    top: 15px;
+    left: -10px;
+    line-height: 1;
+    color: #FFFFFF;
+    background-color: #007cba;
+    z-index: 5;
+}
+
+.block-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    /* text-transform: uppercase; */
+    font-size: 20px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.block-title:first-child {
+    margin-top: 0;
 }

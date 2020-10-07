@@ -74,12 +74,12 @@
 
             // ↓ Работа с контроллом количества товара в корзине
             $('<button class="quantity-button quantity-down">&#8722;</button>')
-                .insertBefore('.product-quantity input');
+                .insertBefore('.quantity input');
                 
             $('<button class="quantity-button quantity-up">+</button>')
-                .insertAfter('.product-quantity input');
+                .insertAfter('.quantity input');
             
-            $('.product-quantity').each(function () {
+            $('.quantity').each(function () {
                 let control = $(this);
                 let elem_inputNumber = control.find('input[type="number"]');
                 let elem_buttonUp    = control.find('.quantity-up');
@@ -89,12 +89,16 @@
                 let maximun          = parseFloat(elem_inputNumber.attr('max'));
             
                 elem_buttonUp.click(function (e) {
+                    e.preventDefault();
+                    
                     let value = parseFloat(elem_inputNumber.val());
                     control.find("input").val((value >= maximun) ? value : value + 1);
                     control.find("input").trigger("change");
                 });
             
                 elem_buttonDown.click(function (e) {
+                    e.preventDefault();
+
                     let value = parseFloat(elem_inputNumber.val());
                     control.find("input").val((value <= minimum) ? value : value - 1);
                     control.find("input").trigger("change");

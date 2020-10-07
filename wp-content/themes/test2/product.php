@@ -24,7 +24,37 @@
         </div>
 
         <div class="product-col general">
+            <div class="product-header">
+                <h1 class="product-title">Butterfly Amicus 3000+</h1>
+                <span class="product-price">1 500 руб.</span>
+            </div>
             
+            <div class="product-row">
+                <div class="star-rating">
+                    <div class="star star-full" aria-hidden="true"></div>
+                    <div class="star star-full" aria-hidden="true"></div>
+                    <div class="star star-full" aria-hidden="true"></div>
+                    <div class="star star-half" aria-hidden="true"></div>
+                    <div class="star star-empty" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <div class="product-reviews">
+                    <a href="" class="reviews-count">Отзывы <span class="count">(0)</span></a>
+                    <span class="reviews-separator">|</span>
+                    <a href="" class="reviews-add">Добавте ваш отзыв</a>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <span class="product-availability true">Есть в наличии</span>
+            </div>
+
+            <div class="product-desc">
+                <p>Тренажер «Фора-Кадет» - автоматическое устройство («робот») для метания мячей для настольного тенниса.</p>
+                <p>Тренажер «Фора-Кадет» специально создан для  любителей  настольного тенниса.  Именно по их  многочисленным просьбам  мы разработали  этот  надежный,  доступный и достаточно функциональный тренажер.</p>
+            </div>
         </div>
 
         <div class="product-col action">
@@ -33,9 +63,8 @@
                 
                 
                 <div class="product-compare">
-                    <!-- <i class="fas fa-balance-scale"></i> -->
                     <i class="fas fa-balance-scale-left"></i>
-                    <a href="#" class="fa-balance-scale action-add-compare">Сравнить</a>
+                    <a href="#" class="fa-balance-scale action-add-compare">Добавить к сравнению</a>
                 </div>
             </div>
         </div>
@@ -46,7 +75,20 @@
             <li class="tab-item open">
                 <a href="#" class="tab-button">Описание</a>
                 <div class="tab-content">
-                    
+                    <table class="woocommerce-product-attributes shop_attributes">
+                        <tbody>
+                            <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--weight">
+                                <th class="woocommerce-product-attributes-item__label">Вес</th>
+                                <td class="woocommerce-product-attributes-item__value">5 kg</td>
+                            </tr>
+                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_brand">
+                                <th class="woocommerce-product-attributes-item__label">Бренд</th>
+                                <td class="woocommerce-product-attributes-item__value">
+                                    <p><a href="http://sport/products/brand/fora" rel="tag">Фора</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </li>
 

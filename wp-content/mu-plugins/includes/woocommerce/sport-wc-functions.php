@@ -69,6 +69,16 @@ function sport_wc_checkout_url() {
 }
 
 /**
+ * Возвращает изображение товара по ID  
+ * В случае отсутствия изображения вернёт плейсхолдер.
+ */
+function sport_wc_image_url_from_id($id) {
+    return (wp_get_attachment_url($id))
+        ? wp_get_attachment_url($id)
+        : woocommerce_placeholder_img_src();
+}
+
+/**
  * Выводит HTML звёздного рейтинга.
  */
 function sport_wc_star_rating($args = []) {

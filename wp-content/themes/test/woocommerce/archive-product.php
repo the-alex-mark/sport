@@ -23,11 +23,11 @@ if (!defined('ABSPATH'))
 					<?php
 						global $product;
 
-						$product_url                = apply_filters('woocommerce_loop_product_link', get_the_permalink(), $product);
-						$product_image_url         = (wp_get_attachment_url($product->get_image_id())) ? wp_get_attachment_url($product->get_image_id()) : woocommerce_placeholder_img_src();
+						$product_url               = apply_filters('woocommerce_loop_product_link', get_the_permalink(), $product);
+						$product_image_url         = sport_wc_image_url_from_id($product->get_image_id());
 						$product_name              = $product->get_name();
 						$product_short_description = $product->get_short_description();
-						$product_price             = $product->get_price_html();;
+						$product_price             = $product->get_price_html();
 						$product_add_to_cart_url   = do_shortcode('[add_to_cart_url id="' . $product->get_id() . '"]');
 					?>
 				

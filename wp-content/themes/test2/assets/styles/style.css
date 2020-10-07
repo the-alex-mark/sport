@@ -128,3 +128,31 @@ textarea {
 	border: 1px solid #AAAAAA;
 	border-radius: 4px;
 }
+
+
+
+
+
+
+
+
+
+
+
+.star-rating .star-full:before { content: "\f155"; }
+.star-rating .star-half:before { content: "\f459"; }
+.star-rating .star-empty:before { content: "\f154"; }
+.star-rating .star {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	font-family: 'dashicons';
+	font-size: 20px;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1;
+	color: #EDB500;
+}

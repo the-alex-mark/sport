@@ -5,10 +5,16 @@ if (!defined('ABSPATH'))
 
 global $organization;
 
-$org_phone_1 = $organization->get_phones()[0];
-$org_phone_2 = $organization->get_phones()[1];
-$org_phone_3 = $organization->get_phones()[3];
-$org_email   = $organization->get_email();
+$org_phone_1     = $organization->get_phones()[0];
+$org_phone_2     = $organization->get_phones()[1];
+$org_phone_3     = $organization->get_phones()[3];
+$org_email       = $organization->get_email();
+$org_forum       = $organization->get_forum();
+
+$wc_myaccount_url = get_permalink(wc_get_page_id('myaccount'));
+$wc_shop_url      = get_permalink(wc_get_page_id('shop'));
+$wc_cart_url      = get_permalink(wc_get_page_id('cart'));
+$wc_checkout_url  = get_permalink(wc_get_page_id('checkout'));
 
 ?>
 
@@ -101,12 +107,15 @@ $org_email   = $organization->get_email();
 
                         <div class="header-menu ml-auto">
                             <ul>
-                                <li class="forum"><a href="#">Форум</a></li>
+                                <?php if ($org_forum): ?>
+                                    <li class="forum"><a href="<?php echo $org_forum; ?>" target="_blank">Форум</a></li>
+                                <?php endif; ?>
+
                                 <li class="search"><a href="#"></a></li>
                                 <li class="cart">
-                                    <a href="#">
+                                    <a href="<?php echo $wc_cart_url; ?>">
                                         <span class="cart-title">Корзина</span>
-                                        <span class="cart-count">3</span>
+                                        <span class="cart-count">0</span>
                                     </a
                                 ></li>
                             </ul>

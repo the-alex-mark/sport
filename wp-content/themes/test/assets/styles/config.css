@@ -145,10 +145,10 @@
     font-size: 18px;
     text-transform: uppercase;
 }
-.product-availability.true {
+.product-availability.in-stock {
     color: #FFC01B;
 }
-.product-availability.false {
+.product-availability.no-stock {
     color: #F44336;
 }
 

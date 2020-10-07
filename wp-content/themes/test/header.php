@@ -5,16 +5,11 @@ if (!defined('ABSPATH'))
 
 global $organization;
 
-$org_phone_1     = $organization->get_phones()[0];
-$org_phone_2     = $organization->get_phones()[1];
-$org_phone_3     = $organization->get_phones()[3];
-$org_email       = $organization->get_email();
-$org_forum       = $organization->get_forum();
+$org_phones            = $organization->get_phones();
+$org_email             = $organization->get_email();
+$org_forum             = $organization->get_forum();
 
-$wc_myaccount_url = get_permalink(wc_get_page_id('myaccount'));
-$wc_shop_url      = get_permalink(wc_get_page_id('shop'));
-$wc_cart_url      = get_permalink(wc_get_page_id('cart'));
-$wc_checkout_url  = get_permalink(wc_get_page_id('checkout'));
+$wc_cart_url           = sport_wc_page_url('cart');
 
 ?>
 
@@ -39,19 +34,18 @@ $wc_checkout_url  = get_permalink(wc_get_page_id('checkout'));
                     <div class="container">
                         <div class="header-contacts">
 
-                            <?php if ($org_phone_1): ?>
+                            <?php if ($org_phones): ?>
                                 <div class="header-phone icon-phone">
-                                    <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $org_phone_1); ?>" class="header-link"><?php echo $org_phone_1; ?></a>
+                                    <?php foreach ($org_phones as $i => $phone_formated): ?>
+                                        
+                                        <?php if ($i > 0): ?>
+                                            <span class="header-comma">,</span>
+                                        <?php endif; ?>
+                                            
+                                        <?php $phone = preg_replace('/[^0-9]/', '', $phone_formated); ?>
+                                        <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $phone); ?>" class="header-link"><?php echo $phone_formated; ?></a>
 
-                                    <?php if ($org_phone_2): ?>
-                                        <span class="header-comma">,</span>
-                                        <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $org_phone_2); ?>" class="header-link"><?php echo $org_phone_2; ?></a>
-                                    <?php endif; ?>
-
-                                    <?php if ($org_phone_3): ?>
-                                        <span class="header-comma">,</span>
-                                        <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $org_phone_3); ?>" class="header-link"><?php echo $org_phone_3; ?></a>
-                                    <?php endif; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
 
@@ -112,12 +106,15 @@ $wc_checkout_url  = get_permalink(wc_get_page_id('checkout'));
                                 <?php endif; ?>
 
                                 <li class="search"><a href="#"></a></li>
-                                <li class="cart">
-                                    <a href="<?php echo $wc_cart_url; ?>">
-                                        <span class="cart-title">Корзина</span>
-                                        <span class="cart-count">0</span>
-                                    </a
-                                ></li>
+
+                                <?php if ($wc_cart_url): ?>
+                                    <li class="cart">
+                                        <a href="<?php echo $wc_cart_url; ?>">
+                                            <span class="cart-title">Корзина</span>
+                                            <span class="cart-count">0</span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>

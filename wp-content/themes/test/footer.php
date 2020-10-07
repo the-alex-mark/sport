@@ -5,11 +5,12 @@ if (!defined('ABSPATH'))
 
 global $organization;
 
-$org_phone_1 = $organization->get_phones()[0];
-$org_phone_2 = $organization->get_phones()[1];
-$org_phone_3 = $organization->get_phones()[3];
-$org_address = $organization->get_address();
-$org_email   = $organization->get_email();
+$org_phones            = $organization->get_phones();
+$org_address           = $organization->get_address();
+$org_email             = $organization->get_email();
+$org_forum             = $organization->get_forum();
+
+$wc_privacy_policy_url = sport_wc_page_url('privacy_policy');
 
 ?>
 
@@ -58,13 +59,15 @@ $org_email   = $organization->get_email();
                             wp_reset_postdata();
                         ?>
 
-                        <div class="footer-add-menu">
-                            <ul id="menu-main" class="menu">
-                                <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="http://sport/about">Пользовательское соглашение</a></li>
-                            <ul>
-                        </div>
+                        <?php if ($wc_privacy_policy_url): ?>
+                            <div class="footer-add-menu">
+                                <ul id="menu-main" class="menu">
+                                    <li><a href="<?php echo $wc_privacy_policy_url; ?>" target="_blank">Пользовательское соглашение</a></li>
+                                <ul>
+                            </div>
+                        <?php endif; ?>
 
-                        <?php if ($org_phone_1 || $org_email || $org_address): ?>
+                        <?php if ($org_phones || $org_email || $org_address): ?>
                             <div class="footer-contacts">
                                 <?php if ($org_address): ?>
                                     <div class="header-address icon-location">
@@ -72,19 +75,18 @@ $org_email   = $organization->get_email();
                                     </div>
                                 <?php endif; ?>
 
-                                <?php if ($org_phone_1): ?>
+                                <?php if ($org_phones): ?>
                                     <div class="header-phone icon-phone">
-                                        <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $org_phone_1); ?>" class="header-link"><?php echo $org_phone_1; ?></a>
+                                        <?php foreach ($org_phones as $i => $phone_formated): ?>
+                                            
+                                            <?php if ($i > 0): ?>
+                                                <span class="header-comma">,</span>
+                                            <?php endif; ?>
+                                                
+                                            <?php $phone = preg_replace('/[^0-9]/', '', $phone_formated); ?>
+                                            <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $phone); ?>" class="header-link"><?php echo $phone_formated; ?></a>
 
-                                        <?php if ($org_phone_2): ?>
-                                            <span class="header-comma">,</span>
-                                            <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $org_phone_2); ?>" class="header-link"><?php echo $org_phone_2; ?></a>
-                                        <?php endif; ?>
-
-                                        <?php if ($org_phone_3): ?>
-                                            <span class="header-comma">,</span>
-                                            <a href="tel:+<?php echo preg_replace('/[^0-9]/', '', $org_phone_3); ?>" class="header-link"><?php echo $org_phone_3; ?></a>
-                                        <?php endif; ?>
+                                        <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>
 

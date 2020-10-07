@@ -41,31 +41,11 @@ function sport_wc_cart_subtotal() {
 }
 
 /**
- * Возвращает путь до страницы "Корзина".
- */
-function sport_wc_cart_url() {
-    if (!sport_wc_cart_available())
-        return '#';
-        
-    return esc_url(wc_get_cart_url());
-}
-
-/**
  * Проверяет доступность страницы "Оформление заказа".
  */
 function sport_wc_checkout_available() {
     $woo = WC();
     return $woo instanceof \WooCommerce && $woo->checkout instanceof \WC_Checkout;
-}
-
-/**
- * Возвращает путь до страницы "Оформление заказа".
- */
-function sport_wc_checkout_url() {
-    if (!sport_wc_checkout_available())
-        return '#';
-        
-    return esc_url(wc_get_checkout_url());
 }
 
 /**

@@ -7,8 +7,8 @@ if (!defined('ABSPATH'))
 
 <?php do_action('sport_page_before'); ?>
 
-	<div class="content">
-		<form action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post" class="form-cart">
+	<form action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post" class="form-cart">
+		<div class="content">
 
 			<div class="product-cart">
 				<?php foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item): ?>
@@ -79,8 +79,8 @@ if (!defined('ABSPATH'))
 				<?php endforeach; ?>
 			</div>
 
-		</form>
-	</div>
+		</div>
+	</form>
 
 <?php do_action('sport_page_after'); ?>
 

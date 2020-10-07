@@ -35,5 +35,6 @@ $sport = (object)[
 
     // Плагин "WooCommerce"
     'wc'                  => require 'includes/woocommerce/sport-wc.php',
-    'wc_functions'        => require 'includes/woocommerce/sport-wc-functions.php'
+    'wc_functions'        => require 'includes/woocommerce/sport-wc-functions.php',
+    'wc_links'            => require 'includes/woocommerce/sport-wc-links.php'
 ];

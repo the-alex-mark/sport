@@ -17,10 +17,9 @@ $wc_checkout_url = get_permalink(wc_get_page_id('checkout'));
 			<a href="<?php echo $wc_checkout_url; ?>" class="button cart-to-checkout">Перейти к оформлению товаров</a>
 		</div>
 
-		<div class="order-cart">
-
-			<?php if (sport_wc_cart_count() > 0): ?>
-				<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+		<?php if (sport_wc_cart_count() > 0): ?>
+			<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+				<div class="order-cart">
 					<div class="order-products">
 
 						<?php foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item): ?>
@@ -85,29 +84,22 @@ $wc_checkout_url = get_permalink(wc_get_page_id('checkout'));
 
 					</div>
 
-					<?php if ( wc_coupons_enabled() ) { ?>
-						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
-							<?php do_action( 'woocommerce_cart_coupon' ); ?>
+					<div class="order-result sidebar-right">
+						<div class="result">
+							<span class="result-title">Итого к оплате</span>
+							<span class="result-total"><?php echo wc_price(sport_wc_cart_subtotal()); ?></span>
 						</div>
-					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-					<?php do_action( 'woocommerce_cart_actions' ); ?>
-					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-				</form>
-			<?php endif; ?>
+						<a href="<?php echo sport_wc_checkout_url(); ?>" class="button cart-to-checkout">Перейти к оформлению товаров</a>
+						<!-- <a href="" class="button update-cart">Обновить корзину</a> -->
 
-			<div class="order-result sidebar-right">
-				<div class="result">
-					<span class="result-title">Итого к оплате</span>
-					<span class="result-total"><?php echo wc_price(sport_wc_cart_subtotal()); ?></span>
+						<button type="submit" class="button update-cart" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+						<?php do_action( 'woocommerce_cart_actions' ); ?>
+						<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+					</div>
 				</div>
-
-				<a href="" class="button cart-to-checkout">Перейти к оформлению товаров</a>
-				<a href="" class="button update-cart">Обновить карзину</a>
-			</div>
-		</div>
+			</form>
+		<?php endif; ?>
 
     </article>
 

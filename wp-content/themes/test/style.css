@@ -1,0 +1,166 @@
+/**
+ * Theme Name:  Фирма "Стек-Спорт" Test
+ * Author:      Компания "Стек"
+ * Author URI:  https://stack-it.ru
+ * Description: Тема официального сайта фирмы "Стек-Спорт"
+ * Version:     1.0
+ * Text Domain: sport
+ * Tags:        e-commerce, left-sidebar, right-sidebar, custom-colors, custom-menu
+ */
+
+
+/* ************************************************************************ */
+/* TYPOGRAPHY                                                               */
+/* ************************************************************************ */
+
+h1 {
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    /* text-align: center; */
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+	line-height: 1.2;
+    color: var(--color-h1);
+}
+h2 {
+	margin: 0;
+    margin-top: 20px;
+	margin-bottom: 25px;
+	
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    /* text-align: center; */
+    text-rendering: optimizeLegibility;
+	line-height: 1.2;
+    color: var(--color-h2);
+}
+h3 {
+	margin: 0;
+    margin-top: 20px;
+	margin-bottom: 25px;
+	
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    /* text-align: center; */
+    text-rendering: optimizeLegibility;
+	line-height: 1.2;
+    color: var(--color-h3);
+}
+h4 {
+    margin: 0;
+    margin-top: 20px;
+	margin-bottom: 25px;
+	
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    /* text-align: center; */
+	text-rendering: optimizeLegibility;
+	line-height: 1.2;
+    color: var(--color-h4);
+}
+
+p {
+    margin: 0;
+	margin-bottom: 10px;
+	
+    font-size: 18px;
+	text-align: justify;
+	line-height: 1.5;
+    color: var(--color-text);
+}
+p.indent {
+	text-indent: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* ************************************************************************ */
+/* FORMS                                                                    */
+/* ************************************************************************ */
+
+label {
+	font-size: 15px;
+}
+
+.button,
+button {
+    display: block;
+    padding: 6px 16px;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #F44336;
+    border-radius: 4px;
+}
+.button:hover,
+button:hover {
+    background-color: #D93C37;
+    text-decoration: none;
+}
+
+input[type='email'],
+input[type='tel'],
+input[type='text'] {
+	padding: 1px 8px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+}
+
+textarea {
+	padding: 1px 8px;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 27px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+}
+
+
+/* ************************************************************************ */
+/* ПРОЧЕЕ                                                                   */
+/* ************************************************************************ */
+
+/* Звёздный рейтинг */
+.star-rating .star-full:before { content: "\f155"; }
+.star-rating .star-half:before { content: "\f459"; }
+.star-rating .star-empty:before { content: "\f154"; }
+.star-rating .star {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	font-family: 'dashicons';
+	font-size: 20px;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1;
+	color: #EDB500;
+}
+
+
+
+
+
+
+
+
+
+
+
+

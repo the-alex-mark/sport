@@ -1,0 +1,39 @@
+/* ************************************************************************ */
+/* SHORTCODE: "staff"                                                       */
+/* ************************************************************************ */
+
+.staff-grid {
+	justify-content: space-around;
+}
+.staff-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: min-content;
+	height: 100%;
+	text-align: center;
+	background-color: #F2F2F2;
+}
+.staff-image {
+	display: block;
+}
+.staff-info {
+	padding: 10px 30px;
+}
+.staff-name {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: normal;
+    line-height: 1.5;
+	color: #636363;
+}
+.staff-position {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: normal;
+    line-height: 1.5;
+	color: #999999;
+}

@@ -74,8 +74,8 @@ function sport_wc_checkout_url() {
 function sport_wc_star_rating($args = []) {
 	$parsed_args = wp_parse_args($args, [
 		'rating'     => 0,
+		'rating_max' => 5,
 		'type'       => 'rating',
-		'count'      => 5,
         'echo'       => true,
     ]);
 
@@ -89,7 +89,7 @@ function sport_wc_star_rating($args = []) {
     // Вычисление количества звезд каждого типа
 	$stars_full  = floor($rating);
 	$stars_half  = ceil($rating - $stars_full);
-	$stars_empty = $parsed_args['count'] - $stars_full - $stars_half;
+	$stars_empty = $parsed_args['rating_max'] - $stars_full - $stars_half;
 
     $output  = '<div class="star-rating">';
 	$output .= str_repeat('<div class="star star-full" aria-hidden="true"></div>', $stars_full);

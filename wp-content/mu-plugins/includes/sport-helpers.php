@@ -54,7 +54,7 @@ if (!function_exists('print_o')) {
 
         if ($open) $open = ' open';
         if (is_object($data) or is_array($data)) {
-            echo '<div style="font-family: Consolas; background-color: #FFFFFF;">';
+            echo '<div style="font-family: Consolas; background-color: #FFFFFF; z-index: 9999999;">';
             echo '<details' . $open . '>';
             echo '<summary>';
             echo (is_object($data)) ? 'Object {' . count((array)$data) . '}' : 'Array [' . count($data) . ']';

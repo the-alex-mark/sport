@@ -23,6 +23,9 @@ $sport = (object)[
     'templates'    => require 'includes/sport-templates.php',
     'shortcodes'   => require 'includes/sport-shortcodes.php',
 
+    // Классы изменения меню
+    'walker_social' => require 'includes/walker/sport-walker-social.php',
+
     // Плагин "WooCommerce"
     'wc'           => require 'includes/woocommerce/sport-wc.php',
     'wc_functions' => require 'includes/woocommerce/sport-wc-functions.php'

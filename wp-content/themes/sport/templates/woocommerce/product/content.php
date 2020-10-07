@@ -27,7 +27,7 @@ global $product;
 		</span>
 
 		<div class="product-info_reviews">
-			<a href="#" class="product-info_reviews-count">Отзывов (0)</a>
+			<a href="#" class="product-info_reviews-count">Отзывов (<?php echo $product->get_rating_count(); ?>)</a>
 			<span class="product-reviews_delimiter">|</span>
 			<a href="#" class="product-info_reviews-add">Добавьте ваш отзыв</a>
 		</div>

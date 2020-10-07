@@ -1,0 +1,9 @@
+/* -- Peace Sans -- */
+
+@font-face {
+	font-family: 'Peace Sans';
+    src: url('Peace Sans.otf');
+
+    font-weight: normal;
+	font-style: normal;
+}

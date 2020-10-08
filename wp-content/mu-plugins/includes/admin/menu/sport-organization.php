@@ -11,13 +11,6 @@ add_action('admin_init', function () {
 // Добавление пункта меню "Организация"
 add_action('admin_menu', function () {
 
-	// Подключение стилей
-	wp_enqueue_style('bootstrap-grid',  SPORT_PLUGIN_PLUGINS . '/bootstrap/css/bootstrap-grid.min.css');
-	wp_enqueue_style('main',            SPORT_PLUGIN_STYLES  . '/main.css');
-	wp_enqueue_style('adaptive',        SPORT_PLUGIN_STYLES  . '/adaptive.css');
-
-	// **************************************************************************
-
     // Основная страница пункта
     add_menu_page(
 		'Организация',

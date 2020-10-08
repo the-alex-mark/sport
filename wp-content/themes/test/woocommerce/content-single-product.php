@@ -15,6 +15,14 @@ $product_availability      = $product->is_in_stock();
 $product_rating            = $product->get_average_rating();
 $product_reviews_count     = $product->get_rating_count();
 $product_add_to_cart_url   = do_shortcode('[add_to_cart_url id="' . $product->get_id() . '"]');
+$product_sellable          = true;
+
+$category_ids = $product->get_category_ids();
+foreach ($category_ids as $id) {
+	$term = get_term($id, 'product_cat');
+	if ($term->slug == 'import_analogue')
+		$product_sellable = false;
+}
 
 ?>
 
@@ -86,12 +94,15 @@ $product_add_to_cart_url   = do_shortcode('[add_to_cart_url id="' . $product->ge
 
 		<div class="product-col action">
 			<div class="product-actions">
-				<a href="<?php echo $product_add_to_cart_url; ?>" class="button action-add-cart">Добавить в корзину</a>
+				<?php if ($product_sellable): ?>
+					<a href="<?php echo $product_add_to_cart_url; ?>" class="button action-add-cart">Добавить в корзину</a>
+				<?php endif; ?>
 				
 				
 				<div class="product-compare">
 					<i class="fas fa-balance-scale-left"></i>
-					<a href="#" class="fa-balance-scale action-add-compare">Добавить к сравнению</a>
+					<!-- <a href="#" class="action-add-compare">Добавить к сравнению</a> -->
+					<?php do_action('sport_wc_add_compare_link'); ?>
 				</div>
 			</div>
 		</div>

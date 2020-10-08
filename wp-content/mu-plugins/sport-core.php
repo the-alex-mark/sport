@@ -16,14 +16,17 @@ $sport = (object)[
     'main'                => require 'includes/sport-functions.php',
     'shortcodes'          => require 'includes/sport-shortcodes.php',
 
+    // Хуки
+    'hook_actions'        => require 'includes/hooks/sport-actions.php',
+    'hook_filters'        => require 'includes/hooks/sport-filters.php',
+
     // Дополнительно
     'class_organization'  => require 'includes/classes/sport-class-organization.php',
 
     // Настройка панели администратора
     'admin'               => require 'includes/admin/sport-admin.php',
+    'admin_enqueue'       => require 'includes/admin/sport-enqueue.php',
     'admin_security'      => require 'includes/admin/sport-security.php',
-
-    // Пользовательское меню панели администратора
     'menu_organization'   => require 'includes/admin/menu/sport-organization.php',
     'menu_tools'          => require 'includes/admin/menu/sport-tools.php',
 
@@ -32,6 +35,9 @@ $sport = (object)[
     'taxonomy_faq'        => require 'includes/taxonomies/sport-faq.php',
     'taxonomy_gratitudes' => require 'includes/taxonomies/sport-gratitudes.php',
     'taxonomy_partners'   => require 'includes/taxonomies/sport-partners.php',
+
+    // Дополнительные поля
+    // 'fields_custom_css'   => require 'includes/fields/sport-custom_css.php',
 
     // Плагин "WooCommerce"
     'wc'                  => require 'includes/woocommerce/sport-wc.php',

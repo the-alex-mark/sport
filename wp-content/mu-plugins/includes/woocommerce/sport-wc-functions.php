@@ -23,20 +23,28 @@ function sport_wc_cart_available() {
  */
 function sport_wc_cart_count() {
     if (!sport_wc_cart_available())
-        return 0;
+        return false;
         
     return WC()->cart->get_cart_contents_count();
 }
 
 /**
- * Возвращает сумарную стоимость добавленных товаров в корзину.
+ * Возвращает `ПОДИТОГ` товаров в корзине.
  */
 function sport_wc_cart_subtotal() {
     if (!sport_wc_cart_available())
-        return 0;
+        return false;
         
-    // return wp_kses_post(WC()->cart->get_cart_subtotal());
-    // return WC()->cart->get_total();
+    return WC()->cart->subtotal;
+}
+
+/**
+ * Возвращает `ИТОГ` товаров в корзине.
+ */
+function sport_wc_cart_total() {
+    if (!sport_wc_cart_available())
+        return false;
+    
     return WC()->cart->total;
 }
 

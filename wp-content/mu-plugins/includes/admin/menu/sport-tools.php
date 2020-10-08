@@ -6,11 +6,6 @@ if (!defined('ABSPATH'))
 // Изменение страниц пункта "Информация"
 add_action('admin_menu', function () {
 
-    // Подключение стилей
-	wp_enqueue_style('php', SPORT_PLUGIN_STYLES . '/phpinfo.css');
-
-	// **************************************************************************
-    
     // Пункт "Версия PHP"
     add_management_page(
         'PHP ' . phpversion(),

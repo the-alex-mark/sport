@@ -12,9 +12,7 @@ if (!defined('ABSPATH'))
     <article class="content">
 		<h1 class="content-title">Каталог</h1>
 
-		<div class="content-filter">
-
-		</div>
+		<?php do_action('sport_wc_catalog_filter'); ?>
 
 		<div class="product-grid grid">
 			<?php if (wc_get_loop_prop('total')): ?>
@@ -29,6 +27,14 @@ if (!defined('ABSPATH'))
 						$product_short_description = $product->get_short_description();
 						$product_price             = $product->get_price_html();
 						$product_add_to_cart_url   = do_shortcode('[add_to_cart_url id="' . $product->get_id() . '"]');
+						$product_sellable          = true;
+
+						$category_ids = $product->get_category_ids();
+						foreach ($category_ids as $id) {
+							$term = get_term($id, 'product_cat');
+							if ($term->slug == 'import_analogue')
+								$product_sellable = false;
+						}
 					?>
 				
 					<figure class="product-card grid-item">
@@ -43,8 +49,11 @@ if (!defined('ABSPATH'))
 							<span class="product-price"><?php echo $product_price ?></span>
 
 							<div class="product-actions">
-								<a href="<?php echo $product_add_to_cart_url ?>" class="action-add-cart">Добавить в корзину</a>
-								<a href="#" class="action-add-compare">Сравнить</a>
+								<?php if ($product_sellable): ?>
+									<a href="<?php echo $product_add_to_cart_url ?>" class="action-add-cart">Добавить в корзину</a>
+								<?php endif; ?>
+
+								<?php do_action('sport_wc_add_compare_link'); ?>
 							</div>
 						</figcaption>
 					</figure>
@@ -53,9 +62,7 @@ if (!defined('ABSPATH'))
 			<?php endif; ?>
 		</div>
 
-		<div class="content-filter">
-
-		</div>
+		<?php do_action('sport_wc_catalog_filter'); ?>
     </article>
 
 <?php get_footer(); ?>

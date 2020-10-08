@@ -32,7 +32,7 @@ class sport {
         });
 
         // Скрытие панели WordPress на сайте
-        show_admin_bar(false);
+        // show_admin_bar(false);
 
         // Поддержка различных функций на сайте
         add_theme_support('custom-logo');                 // Пользовательский логотип

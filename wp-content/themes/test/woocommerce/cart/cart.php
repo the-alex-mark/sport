@@ -26,12 +26,15 @@ $wc_checkout_url = get_permalink(wc_get_page_id('checkout'));
 							<?php
 								$_product    = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
 								$_product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
+
+								$_product    = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+								$product_id  = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 							?>
 
 							<?php if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)): ?>
 								<?php
 									$product_remove_url        = esc_url( wc_get_cart_remove_url($cart_item_key));
-									$product_url               = apply_filters('woocommerce_loop_product_link', get_the_permalink(), $_product);
+									$product_url               = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
 									$product_image_url         = sport_wc_image_url_from_id($_product->get_image_id());
 									$product_name              = $_product->get_name();
 									$product_short_description = $_product->get_short_description();
@@ -87,7 +90,7 @@ $wc_checkout_url = get_permalink(wc_get_page_id('checkout'));
 					<div class="order-result sidebar-right">
 						<div class="result">
 							<span class="result-title">Итого к оплате</span>
-							<span class="result-total"><?php echo wc_price(sport_wc_cart_subtotal()); ?></span>
+							<span class="result-total"><?php echo wc_price(sport_wc_cart_total()); ?></span>
 						</div>
 
 						<a href="<?php echo sport_wc_checkout_url(); ?>" class="button cart-to-checkout">Перейти к оформлению товаров</a>

@@ -104,24 +104,23 @@
                     control.find("input").trigger("change");
                 });
             });
-
-
-
-
-
-
-
+            
             // ↓ Зум изображения товара
-            $('.product-image-large').zoom();
+            $large_src = $('.product-image-large').find('img').attr('src');
+            if (!$large_src.includes('woocommerce-placeholder'))
+                $('.product-image-large').zoom();
+
             $('.product-image-small').on('click', function (e) {
                 e.preventDefault();
 
                 $('.product-image-large').find('img').attr(
                     'src',
                     $(this).find('img').attr('src'));
-
+                
                 $('.product-image-large').trigger('zoom.destroy');
-                $('.product-image-large').zoom();
+                if (!$large_src.includes('woocommerce-placeholder')) {
+                    $('.product-image-large').zoom();
+                }
             });
 
         });

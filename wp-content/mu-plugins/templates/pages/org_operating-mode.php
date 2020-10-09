@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="page-title">Режим работы</h1>
+                <h1 class="page-title"><?php _e('Режим работы', 'sport'); ?></h1>
             </div>
         </div>
 
@@ -26,9 +26,9 @@
                 <form action="?page=<?php echo basename(__FILE__, '.php'); ?>" method="post" class="form-org">
                     <div class="container">
 
-                        <h2 class="block-title">Будни</h2>
+                        <h2 class="block-title"><?php _e('Будни', 'sport'); ?></h2>
                         <div class="row">
-                            <div class="col-1"><span class="row-title">С:</span></div>
+                            <div class="col-1"><span class="row-title"><?php _e('С', 'sport'); ?>:</span></div>
                             <div class="col-5">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-1"><span class="row-title">До:</span></div>
+                            <div class="col-1"><span class="row-title"><?php _e('До', 'sport'); ?>:</span></div>
                             <div class="col-5">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
@@ -64,9 +64,9 @@
                         </div>
 
                         
-                        <h2 class="block-title">Выходные</h2>
+                        <h2 class="block-title"><?php _e('Выходные', 'sport'); ?></h2>
                         <div class="row">
-                            <div class="col-1"><span class="row-title">С:</span></div>
+                            <div class="col-1"><span class="row-title"><?php _e('С', 'sport'); ?>:</span></div>
                             <div class="col-5">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-1"><span class="row-title">До:</span></div>
+                            <div class="col-1"><span class="row-title"><?php _e('До', 'sport'); ?>:</span></div>
                             <div class="col-5">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
@@ -101,9 +101,9 @@
                             </div>
                         </div>
 
-                        <h2 class="block-title">Обед</h2>
+                        <h2 class="block-title"><?php _e('Обед', 'sport'); ?></h2>
                         <div class="row">
-                            <div class="col-1"><span class="row-title">С:</span></div>
+                            <div class="col-1"><span class="row-title"><?php _e('С', 'sport'); ?>:</span></div>
                             <div class="col-5">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
@@ -120,7 +120,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-1"><span class="row-title">До:</span></div>
+                            <div class="col-1"><span class="row-title"><?php _e('До', 'sport'); ?>:</span></div>
                             <div class="col-5">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
@@ -144,7 +144,7 @@
                         <div class="row row-submit">
                             <div class="col-3 margin-left-auto">
                                 <p class="submit">
-                                    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />  
+                                    <input type="submit" class="button-primary" value="<?php _e('Сохранить изменения', 'sport'); ?>">
                                 </p>
                             </div>
                         </div>

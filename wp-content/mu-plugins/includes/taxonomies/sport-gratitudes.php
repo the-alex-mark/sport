@@ -10,18 +10,18 @@ add_action('init', function () {
 	register_post_type('gratitudes', [
 		'label'                  => null,
 		'labels'                 => [
-			'name'               => 'Благодарности',
-            'singular_name'      => 'Благодарность',
-            'all_items'          => 'Все благодарности',
-			'add_new'            => 'Добавить новую',
-			'add_new_item'       => 'Добавление благодарности',
-			'edit_item'          => 'Редактирование благодарности',
-			'new_item'           => 'Новая благодарность',
-			'view_item'          => 'Смотреть благодарность',
-			'search_items'       => 'Поиск благодарностей',
-			'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Благодарности',
+			'name'               => __('Благодарности', 'sport'),
+            'singular_name'      => __('Благодарность', 'sport'),
+            'all_items'          => __('Все благодарности', 'sport'),
+			'add_new'            => __('Добавить новую', 'sport'),
+			'add_new_item'       => __('Добавление благодарности', 'sport'),
+			'edit_item'          => __('Редактирование благодарности', 'sport'),
+			'new_item'           => __('Новая благодарность', 'sport'),
+			'view_item'          => __('Смотреть благодарность', 'sport'),
+			'search_items'       => __('Поиск благодарностей', 'sport'),
+			'not_found'          => __('Не найдено', 'sport'),
+			'not_found_in_trash' => __('Не найдено', 'sport'),
+			'menu_name'          => __('Благодарности', 'sport'),
         ],
 		'description'            => '',
 		'public'                 => true,
@@ -54,7 +54,7 @@ add_filter('manage_edit-gratitudes_columns', function ($columns) {
         ++$i;
 
         // "Миниатюра"
-        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+        if ($i == 2) $result['thumbnail'] = __('Миниатюра', 'sport');
 
         // "ID"
         if ($i == 3) $result['id'] = 'ID';

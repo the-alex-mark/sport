@@ -10,18 +10,18 @@ add_action('init', function () {
 	register_post_type('partners', [
 		'label'                  => null,
 		'labels'                 => [
-			'name'               => 'Партнёры',
-            'singular_name'      => 'Партнёр',
-            'all_items'          => 'Все партнёры',
-			'add_new'            => 'Добавить нового',
-			'add_new_item'       => 'Добавление партнёра',
-			'edit_item'          => 'Редактирование партнёра',
-			'new_item'           => 'Новый партнёр',
-			'view_item'          => 'Смотреть партнёра',
-			'search_items'       => 'Поиск партнёров',
-			'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Партнёры',
+			'name'               => __('Партнёры', 'sport'),
+            'singular_name'      => __('Партнёр', 'sport'),
+            'all_items'          => __('Все партнёры', 'sport'),
+			'add_new'            => __('Добавить нового', 'sport'),
+			'add_new_item'       => __('Добавление партнёра', 'sport'),
+			'edit_item'          => __('Редактирование партнёра', 'sport'),
+			'new_item'           => __('Новый партнёр', 'sport'),
+			'view_item'          => __('Смотреть партнёра', 'sport'),
+			'search_items'       => __('Поиск партнёров', 'sport'),
+			'not_found'          => __('Не найдено', 'sport'),
+			'not_found_in_trash' => __('Не найдено', 'sport'),
+			'menu_name'          => __('Партнёры', 'sport'),
         ],
 		'description'            => '',
 		'public'                 => true,
@@ -54,7 +54,7 @@ add_filter('manage_edit-partners_columns', function ($columns) {
         ++$i;
 
         // "Миниатюра"
-        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+        if ($i == 2) $result['thumbnail'] = __('Миниатюра', 'sport');
 
         // "ID"
         if ($i == 3) $result['id'] = 'ID';
@@ -78,7 +78,7 @@ add_action('add_meta_boxes', function () {
 	// Создание блока полей "Дополнительно"
 	add_meta_box(
 		'additional_info',
-		'Дополнительно',
+		__('Дополнительно', 'sport'),
 		'additional_info__callback',
 		'partners',
 		'side'

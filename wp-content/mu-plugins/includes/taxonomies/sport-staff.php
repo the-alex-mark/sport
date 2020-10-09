@@ -10,18 +10,18 @@ add_action('init', function () {
 	register_post_type('staff', [
 		'label'                  => null,
 		'labels'                 => [
-			'name'               => 'Персонал',
-            'singular_name'      => 'Сотрудник',
-            'all_items'          => 'Все сотрудники',
-			'add_new'            => 'Добавить нового',
-			'add_new_item'       => 'Добавление сотрудника',
-			'edit_item'          => 'Редактирование сотрудника',
-			'new_item'           => 'Новый сотрудник',
-			'view_item'          => 'Смотреть сотрудника',
-			'search_items'       => 'Поиск сотрудников',
-			'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Персонал',
+			'name'               => __('Персонал', 'sport'),
+            'singular_name'      => __('Сотрудник', 'sport'),
+            'all_items'          => __('Все сотрудники', 'sport'),
+			'add_new'            => __('Добавить нового', 'sport'),
+			'add_new_item'       => __('Добавление сотрудника', 'sport'),
+			'edit_item'          => __('Редактирование сотрудника', 'sport'),
+			'new_item'           => __('Новый сотрудник', 'sport'),
+			'view_item'          => __('Смотреть сотрудника', 'sport'),
+			'search_items'       => __('Поиск сотрудников', 'sport'),
+			'not_found'          => __('Не найдено', 'sport'),
+			'not_found_in_trash' => __('Не найдено', 'sport'),
+			'menu_name'          => __('Персонал', 'sport'),
         ],
 		'description'            => '',
 		'public'                 => true,
@@ -51,20 +51,20 @@ add_action('init', function () {
     register_taxonomy('position', [ 'staff' ], [ 
 		'label'                  => null,
 		'labels'                 => [
-			'name'               => 'Должности',
-			'singular_name'      => 'Должность',
-			'search_items'       => 'Поиск должностей',
-			'all_items'          => 'Все должности',
-			'view_item'          => 'Просмотреть должность',
-			'parent_item'        => 'Родительская должность',
-			'parent_item_colon'  => 'Родительская должность:',
-			'edit_item'          => 'Редактировать должность',
-			'update_item'        => 'Обновить должность',
-			'add_new_item'       => 'Добавить новую должность',
-            'new_item_name'      => 'Новое имя должности',
-            'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Должности',
+			'name'               => __('Должности', 'sport'),
+			'singular_name'      => __('Должность', 'sport'),
+			'search_items'       => __('Поиск должностей', 'sport'),
+			'all_items'          => __('Все должности', 'sport'),
+			'view_item'          => __('Просмотреть должность', 'sport'),
+			'parent_item'        => __('Родительская должность', 'sport'),
+			'parent_item_colon'  => __('Родительская должность:', 'sport'),
+			'edit_item'          => __('Редактировать должность', 'sport'),
+			'update_item'        => __('Обновить должность', 'sport'),
+			'add_new_item'       => __('Добавить новую должность', 'sport'),
+            'new_item_name'      => __('Новое имя должности', 'sport'),
+            'not_found'          => __('Не найдено', 'sport'),
+			'not_found_in_trash' => __('Не найдено', 'sport'),
+			'menu_name'          => __('Должности', 'sport'),
 		],
 		'description'            => '',
 		'public'                 => true,
@@ -81,7 +81,7 @@ add_filter('manage_edit-staff_columns', function ($columns) {
         ++$i;
 
         // "Миниатюра"
-        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+        if ($i == 2) $result['thumbnail'] = __('Миниатюра', 'sport');
 
         // "ID"
         if ($i == 3) $result['id'] = 'ID';

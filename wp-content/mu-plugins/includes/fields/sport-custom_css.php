@@ -6,14 +6,14 @@ if (!defined('ABSPATH'))
 // Добавление поля для пользовательского кода CSS
 add_action('admin_menu', 'custom_css_hooks');
 function custom_css_hooks() {
-    add_meta_box('custom_css', 'Custom CSS', 'custom_css_input', 'post', 'normal', 'high');
-    add_meta_box('custom_css', 'Custom CSS', 'custom_css_input', 'page', 'normal', 'high');
+    add_meta_box('custom_css', __('Пользовательский CSS', 'sport'), 'custom_css_input', 'post', 'normal', 'high');
+    add_meta_box('custom_css', __('Пользовательский CSS', 'sport'), 'custom_css_input', 'page', 'normal', 'high');
 }
 
 function custom_css_input() {
     global $post;
     echo '<input type="hidden" name="custom_css_noncename" id="custom_css_noncename" value="' . wp_create_nonce('custom-css') . '" />';
-    echo '<textarea name="custom_css" id="custom_css" rows="5" cols="30" style="width:100%;">' . get_post_meta($post->ID,'_custom_css', true) . 'привет</textarea>';
+    echo '<textarea name="custom_css" id="custom_css" rows="5" cols="30" style="width:100%;">' . get_post_meta($post->ID,'_custom_css', true) . '</textarea>';
 }
 
 // Сохранение полей

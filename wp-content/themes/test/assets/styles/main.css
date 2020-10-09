@@ -470,12 +470,47 @@ a.breadcrumb-item:hover {
     width: 100%;
     border-bottom: none !important;
 }
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a {
+    position: relative;
+    padding-left: 20px;
+}
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a::before {
+    font-family: WooCommerce;
+    content: "";
+    order: 1;
+    speak: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 6px;
+    text-decoration: none;
+    color: #AA0000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a:hover::before {
+    text-decoration: none !important;
+}
 .yith-woocompare-widget a.clear-all {
     margin: 6px 10px;
     font-size: 14px;
     line-height: 1;
 }
+.sidebar-filter .products-list .remove:before {
+    position: absolute;
+    font-family: WooCommerce;
+    content: "";
+    color: #AA0000;
+}
 .sidebar-filter .products-list .remove {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: unset !important;
     display: flex;
     justify-content: center;
@@ -483,15 +518,14 @@ a.breadcrumb-item:hover {
     width: 20px !important;
     height: 20px !important;
     order: 1;
-    font-size: 16px !important;
+    font-size: 14px !important;
     text-decoration: none;
     line-height: 1 !important;
-    color: #D93C37 !important;
+    color: transparent !important;
     border-radius: 4px !important;
 }
 .sidebar-filter .products-list .remove:hover {
-    color: #FFFFFF !important;
-    background-color: #D93C37;
+    background-color: transparent !important;
 }
 .sidebar-filter .products-list .product-info {
     display: flex !important;

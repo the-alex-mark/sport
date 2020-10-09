@@ -12,7 +12,7 @@ class sport_walker_social extends Walker_Nav_Menu {
 	 * Позволяет перезаписать <ul class="sub-menu">
 	 */
 	function start_lvl( &$output, $depth = 0, $args = NULL ) {
-		$output .= '<ul class="menu_sublist">';
+		$output .= '<ul class="sub-menu">';
     }
     
 	/**

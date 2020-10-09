@@ -10,18 +10,18 @@ add_action('init', function () {
 	register_post_type('faq', [
 		'label'                  => null,
 		'labels'                 => [
-			'name'               => 'FAQ',
-            'singular_name'      => 'Вопрос',
-            'all_items'          => 'Все вопросы',
-			'add_new'            => 'Добавить новый',
-			'add_new_item'       => 'Добавление вопроса',
-			'edit_item'          => 'Редактирование вопроса',
-			'new_item'           => 'Новый вопрос',
-			'view_item'          => 'Смотреть вопрос',
-			'search_items'       => 'Поиск вопросов',
-			'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'FAQ',
+			'name'               => __('FAQ', 'sport'),
+            'singular_name'      => __('Вопрос', 'sport'),
+            'all_items'          => __('Все вопросы', 'sport'),
+			'add_new'            => __('Добавить новый', 'sport'),
+			'add_new_item'       => __('Добавление вопроса', 'sport'),
+			'edit_item'          => __('Редактирование вопроса', 'sport'),
+			'new_item'           => __('Новый вопрос', 'sport'),
+			'view_item'          => __('Смотреть вопрос', 'sport'),
+			'search_items'       => __('Поиск вопросов', 'sport'),
+			'not_found'          => __('Не найдено', 'sport'),
+			'not_found_in_trash' => __('Не найдено', 'sport'),
+			'menu_name'          => __('FAQ', 'sport'),
         ],
 		'description'            => '',
 		'public'                 => true,
@@ -51,20 +51,20 @@ add_action('init', function () {
     register_taxonomy('themes', [ 'faq' ], [ 
 		'label'                  => null,
 		'labels'                 => [
-			'name'               => 'Темы',
-			'singular_name'      => 'Тема',
-			'search_items'       => 'Поиск тем',
-			'all_items'          => 'Все темы',
-			'view_item'          => 'Просмотреть тему',
-			'parent_item'        => 'Родительская тема',
-			'parent_item_colon'  => 'Родительская тема:',
-			'edit_item'          => 'Редактировать тему',
-			'update_item'        => 'Обновить тему',
-			'add_new_item'       => 'Добавить новую тему',
-            'new_item_name'      => 'Новое имя темы',
-            'not_found'          => 'Не найдено',
-			'not_found_in_trash' => 'Не найдено',
-			'menu_name'          => 'Темы',
+			'name'               => __('Темы', 'sport'),
+			'singular_name'      => __('Тема', 'sport'),
+			'search_items'       => __('Поиск тем', 'sport'),
+			'all_items'          => __('Все темы', 'sport'),
+			'view_item'          => __('Просмотреть тему', 'sport'),
+			'parent_item'        => __('Родительская тема', 'sport'),
+			'parent_item_colon'  => __('Родительская тема:', 'sport'),
+			'edit_item'          => __('Редактировать тему', 'sport'),
+			'update_item'        => __('Обновить тему', 'sport'),
+			'add_new_item'       => __('Добавить новую тему', 'sport'),
+            'new_item_name'      => __('Новое имя темы', 'sport'),
+            'not_found'          => __('Не найдено', 'sport'),
+			'not_found_in_trash' => __('Не найдено', 'sport'),
+			'menu_name'          => __('Темы', 'sport'),
 		],
 		'description'            => '',
 		'public'                 => true,
@@ -81,7 +81,7 @@ add_filter('manage_edit-faq_columns', function ($columns) {
         ++$i;
 
         // "Миниатюра"
-        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+        if ($i == 2) $result['thumbnail'] = __('Миниатюра', 'sport');
 
         // "ID"
         if ($i == 3) $result['id'] = 'ID';

@@ -1,0 +1,529 @@
+# Copyright (C) 2020 Компания "Стек"
+# This file is distributed under the same license as the Фирма "Стек-Спорт" Core plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sport\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mu-plugins\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-10-09T21:47:59+03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+
+#. Plugin Name of the plugin
+msgid "Фирма \"Стек-Спорт\" Core"
+msgstr ""
+
+#. Description of the plugin
+msgid "Основной функционал сайта фирмы \"Стек-Спорт\""
+msgstr ""
+
+#. Author of the plugin
+msgid "Компания \"Стек\""
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://stack-it.ru"
+msgstr ""
+
+#: includes/admin/menu/sport-organization.php:16
+#: includes/admin/menu/sport-organization.php:17
+msgid "Организация"
+msgstr ""
+
+#: includes/admin/menu/sport-organization.php:28
+#: templates/pages/org_info.php:25
+msgid "Основная информация"
+msgstr ""
+
+#: includes/admin/menu/sport-organization.php:29
+msgid "Информация"
+msgstr ""
+
+#: includes/admin/menu/sport-organization.php:50
+#: includes/admin/menu/sport-organization.php:51
+#: templates/pages/org_operating-mode.php:19
+msgid "Режим работы"
+msgstr ""
+
+#: includes/admin/menu/sport-organization.php:74
+#: includes/admin/menu/sport-organization.php:75
+#: templates/pages/org_requisites.php:27
+msgid "Реквизиты"
+msgstr ""
+
+#: includes/admin/menu/sport-tools.php:12
+msgid "Версия PHP"
+msgstr ""
+
+#: includes/admin/sport-admin.php:46
+#: includes/taxonomies/sport-faq.php:84
+#: includes/taxonomies/sport-gratitudes.php:57
+#: includes/taxonomies/sport-partners.php:57
+#: includes/taxonomies/sport-staff.php:84
+msgid "Миниатюра"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:86
+#: templates/pages/org_requisites.php:37
+msgid "ИНН"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:87
+msgid "Идентификационный номер налогоплательщика"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:94
+#: templates/pages/org_requisites.php:43
+msgid "ОКОПФ"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:95
+msgid "Общероссийский классификатор организационно-правовых форм"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:102
+#: templates/pages/org_requisites.php:51
+msgid "КПП"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:103
+msgid "Код причины постановки"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:110
+#: templates/pages/org_requisites.php:57
+msgid "ОКФС"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:111
+msgid "Общероссийского классификатора форм собственности"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:118
+#: templates/pages/org_requisites.php:65
+msgid "ОКПО"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:119
+msgid "Общероссийский классификатор предприятий и организаций"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:126
+#: templates/pages/org_requisites.php:71
+msgid "ОКДП"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:127
+msgid "Общероссийский классификатор видов экономической деятельности, продукции и услуг"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:134
+#: templates/pages/org_requisites.php:79
+msgid "ОГРН"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:135
+msgid "Основной государственный регистрационный номер"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:142
+#: templates/pages/org_requisites.php:85
+msgid "ОКАТО"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:143
+msgid "Общероссийский классификатор объектов административно-территориального деления"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:150
+msgid "ОКВЕД"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:151
+msgid "Общероссийский классификатор видов экономической деятельности"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:158
+#: templates/pages/org_requisites.php:101
+msgid "Р/с"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:159
+msgid "Расчётный счёт"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:166
+#: includes/classes/sport-class-organization.php:167
+#: templates/pages/org_requisites.php:107
+msgid "Банк"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:183
+msgid "ВКонтакте"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:190
+msgid "Однокласники"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:197
+msgid "Facebook"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:204
+msgid "Instagram"
+msgstr ""
+
+#: includes/classes/sport-class-organization.php:211
+#: templates/pages/org_info.php:83
+msgid "Skype"
+msgstr ""
+
+#: includes/fields/sport-custom_css.php:9
+#: includes/fields/sport-custom_css.php:10
+msgid "Пользовательский CSS"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:13
+#: includes/taxonomies/sport-faq.php:24
+msgid "FAQ"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:14
+msgid "Вопрос"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:15
+msgid "Все вопросы"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:16
+msgid "Добавить новый"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:17
+msgid "Добавление вопроса"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:18
+msgid "Редактирование вопроса"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:19
+msgid "Новый вопрос"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:20
+msgid "Смотреть вопрос"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:21
+msgid "Поиск вопросов"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:22
+#: includes/taxonomies/sport-faq.php:23
+#: includes/taxonomies/sport-faq.php:65
+#: includes/taxonomies/sport-faq.php:66
+#: includes/taxonomies/sport-gratitudes.php:22
+#: includes/taxonomies/sport-gratitudes.php:23
+#: includes/taxonomies/sport-partners.php:22
+#: includes/taxonomies/sport-partners.php:23
+#: includes/taxonomies/sport-staff.php:22
+#: includes/taxonomies/sport-staff.php:23
+#: includes/taxonomies/sport-staff.php:65
+#: includes/taxonomies/sport-staff.php:66
+msgid "Не найдено"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:54
+#: includes/taxonomies/sport-faq.php:67
+msgid "Темы"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:55
+msgid "Тема"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:56
+msgid "Поиск тем"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:57
+msgid "Все темы"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:58
+msgid "Просмотреть тему"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:59
+msgid "Родительская тема"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:60
+msgid "Родительская тема:"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:61
+msgid "Редактировать тему"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:62
+msgid "Обновить тему"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:63
+msgid "Добавить новую тему"
+msgstr ""
+
+#: includes/taxonomies/sport-faq.php:64
+msgid "Новое имя темы"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:13
+#: includes/taxonomies/sport-gratitudes.php:24
+msgid "Благодарности"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:14
+msgid "Благодарность"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:15
+msgid "Все благодарности"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:16
+msgid "Добавить новую"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:17
+msgid "Добавление благодарности"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:18
+msgid "Редактирование благодарности"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:19
+msgid "Новая благодарность"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:20
+msgid "Смотреть благодарность"
+msgstr ""
+
+#: includes/taxonomies/sport-gratitudes.php:21
+msgid "Поиск благодарностей"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:13
+#: includes/taxonomies/sport-partners.php:24
+msgid "Партнёры"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:14
+msgid "Партнёр"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:15
+msgid "Все партнёры"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:16
+#: includes/taxonomies/sport-staff.php:16
+msgid "Добавить нового"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:17
+msgid "Добавление партнёра"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:18
+msgid "Редактирование партнёра"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:19
+msgid "Новый партнёр"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:20
+msgid "Смотреть партнёра"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:21
+msgid "Поиск партнёров"
+msgstr ""
+
+#: includes/taxonomies/sport-partners.php:81
+msgid "Дополнительно"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:13
+#: includes/taxonomies/sport-staff.php:24
+msgid "Персонал"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:14
+msgid "Сотрудник"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:15
+msgid "Все сотрудники"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:17
+msgid "Добавление сотрудника"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:18
+msgid "Редактирование сотрудника"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:19
+msgid "Новый сотрудник"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:20
+msgid "Смотреть сотрудника"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:21
+msgid "Поиск сотрудников"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:54
+#: includes/taxonomies/sport-staff.php:67
+msgid "Должности"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:55
+msgid "Должность"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:56
+msgid "Поиск должностей"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:57
+msgid "Все должности"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:58
+msgid "Просмотреть должность"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:59
+msgid "Родительская должность"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:60
+msgid "Родительская должность:"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:61
+msgid "Редактировать должность"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:62
+msgid "Обновить должность"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:63
+msgid "Добавить новую должность"
+msgstr ""
+
+#: includes/taxonomies/sport-staff.php:64
+msgid "Новое имя должности"
+msgstr ""
+
+#: sport-core.php:53
+#: sport-core.php:54
+msgid "Привет"
+msgstr ""
+
+#: templates/pages/org_info.php:35
+msgid "Наименование организации"
+msgstr ""
+
+#: templates/pages/org_info.php:38
+#: templates/pages/org_info.php:46
+#: templates/pages/org_info.php:54
+#: templates/pages/org_info.php:58
+#: templates/pages/org_info.php:62
+#: templates/pages/org_info.php:70
+#: templates/pages/org_info.php:78
+#: templates/pages/org_info.php:86
+#: templates/pages/org_info.php:94
+#: templates/pages/org_requisites.php:40
+#: templates/pages/org_requisites.php:46
+#: templates/pages/org_requisites.php:54
+#: templates/pages/org_requisites.php:60
+#: templates/pages/org_requisites.php:68
+#: templates/pages/org_requisites.php:74
+#: templates/pages/org_requisites.php:82
+#: templates/pages/org_requisites.php:88
+#: templates/pages/org_requisites.php:96
+#: templates/pages/org_requisites.php:104
+#: templates/pages/org_requisites.php:110
+msgid "Ярлык"
+msgstr ""
+
+#: templates/pages/org_info.php:43
+msgid "Описание"
+msgstr ""
+
+#: templates/pages/org_info.php:51
+msgid "Номера телефонов"
+msgstr ""
+
+#: templates/pages/org_info.php:67
+msgid "Адрес"
+msgstr ""
+
+#: templates/pages/org_info.php:75
+msgid "Электронная почта"
+msgstr ""
+
+#: templates/pages/org_info.php:91
+msgid "Ссылка на форум"
+msgstr ""
+
+#: templates/pages/org_info.php:104
+#: templates/pages/org_operating-mode.php:147
+#: templates/pages/org_requisites.php:120
+msgid "Сохранить изменения"
+msgstr ""
+
+#: templates/pages/org_operating-mode.php:29
+msgid "Будни"
+msgstr ""
+
+#: templates/pages/org_operating-mode.php:31
+#: templates/pages/org_operating-mode.php:69
+#: templates/pages/org_operating-mode.php:106
+msgid "С"
+msgstr ""
+
+#: templates/pages/org_operating-mode.php:48
+#: templates/pages/org_operating-mode.php:86
+#: templates/pages/org_operating-mode.php:123
+msgid "До"
+msgstr ""
+
+#: templates/pages/org_operating-mode.php:67
+msgid "Выходные"
+msgstr ""
+
+#: templates/pages/org_operating-mode.php:104
+msgid "Обед"
+msgstr ""
+
+#: templates/pages/org_requisites.php:93
+msgid "ОКВЭД"
+msgstr ""

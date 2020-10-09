@@ -13,8 +13,8 @@ add_action('admin_menu', function () {
 
     // Основная страница пункта
     add_menu_page(
-		'Организация',
-		'Организация',
+		__('Организация', 'sport'),
+		__('Организация', 'sport'),
 		'manage_options',
 		'sport_org.php',
 		'sport_org',
@@ -25,8 +25,8 @@ add_action('admin_menu', function () {
     // Подпункт "Информация"
     add_submenu_page(
 		'sport_org.php',
-		'Основная информация',
-		'Информация',
+		__('Основная информация', 'sport'),
+		__('Информация', 'sport'),
 		'manage_options',
 		'org_info',
 		function () {
@@ -47,8 +47,8 @@ add_action('admin_menu', function () {
 	// Подпункт "Режим работы"
     add_submenu_page(
 		'sport_org.php',
-		'Режим работы',
-		'Режим работы',
+		__('Режим работы', 'sport'),
+		__('Режим работы', 'sport'),
 		'manage_options',
 		'org_operating-mode',
 		function () {
@@ -71,8 +71,8 @@ add_action('admin_menu', function () {
 	// Подпункт "Реквизиты"
     add_submenu_page(
 		'sport_org.php',
-		'Реквизиты',
-		'Реквизиты',
+		__('Реквизиты', 'sport'),
+		__('Реквизиты', 'sport'),
 		'manage_options',
 		'org_requisites',
 		function () {

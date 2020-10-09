@@ -27,3 +27,4 @@ $sport = (object)[
     'wc'           => require 'includes/woocommerce/sport-wc.php',
     'wc_functions' => require 'includes/woocommerce/sport-wc-functions.php'
 ];
+

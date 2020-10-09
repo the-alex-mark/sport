@@ -43,7 +43,7 @@ add_filter('manage_edit-post_columns', function ($columns) {
         ++$i;
 
         // "Миниатюра"
-        if ($i == 2) $result['thumbnail'] = 'Миниатюра';
+        if ($i == 2) $result['thumbnail'] = __('Миниатюра', 'sport');
 
         // "ID"
         if ($i == 3) $result['id'] = 'ID';

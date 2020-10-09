@@ -9,7 +9,7 @@ add_action('admin_menu', function () {
     // Пункт "Версия PHP"
     add_management_page(
         'PHP ' . phpversion(),
-        'Версия PHP',
+        __('Версия PHP', 'sport'),
         'manage_options',
         'php_info',
         function () {

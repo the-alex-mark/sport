@@ -13,9 +13,17 @@ class sport {
      */
     public function __construct() {
 
+        add_action('init',               [ $this, 'init' ]);
         add_action('after_setup_theme',  [ $this, 'setup' ]);
         add_action('widgets_init',       [ $this, 'widgets' ]);
         add_action('wp_enqueue_scripts', [ $this, 'assets' ]);
+    }
+
+    /**
+     * 
+     */
+    public function init() {
+        do_action('sport_register');
     }
 
     /**
@@ -32,7 +40,7 @@ class sport {
         });
 
         // Скрытие панели WordPress на сайте
-        // show_admin_bar(false);
+        show_admin_bar(true);
 
         // Поддержка различных функций на сайте
         add_theme_support('custom-logo');                 // Пользовательский логотип
@@ -62,6 +70,8 @@ class sport {
 
         // Полное отключение стилей плагина "WooCommerce"
         // add_filter('woocommerce_enqueue_styles', '__return_false');
+
+        do_action('tgmpa_register');
     }
 
     /**

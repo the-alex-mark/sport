@@ -18,8 +18,8 @@ $sport = (object)[
 
     // Функционал темы
     'constants'     => require 'includes/sport-constants.php',
-    'plugins'       => require 'includes/sport-plugins.php',
     'setup'         => require 'includes/sport-setup.php',
+    'plugins'       => require 'includes/plugins/sport-plugins.php',
     'locale'        => require 'includes/sport-locale.php',
     'main'          => require 'includes/sport-functions.php',
     'templates'     => require 'includes/sport-templates.php',

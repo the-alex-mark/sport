@@ -2789,6 +2789,17 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @param string $which 'top' or 'bottom' table navigation.
 		 */
 		public function extra_tablenav( $which ) {
+			if ( 'top' === $which ) {
+				if (!$this->view_totals || !$this->view_context)
+					return;
+				
+				$count = $this->view_totals[ $this->view_context ];
+
+				echo '<div class="tablenav-pages one-page">';
+				echo '<span class="displaying-num">' . sprintf( _n( '%s item', '%s items', $count ), number_format_i18n( $count ) ) . '</span>';
+				echo '</div>';
+			}
+			
 			if ( 'bottom' === $which ) {
 				$this->tgmpa->show_tgmpa_version();
 			}

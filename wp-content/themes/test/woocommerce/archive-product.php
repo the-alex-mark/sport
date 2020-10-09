@@ -32,7 +32,7 @@ if (!defined('ABSPATH'))
 						$category_ids = $product->get_category_ids();
 						foreach ($category_ids as $id) {
 							$term = get_term($id, 'product_cat');
-							if ($term->slug == 'import_analogue')
+							if ($term->slug == 'import')
 								$product_sellable = false;
 						}
 					?>

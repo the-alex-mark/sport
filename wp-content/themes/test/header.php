@@ -130,10 +130,9 @@ $wc_cart_url           = sport_wc_page_url('cart');
                 </div>
             </div>
         </header>
-
-        <?php /* Хлебные крошки */ ?>
-
+        
         <?php if (!is_front_page()): ?>
+            <?php woocommerce_breadcrumb(); ?>
 
             <main class="main-wrapper">
                 <div class="container">

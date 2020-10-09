@@ -358,6 +358,34 @@ li.cart a .cart-count {
 
 
 /* ************************************************************************ */
+/* BREADCRUMBS                                                              */
+/* ************************************************************************ */
+.breadcrumb {
+    display: flex;
+	align-items: center;
+	
+	margin-top: 14px;
+    margin-bottom: 14px;
+}
+.breadcrumb-item {
+	display: inline-block;
+
+	font-size: 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #636363;
+}
+a.breadcrumb-item:hover {
+	text-decoration: underline;
+	color: #00899B;
+}
+.breadcrumb-item.delimiter {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+/* ************************************************************************ */
 /* MAIN                                                                     */
 /* ************************************************************************ */
 .main-wrapper {

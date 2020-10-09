@@ -34,19 +34,3 @@ $sport = (object)[
     'wc'             => require 'includes/woocommerce/sport-wc.php',
     'wc_functions'   => require 'includes/woocommerce/sport-wc-functions.php'
 ];
-
-add_filter( 'get_terms', 'organicweb_exclude_category', 10, 3 );
-function organicweb_exclude_category( $terms, $taxonomies, $args ) {
-  $new_terms = array();
-  // if a product category and on a page
-  if ( in_array( 'product_cat', $taxonomies ) && ! is_admin() && is_page() ) {
-    foreach ( $terms as $key => $term ) {
-// Enter the name of the category you want to exclude in place of 'uncategorised'
-      if ( ! in_array( $term->slug, array( 'uncategorised', 'import_analogue' ) ) ) {
-        $new_terms[] = $term;
-      }
-    }
-    $terms = $new_terms;
-  }
-  return $terms;
-}

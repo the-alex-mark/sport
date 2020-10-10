@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
 /**
  * 
  */
-class sport_walker_default extends Walker_Nav_Menu {
+class sport_walker_example extends Walker_Nav_Menu {
 
 	/*
 	 * Позволяет перезаписать <ul class="sub-menu">

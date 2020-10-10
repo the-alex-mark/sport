@@ -13,17 +13,10 @@ class sport {
      */
     public function __construct() {
 
-        add_action('init',               [ $this, 'init' ]);
+        add_action('after_switch_theme', [ $this, 'switch' ], 10, 2);
         add_action('after_setup_theme',  [ $this, 'setup' ]);
         add_action('widgets_init',       [ $this, 'widgets' ]);
         add_action('wp_enqueue_scripts', [ $this, 'assets' ]);
-    }
-
-    /**
-     * 
-     */
-    public function init() {
-        do_action('sport_register');
     }
 
     /**
@@ -70,8 +63,16 @@ class sport {
 
         // Полное отключение стилей плагина "WooCommerce"
         // add_filter('woocommerce_enqueue_styles', '__return_false');
+    }
+    
+    /**
+     * Действия при активации темы.
+     */
+    public function switch($old_name, $old_theme) {
 
-        do_action('tgmpa_register');
+        // Переход на страницу установки необходимых плагинов
+        if (tgmpa_plugins()['all'])
+            wp_redirect(esc_url(admin_url('themes.php?page=install-required-plugins')), 301);
     }
 
     /**

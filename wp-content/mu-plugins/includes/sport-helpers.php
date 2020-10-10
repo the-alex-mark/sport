@@ -169,3 +169,43 @@ function sport_do_shortcode($tag, array $atts = [], $content = null) {
 
 	return call_user_func($shortcode_tags[$tag], $atts, $content, $tag);
 }
+
+/**
+ * Возвращает количество необходимых плагинов.
+ */
+function tgmpa_plugins() {
+	if (!isset($GLOBALS['tgmpa']))
+		return false;
+	
+	$tgmpa = call_user_func([ get_class($GLOBALS['tgmpa']), 'get_instance' ]);
+	$plugins = [
+		'all'      => [],
+		'install'  => [],
+		'update'   => [],
+		'activate' => [],
+	];
+
+	foreach ($tgmpa->plugins as $slug => $plugin) {
+		if ($tgmpa->is_plugin_active($slug) && false === $tgmpa->does_plugin_have_update($slug)) {
+			continue;
+		}
+		else {
+			$plugins['all'][$slug] = $plugin;
+
+			if (!$tgmpa->is_plugin_installed($slug)) {
+				$plugins['install'][$slug] = $plugin;
+			}
+			else {
+				if (false !== $tgmpa->does_plugin_have_update($slug)) {
+					$plugins['update'][$slug] = $plugin;
+				}
+
+				if ( $tgmpa->can_plugin_activate($slug)) {
+					$plugins['activate'][$slug] = $plugin;
+				}
+			}
+		}
+	}
+
+	return $plugins;
+}

@@ -18,29 +18,10 @@ add_action('tgmpa_register', function () {
             'required'           => true
         ],
         [
-			'name'               => __('WooCommerce Compare', 'sport'),
-			'slug'               => 'yith-woocommerce-compare-premium',
-			'source'             => get_template_directory() . '/includes/plugins/wc-compare.zip',
-			'version'            => '2.4.1',
-			'required'           => true,
-			'force_activation'   => false,
-			'force_deactivation' => false,
-			'external_url'       => 'stack-sport.ru'
-        ],
-        [
-			'name'               => __('WooCommerce Payment Промсвязьбанк', 'sport'),
-			'slug'               => 'wc_psbankpayment',
-			'source'             => get_template_directory() . '/includes/plugins/wc-payment-psb.zip',
-			'version'            => '1.0.2',
-			'required'           => true,
-			'force_activation'   => false,
-			'force_deactivation' => false
-        ],
-		[
-			'name'               => __('Contact Form 7', 'sport'),
+            'name'               => __('Contact Form 7', 'sport'),
 			'slug'               => 'contact-form-7',
-			'required'           => false
-		],
+            'required'           => false
+        ],
         [
             'name'               => __('Advanced Custom Fields', 'sport'),
 			'slug'               => 'advanced-custom-fields',

@@ -1,5 +1,7 @@
-.theme-browser .theme .theme-name {
-    height: auto;
+.sport-plugin *,
+.sport-plugin *::before,
+.sport-plugin *::after {
+  box-sizing: border-box;
 }
 
 .sport-plugin {

@@ -7,7 +7,7 @@ if (!defined('ABSPATH'))
 add_action('admin_enqueue_scripts', function () {
 
 	// Подключение плагинов
-	wp_enqueue_style('bootstrap-grid', SPORT_PLUGIN_PLUGINS . '/bootstrap/css/bootstrap-grid.min.css');
+	wp_enqueue_style('bootstrap-grid', SPORT_PLUGIN_PLUGINS . '/bootstrap/bootstrap-grid.css');
 
 	// Подключение стилей
 	wp_enqueue_style('php',            SPORT_PLUGIN_STYLES  . '/phpinfo.css');

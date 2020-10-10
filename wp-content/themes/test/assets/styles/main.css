@@ -363,13 +363,12 @@ li.cart a .cart-count {
 .breadcrumb {
     display: flex;
 	align-items: center;
-	
 	margin-top: 14px;
     margin-bottom: 14px;
+    padding: 0 15px;
 }
 .breadcrumb-item {
 	display: inline-block;
-
 	font-size: 12px;
 	text-transform: uppercase;
 	text-decoration: none;

@@ -324,27 +324,55 @@
 
 
 
+.compare-table-clear:first-child {
+    display: none;
+}
+.compare-list {
+    border-collapse: collapse !important;
+}
+#yith-woocompare table.dataTable.compare-list tbody th {
+    border-right: none !important;
+}
+#yith-woocompare table.dataTable.compare-list tbody th,
+#yith-woocompare table.dataTable.compare-list tbody td {
+    /* border-right: 1px solid #C0C0C0;
+    border-top: 1px solid #C0C0C0;
+    border-bottom: none;
+    border-left: none; */
+
+    border: 1px solid #C0C0C0;
+}
+#yith-woocompare table.compare-list tbody th {
+    width: 100%;
+    max-width: 200px;
+    font-weight: normal;
+    color: var(--color-text);
+    background-color: #F4F4F4;
+}
+.product_title {
+    text-transform: uppercase;
+    color: #006183 !important;
+}
 
 
 
-
-table {
+.tab-control table {
     max-width: 100%;
     width: 100%;
     border-collapse: collapse;
 }
-table * {
+.tab-control table * {
     font-size: 14px;
     font-weight: normal;
     line-height: 1 !important;
 }
-tbody {
+.tab-control tbody {
 
 }
-tr {
+.tab-control tr {
     
 }
-th {
+.tab-control th {
     padding: 10px;
     max-width: 40%;
     width: 20%;
@@ -354,11 +382,11 @@ th {
     background-color: #F4F4F4;
     border: 1px solid #C0C0C0;
 }
-td {
+.tab-control td {
     padding: 10px;
     border: 1px solid #C0C0C0;
 }
-td p {
+.tab-control td p {
     padding: 0;
     margin: 0;
     font-size: 14px;

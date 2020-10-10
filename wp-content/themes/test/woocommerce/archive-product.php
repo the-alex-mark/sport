@@ -10,7 +10,7 @@ if (!defined('ABSPATH'))
 	<?php get_sidebar(); ?>
 
     <article class="content">
-		<h1 class="content-title">Каталог</h1>
+		<h1 class="content-title"><?php woocommerce_page_title(); ?></h1>
 
 		<?php do_action('sport_wc_catalog_filter'); ?>
 

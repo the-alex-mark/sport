@@ -10,11 +10,13 @@ add_action('tgmpa_register', function () {
         [
             'name'               => __('WooCommerce', 'sport'),
             'slug'               => 'woocommerce',
+            'version'            => '4.5.2',
             'required'           => true
         ],
         [
-            'name'               => __('WooCommerce Checkout Fields', 'sport'),
+			'name'               => __('WooCommerce Checkout Fields', 'sport'),
             'slug'               => 'woo-checkout-field-editor-pro',
+			'version'            => '1.4.4',
             'required'           => true
         ],
         [
@@ -39,11 +41,13 @@ add_action('tgmpa_register', function () {
 		[
 			'name'               => __('Contact Form 7', 'sport'),
 			'slug'               => 'contact-form-7',
+			'version'            => '5.2.2',
 			'required'           => false
 		],
         [
-            'name'               => __('Advanced Custom Fields', 'sport'),
+			'name'               => __('Advanced Custom Fields', 'sport'),
 			'slug'               => 'advanced-custom-fields',
+			'version'            => '5.9.1',
             'required'           => false
         ],
     ];

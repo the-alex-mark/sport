@@ -26,113 +26,107 @@
                 <form action="?page=<?php echo basename(__FILE__, '.php'); ?>" method="post" class="form-org">
                     <div class="container">
 
-                        <h2 class="block-title"><?php _e('Будни', 'sport'); ?></h2>
                         <div class="row">
-                            <div class="col-1"><span class="row-title"><?php _e('С', 'sport'); ?>:</span></div>
-                            <div class="col-5">
+                            <div class="col-3"><span class="row-title"><?php _e('Будни', 'sport'); ?>:</span></div>
+
+                            <div class="col-4">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekday[from][h]" value="<?php echo $time['weekday']['from']['h']; ?>" class="row-input row-input_text" placeholder="<?php echo '09'; ?>">
-                                        <span class='description'><strong>org_time['weekday']['from']['h']</strong></span>
+                                        <span class='description'><?php _e('С', 'sport'); ?></span>
                                     </div>
 
                                     <span class="input-separator">:</span>
 
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekday[from][m]" value="<?php echo esc_html($time['weekday']['from']['m']); ?>" class="row-input row-input_text" placeholder="<?php echo '00'; ?>">
-                                        <span class='description'><strong>org_time['weekday']['from']['m']</strong></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-1"><span class="row-title"><?php _e('До', 'sport'); ?>:</span></div>
-                            <div class="col-5">
+                            <div class="col-1"></div>
+
+                            <div class="col-4">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekday[to][h]" value="<?php echo esc_html($time['weekday']['to']['h']); ?>" class="row-input row-input_text" placeholder="<?php echo '18'; ?>">
-                                        <span class='description'><strong>org_time['weekday']['to']['h']</strong></span>
+                                        <span class='description'><?php _e('До', 'sport'); ?></span>
                                     </div>
 
                                     <span class="input-separator">:</span>
 
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekday[to][m]" value="<?php echo esc_html($time['weekday']['to']['m']); ?>" class="row-input row-input_text" placeholder="<?php echo '00'; ?>">
-                                        <span class='description'><strong>org_time['weekend']['to']['m']</strong></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        
-                        <h2 class="block-title"><?php _e('Выходные', 'sport'); ?></h2>
                         <div class="row">
-                            <div class="col-1"><span class="row-title"><?php _e('С', 'sport'); ?>:</span></div>
-                            <div class="col-5">
+                            <div class="col-3"><span class="row-title"><?php _e('Выходные', 'sport'); ?>:</span></div>
+                            <div class="col-4">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekend[from][h]" value="<?php echo esc_html($time['weekend']['from']['h']); ?>" class="row-input row-input_text" placeholder="<?php echo '09'; ?>">
-                                        <span class='description'><strong>org_time['weekend']['from']['h']</strong></span>
+                                        <span class='description'><?php _e('С', 'sport'); ?></span>
                                     </div>
 
                                     <span class="input-separator">:</span>
 
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekend[from][m]" value="<?php echo esc_html($time['weekend']['from']['m']); ?>" class="row-input row-input_text" placeholder="<?php echo '00'; ?>">
-                                        <span class='description'><strong>org_time['weekend']['from']['m']</strong></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-1"><span class="row-title"><?php _e('До', 'sport'); ?>:</span></div>
-                            <div class="col-5">
+                            <div class="col-1"></div>
+
+                            <div class="col-4">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekend[to][h]" value="<?php echo esc_html($time['weekend']['to']['h']); ?>" class="row-input row-input_text" placeholder="<?php echo '17'; ?>">
-                                        <span class='description'><strong>org_time['weekend']['to']['h']</strong></span>
+                                        <span class='description'><?php _e('До', 'sport'); ?></span>
                                     </div>
 
                                     <span class="input-separator">:</span>
 
                                     <div class="form-input ta-center">
                                         <input type="text" name="weekend[to][m]" value="<?php echo esc_html($time['weekend']['to']['m']); ?>" class="row-input row-input_text" placeholder="<?php echo '00'; ?>">
-                                        <span class='description'><strong>org_time['weekend']['to']['m']</strong></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <h2 class="block-title"><?php _e('Обед', 'sport'); ?></h2>
                         <div class="row">
-                            <div class="col-1"><span class="row-title"><?php _e('С', 'sport'); ?>:</span></div>
-                            <div class="col-5">
+                            <div class="col-3"><span class="row-title"><?php _e('Обед', 'sport'); ?>:</span></div>
+                            <div class="col-4">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
                                         <input type="text" name="dinner[from][h]" value="<?php echo esc_html($time['dinner']['from']['h']); ?>" class="row-input row-input_text" placeholder="<?php echo '13'; ?>">
-                                        <span class='description'><strong>org_time['dinner']['from']['h']</strong></span>
+                                        <span class='description'><?php _e('С', 'sport'); ?></span>
                                     </div>
 
                                     <span class="input-separator">:</span>
 
                                     <div class="form-input ta-center">
                                         <input type="text" name="dinner[from][m]" value="<?php echo esc_html($time['dinner']['from']['m']); ?>" class="row-input row-input_text" placeholder="<?php echo '00'; ?>">
-                                        <span class='description'><strong>org_time['dinner']['from']['m']</strong></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-1"><span class="row-title"><?php _e('До', 'sport'); ?>:</span></div>
-                            <div class="col-5">
+                            <div class="col-1"></div>
+
+                            <div class="col-4">
                                 <div class="form-row">
                                     <div class="form-input ta-center">
                                         <input type="text" name="dinner[to][h]" value="<?php echo esc_html($time['dinner']['to']['h']); ?>" class="row-input row-input_text" placeholder="<?php echo '14'; ?>">
-                                        <span class='description'><strong>org_time['dinner']['to']['h']</strong></span>
+                                        <span class='description'><?php _e('До', 'sport'); ?></span>
                                     </div>
 
                                     <span class="input-separator">:</span>
 
                                     <div class="form-input ta-center">
                                         <input type="text" name="dinner[to][m]" value="<?php echo esc_html($time['dinner']['to']['m']); ?>" class="row-input row-input_text" placeholder="<?php echo '00'; ?>">
-                                        <span class='description'><strong>org_time['dinner']['to']['m']</strong></span>
                                     </div>
                                 </div>
                             </div>

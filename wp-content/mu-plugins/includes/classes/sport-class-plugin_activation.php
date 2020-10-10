@@ -757,7 +757,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			?>
 			<div class="tgmpa wrap">
-				<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+				<h1 class="wp-heading-inline"><?php echo esc_html( get_admin_page_title() ); ?></h1>
+				<a href="<?php echo esc_url(admin_url('plugin-install.php')) ?>" class="page-title-action"><?php echo _x('Add New', 'plugin'); ?></a>
+				<hr class="wp-header-end">
+				
 				<?php $plugin_table->prepare_items(); ?>
 
 				<?php
@@ -2801,7 +2804,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			}
 			
 			if ( 'bottom' === $which ) {
-				$this->tgmpa->show_tgmpa_version();
+				// $this->tgmpa->show_tgmpa_version();
 			}
 		}
 

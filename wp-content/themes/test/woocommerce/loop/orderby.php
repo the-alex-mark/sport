@@ -5,18 +5,8 @@ if (!defined('ABSPATH'))
 
 ?>
 
-<!-- <form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
-		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html($name); ?></option>
-		<?php endforeach; ?>
-	</select>
-	<input type="hidden" name="paged" value="1" />
-	<?php wc_query_string_form_fields( null, [ 'orderby', 'submit', 'paged', 'product-page' ]); ?>
-</form> -->
-
 <form method="get" class="form-filter filter-orderby woocommerce-ordering">
-	<label for="filter-label select-orderby">Сортировать по:</label>
+	<label for="select-orderby" class="filter-label">Сортировать по:</label>
 	<select id="select-orderby" name="orderby" class="filter-select select-orderby orderby">
 		<?php foreach ($catalog_orderby_options as $id => $name): ?>
 			<option value="<?php echo $id; ?>" <?php selected($orderby, $id); ?>><?php echo $name; ?></option>

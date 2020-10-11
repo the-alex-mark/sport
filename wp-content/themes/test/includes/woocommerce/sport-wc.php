@@ -40,8 +40,8 @@ function devvn_product_category_base_same_shop_base($flash = false) {
 add_filter('loop_shop_per_page', function ($cols) { return 12; }, 20);
 
 // Выбор количества отображаемых постов на странице списка товаров
-add_action('woocommerce_before_shop_loop', 'woocommerce_catalog_per_page', 26);
-function woocommerce_catalog_per_page() {
+add_action('woocommerce_before_shop_loop', 'woocommerce_per_page', 26);
+function woocommerce_per_page() {
     $per_page = filter_input(INPUT_GET, 'per_page', FILTER_SANITIZE_NUMBER_INT);
 
     $orderby_options = [
@@ -50,9 +50,9 @@ function woocommerce_catalog_per_page() {
         '36' => '36'
     ];
 
-    echo '<form method="get" class="form-option option-count">';
-    echo '<label for="select-count">Показать:</label>';
-    echo '<select name="count" id="select-count" class="product-show-count" onchange="if (this.value) window.location.href=this.value">';
+    echo '<form method="get" class="form-filter option-count">';
+    echo '<label for="select-count" class="filter-label">Показать:</label>';
+    echo '<select name="count" id="select-count" class="filter-select" onchange="if (this.value) window.location.href=this.value">';
 
     foreach ($orderby_options as $value => $label)
         echo '<option ' . selected($per_page, $value) . ' value="?per_page=' . $value . '">' . $label . '</option>';

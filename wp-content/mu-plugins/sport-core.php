@@ -15,6 +15,7 @@ $sport = (object)[
     'helpers'                  => require 'includes/sport-helpers.php',
     'main'                     => require 'includes/sport-functions.php',
     'shortcodes'               => require 'includes/sport-shortcodes.php',
+    'meta_box'                 => require 'includes/fields/sport-meta_box.php',
 
     // Хуки
     'hook_actions'             => require 'includes/hooks/sport-actions.php',
@@ -39,11 +40,9 @@ $sport = (object)[
     'taxonomy_gratitudes'      => require 'includes/taxonomies/sport-gratitudes.php',
     'taxonomy_partners'        => require 'includes/taxonomies/sport-partners.php',
 
-    // Дополнительные поля
-    // 'fields_custom_css'        => require 'includes/fields/sport-custom_css.php',
-
     // Плагин "WooCommerce"
     'wc'                       => require 'includes/woocommerce/sport-wc.php',
     'wc_functions'             => require 'includes/woocommerce/sport-wc-functions.php',
-    'wc_links'                 => require 'includes/woocommerce/sport-wc-links.php'
+    'wc_links'                 => require 'includes/woocommerce/sport-wc-links.php',
+    'wc_fields'                => require 'includes/woocommerce/sport-wc-fields.php'
 ];

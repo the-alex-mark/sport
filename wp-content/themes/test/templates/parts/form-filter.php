@@ -20,7 +20,7 @@ if (!defined('ABSPATH'))
         woocommerce_result_count();
 
         // Выбор количества отображения на одной странице
-        woocommerce_catalog_per_page();
+        woocommerce_per_page();
 
         // Пагинация
         woocommerce_pagination();

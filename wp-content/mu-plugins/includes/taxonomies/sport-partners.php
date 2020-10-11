@@ -89,7 +89,7 @@ function additional_info__callback($post, $meta) {
 	wp_nonce_field(plugin_basename(__FILE__), 'sport_nonce');
 	$partner_url = get_post_meta($post->ID, 'partner_url', 1);
 
-	echo '<label for="partner_url" style="display: inline-block; margin-top: 5px; margin-bottom: 5px; font-weight: 600;">' . 'Сайт партнёра' . '</label> ';
+	echo '<label for="partner_url" style="display: inline-block; margin-top: 5px; margin-bottom: 5px; font-weight: 600;">' . _e('Сайт партнёра', 'sport') . '</label> ';
 	echo '<input type="text" id="partner_url" name="partner_url" value="'. $partner_url .'" style="width: 100%">';
 }
 

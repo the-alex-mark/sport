@@ -391,3 +391,42 @@
     margin: 0;
     font-size: 14px;
 }
+
+
+.form-filter {
+    display: flex;
+    align-items: center;
+}
+.filter-label {
+    margin-right: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.filter-select {
+    padding: 2px 1px;
+    padding-right: 6px;
+}
+.filter-text {
+    font-size: 13px;
+}
+.link-orderby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;
+    padding: 3px;
+    font-size: 10px;
+    text-decoration: none !important;
+    height: 100%;
+}
+
+
+
+.product-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.product-video {
+    margin-bottom: 15px;
+}

@@ -14,7 +14,7 @@ add_action('tgmpa_register', function () {
             'required'           => true
         ],
         [
-			'name'               => __('WooCommerce Checkout Fields', 'sport'),
+			'name'               => __('WooCommerce Checkout Field Editor', 'sport'),
             'slug'               => 'woo-checkout-field-editor-pro',
 			'version'            => '1.4.4',
             'required'           => true

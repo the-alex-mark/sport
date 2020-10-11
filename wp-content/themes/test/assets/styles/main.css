@@ -16,9 +16,6 @@ body {
     color: var(--color-text);
     overflow-x: hidden;
 }
-body img {
-    display: block;
-}
 
 .container {
     margin: 0 auto;
@@ -420,7 +417,7 @@ a.breadcrumb-item:hover {
 
 .sidebar-title {
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;
     text-transform: uppercase;
@@ -468,36 +465,6 @@ a.breadcrumb-item:hover {
     padding: 0 !important;
     width: 100%;
     border-bottom: none !important;
-}
-.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a {
-    position: relative;
-    padding-left: 20px;
-}
-.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a::before {
-    font-family: WooCommerce;
-    content: "";
-    order: 1;
-    speak: none;
-    font-size: 14px;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    margin-right: 6px;
-    text-decoration: none;
-    color: #AA0000;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a:hover::before {
-    text-decoration: none !important;
-}
-.yith-woocompare-widget a.clear-all {
-    margin: 6px 10px;
-    font-size: 14px;
-    line-height: 1;
 }
 .sidebar-filter .products-list .remove:before {
     position: absolute;
@@ -572,23 +539,6 @@ a.breadcrumb-item:hover {
     margin-right: 6px !important;
 }
 
-/* .widget_text .call-ec-widget {
-	display: flex;
-    align-items: center;
-    min-height: 47px;
-    margin-bottom: 10px;
-    padding: 12px;
-    text-transform: uppercase;
-    line-height: 1;
-    color: #f69d01;
-    background-color: #F4F4F4;
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-}
-.widget_text .call-ec-widget:hover {
-	background-color: #ECECEC;
-} */
-
 
 /* ************************************************************************ */
 /* CONTENT                                                                  */
@@ -599,7 +549,7 @@ a.breadcrumb-item:hover {
 
 .content-title {
     margin: 0;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     margin-bottom: 10px;
     text-align: left;
 }

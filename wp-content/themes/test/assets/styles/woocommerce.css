@@ -1,0 +1,30 @@
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a {
+    position: relative;
+    padding-left: 20px;
+}
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a::before {
+    font-family: WooCommerce;
+    content: "";
+    order: 1;
+    speak: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 6px;
+    text-decoration: none;
+    color: #AA0000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item--chosen a:hover::before {
+    text-decoration: none !important;
+}
+.yith-woocompare-widget a.clear-all {
+    margin: 6px 10px;
+    font-size: 14px;
+    line-height: 1;
+}

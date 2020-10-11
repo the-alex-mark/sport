@@ -13,7 +13,7 @@ $product_short_description = $product->get_short_description();
 $product_price             = $product->get_price_html();
 $product_availability      = $product->is_in_stock();
 $product_rating            = $product->get_average_rating();
-$product_reviews_count     = $product->get_rating_count();
+$product_reviews_count     = $product->get_review_count();
 $product_add_to_cart_url   = do_shortcode('[add_to_cart_url id="' . $product->get_id() . '"]');
 $product_sellable          = true;
 
@@ -101,56 +101,11 @@ foreach ($category_ids as $id) {
 				
 				<div class="product-compare">
 					<i class="fas fa-balance-scale-left"></i>
-					<!-- <a href="#" class="action-add-compare">Добавить к сравнению</a> -->
 					<?php do_action('sport_wc_add_compare_link'); ?>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="tab-control">
-		<ul class="tab-list">
-			<li class="tab-item open">
-				<a href="#" class="tab-button">Описание</a>
-				<div class="tab-content">
-					<?php the_content(); ?>
-				</div>
-			</li>
-
-			<li class="tab-item">
-				<a href="#" class="tab-button">Характеристики</a>
-				<div class="tab-content">
-					<?php $product->list_attributes(); ?>
-				</div>
-			</li>
-
-			<li class="tab-item">
-				<a href="#" class="tab-button">Видео</a>
-				<div class="tab-content">
-
-				</div>
-			</li>
-
-			<li class="tab-item">
-				<a href="#" class="tab-button">Документация</a>
-				<div class="tab-content">
-					
-				</div>
-			</li>
-
-			<li class="tab-item">
-				<a href="#" class="tab-button">Отзывы (<span class="reviews-count">0</span>)</a>
-				<div class="tab-content">
-					
-				</div>
-			</li>
-
-			<li class="tab-item">
-				<a href="#" class="tab-button">Cопутствующие товары</a>
-				<div class="tab-content">
-					
-				</div>
-			</li>
-		</ul>
-	</div>
+	<?php get_template_part(SPORT_TEMPLATES_PARTS . '/tabs'); ?>
 </div>

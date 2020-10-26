@@ -1,68 +1,49 @@
 <?php
-/**
- * Review Comments Template
- *
- * Closing li is left out on purpose!.
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/review.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 2.6.0
- */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+if (!defined('ABSPATH'))
+    exit;
+
+global $comment;
+
+$rating = intval(get_comment_meta($comment->comment_ID, 'rating', true));
+$verified = wc_review_is_from_verified_owner($comment->comment_ID);
 
 ?>
+
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 
 	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
-
-		<?php
-		/**
-		 * The woocommerce_review_before hook
-		 *
-		 * @hooked woocommerce_review_display_gravatar - 10
-		 */
-		do_action( 'woocommerce_review_before', $comment );
-		?>
-
 		<div class="comment-text">
+			<div class="comment-row comment-meta">
+				<?php if ($comment->comment_approved === '0'): ?>
+					<em class="woocommerce-review__awaiting-approval">
+						<?php esc_html_e( 'Your review is awaiting approval', 'woocommerce' ); ?>
+					</em>
+				<?php else: ?>
+					<span class="comment-author">Отзыв пользователя <strong><?php comment_author(); ?></strong></span>
+					<?php
+						if (get_option('woocommerce_review_rating_verification_label') && $verified === 'yes')
+							echo '<em class="woocommerce-review__verified verified">(' . esc_attr__('verified owner', 'woocommerce') . ')</em> ';
+					?>
+				<?php endif; ?>
+			</div>
 
-			<?php
-			/**
-			 * The woocommerce_review_before_comment_meta hook.
-			 *
-			 * @hooked woocommerce_review_display_rating - 10
-			 */
-			do_action( 'woocommerce_review_before_comment_meta', $comment );
+			<div class="comment-row comment-rating">
+				<span class="comment-label">Качество</span>
+				<?php
+					if ($rating > 0)
+						sport_wc_star_rating([ 'rating' => $rating ]);
+				?>
+			</div>
 
-			/**
-			 * The woocommerce_review_meta hook.
-			 *
-			 * @hooked woocommerce_review_display_meta - 10
-			 */
-			do_action( 'woocommerce_review_meta', $comment );
+			<div class="comment-row comment-desc">
+				<?php comment_text(); ?>
 
-			do_action( 'woocommerce_review_before_comment_text', $comment );
-
-			/**
-			 * The woocommerce_review_comment_text hook
-			 *
-			 * @hooked woocommerce_review_display_comment_text - 10
-			 */
-			do_action( 'woocommerce_review_comment_text', $comment );
-
-			do_action( 'woocommerce_review_after_comment_text', $comment );
-			?>
-
+				<span class="comment-time">
+					(Отзыв написан
+					<time class="woocommerce-review__published-date" datetime="<?php echo esc_attr( get_comment_date( 'c' ) ); ?>"><?php echo esc_html( get_comment_date( wc_date_format() ) ); ?></time>)
+				</span>
+			</div>
 		</div>
 	</div>
+</li>

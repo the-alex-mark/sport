@@ -606,7 +606,7 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
 
 		    $json = apply_filters( 'yith_woocompare_add_product_action_json', array(
 			    'table_url'     => $this->view_table_url( $product_id ),
-			    'widget_table'  => $this->list_products_html(),
+			    'widget_table'  => $this->get_widget_template( false, true ),
                 'added'         => $added
 		     ) );
 
@@ -687,7 +687,7 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
             header('Content-Type: text/html; charset=utf-8');
 
             if ( isset( $_REQUEST['responseType'] ) && $_REQUEST['responseType'] == 'product_list' ) {
-                echo wp_kses_post( $this->list_products_html( $lang ) );
+                $this->get_widget_template( $lang );
             } else {
                 $this->compare_table_html();
             }
@@ -706,12 +706,13 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
 
             $lang = isset( $_REQUEST['lang'] ) ? $_REQUEST['lang'] : false;
 
-            echo wp_kses_post( $this->list_products_html( $lang ) );
+            $this->get_widget_template( $lang );
             die();
         }
 
         /**
          * The list of products as HTML list
+         * @deprecated since 2.5.0. To be removed on next plugin version
          */
         public function list_products_html( $lang = false ) {
             ob_start();
@@ -746,8 +747,53 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
 
             $return = ob_get_clean();
 
-            return apply_filters( 'yith_woocompare_widget_products_html', $return, $this->products_list, $this );
+            return apply_filters_deprecated( 'yith_woocompare_widget_products_html',
+	            array( $return, $this->products_list, $this ),
+	            '',
+	            'Customize template yith-compare-widget.php and yith-compare-widget-items.php'
+            );
         }
+
+	    /**
+	     * Get the widget template
+	     *
+	     * @since 2.5.0
+	     * @author Francesco Licandro
+	     * @param boolean $return
+	     * @param array $args An additional arguments array
+	     */
+	    public function get_widget_template( $lang = false, $return = false, $args = array() ) {
+
+		    /**
+		     * WPML Suppot: Localize Ajax Call
+		     */
+		    global $sitepress;
+
+		    if( defined( 'ICL_LANGUAGE_CODE' ) && $lang && isset( $sitepress ) ) {
+			    $sitepress->switch_lang( $lang, true );
+		    }
+
+	    	$args = array_merge( $args, array(
+			    'products_list'	=> $this->products_list,
+			    'remove_url'    => $this->remove_product_url('all'),
+			    'view_url'      => $this->view_table_url(),
+			    'lang'          => $lang
+		    ) );
+	    	// Let's filter template arguments
+		    $args = apply_filters('yith_woocompare_widget_template_args', $args );
+
+	    	ob_start();
+
+		    wc_get_template( 'yith-compare-widget.php', $args, '', YITH_WOOCOMPARE_TEMPLATE_PATH . '/' );
+
+		    $template = ob_get_clean();
+
+		    if( $return ) {
+		    	return $template;
+		    }
+
+		    echo $template;
+	    }
 
         /**
          * Remove a product from the comparison table

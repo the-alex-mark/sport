@@ -468,21 +468,21 @@ jQuery(document).ready(function($) {
 
         if( ! cookie_val.length ) {
             widget.closest( '.yith-woocompare-widget' ).hide();
-        }
-        else {
+        } else {
             widget.closest( '.yith-woocompare-widget' ).show();
         }
     }
 
     function update_widget( content ) {
 
-        var widget_list = $('.yith-woocompare-widget ul.products-list'),
-            lang = widget_list.data('lang');
+        var widget_content  = $( '.yith-woocomerce-widget-content' );
 
-        if( widget_list.length ) {
+        if( widget_content.length ) {
+
+            var lang = widget_content.data('lang');
 
             if( content ) {
-                widget_list.html( content )
+                widget_content.replaceWith( content )
             }
             else {
                 // get content
@@ -493,7 +493,7 @@ jQuery(document).ready(function($) {
                 };
 
                 if (typeof $.fn.block != 'undefined') {
-                    widget_list.block({
+                    widget_content.block({
                         message: null,
                         overlayCSS: {
                             background: '#fff url(' + yith_woocompare.loader + ') no-repeat center',
@@ -510,15 +510,15 @@ jQuery(document).ready(function($) {
                     success: function (response) {
                         // add the product in the widget
                         if (typeof $.fn.block != 'undefined') {
-                            widget_list.unblock();
+                            widget_content.unblock();
                         }
-                        widget_list.html(response);
+                        widget_content.replaceWith( response );
                     }
                 });
             }
 
             // hide show widget
-            hide_show_widget( widget_list );
+            hide_show_widget( widget_content );
 
             $(document).trigger('yith_woocompare_widget_updated');
         }

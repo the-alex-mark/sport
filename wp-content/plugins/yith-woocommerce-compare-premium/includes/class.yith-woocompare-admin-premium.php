@@ -38,8 +38,6 @@ if ( ! class_exists( 'YITH_Woocompare_Admin_Premium' ) ) {
 
 			$this->is_wc27 = version_compare( WC()->version, '2.7', '<' );
 
-			add_action( 'admin_menu', array( $this, 'add_custom_type' ) );
-
 			// Register plugin to licence/update system
 			add_action( 'wp_loaded', array( $this, 'register_plugin_for_activation' ), 99 );
 			add_action( 'admin_init', array( $this, 'register_plugin_for_updates' ) );
@@ -47,23 +45,8 @@ if ( ! class_exists( 'YITH_Woocompare_Admin_Premium' ) ) {
 			// add admin tabs
 			add_filter( 'yith_woocompare_admin_tabs', array( $this, 'add_admin_tabs' ), 10, 1 );
 
-			// search product category in ajax
-			add_action( 'wp_ajax_yith_woocompare_search_product_cat', array( $this, 'yith_woocompare_search_product_cat_ajax' ) );
-			add_action( 'wp_ajax_nopriv_yith_woocompare_search_product_cat', array( $this, 'yith_woocompare_search_product_cat_ajax' ) );
-
 			add_action( 'yith_woocompare_shortcode_tab', array( $this, 'shortcode_tab' ) );
 
-		}
-
-		/**
-		 * Add upload type to standard woo
-		 *
-		 * @since 2.0.0
-		 * @author Francesco Licandro <francesco.licandro@yithemes.com>
-		 */
-		public function add_custom_type() {
-			// select category
-			add_action( 'woocommerce_admin_field_yith_woocompare_select_cat', array( $this, 'yith_woocompare_select_cat' ), 10, 1 );
 		}
 
 		/**
@@ -93,84 +76,6 @@ if ( ! class_exists( 'YITH_Woocompare_Admin_Premium' ) ) {
 				require_once( YITH_WOOCOMPARE_DIR . 'plugin-fw/lib/yit-upgrade.php' );
 			}
 			YIT_Upgrade()->register( YITH_WOOCOMPARE_SLUG, YITH_WOOCOMPARE_INIT );
-		}
-
-		/**
-		 * Add select cate
-		 */
-		public function yith_woocompare_select_cat( $args = array() ) {
-
-			if ( ! empty( $args ) ) {
-				$args['value'] = get_option( $args['id'], $args['default'] );
-				extract( $args );
-				
-				// build data selected array
-				$data_selected   = array();
-				$categories = ! is_array( $value ) ? explode( ',', $value ) : $value;
-				
-				foreach ( $categories as $category ) {
-					$term_obj = get_term_by( 'id', $category, 'product_cat' );
-					if ( $term_obj ) {
-						$data_selected[ $category ] = wp_kses_post( $term_obj->name );
-					}
-				}
-				
-				if( $this->is_wc27 ) {
-					$value = implode( ',', array_keys( $data_selected ) );
-				}
-
-				include( YITH_WOOCOMPARE_TEMPLATE_PATH . '/admin/yith_woocompare_select_cat.php' );
-			}
-		}
-
-		/**
-		 * Ajax action search product
-		 *
-		 * @since 1.0.0
-		 * @author Francesco Licandro <francesco.licandro@yithemes.com>
-		 */
-		public function yith_woocompare_search_product_cat_ajax(){
-			ob_start();
-
-			check_ajax_referer( 'search-products', 'security' );
-
-			$term = (string) wc_clean( stripslashes( $_GET['term'] ) );
-
-			if ( empty( $term ) ) {
-				die();
-			}
-
-			$args = array(
-				'orderby'           => 'name',
-				'order'             => 'ASC',
-				'hide_empty'        => false,
-				'exclude'           => array(),
-				'exclude_tree'      => array(),
-				'include'           => array(),
-				'number'            => '',
-				'fields'            => 'all',
-				'slug'              => '',
-				'parent'            => '',
-				'hierarchical'      => true,
-				'child_of'          => 0,
-				'childless'         => false,
-				'get'               => '',
-				'name__like'        => $term,
-				'pad_counts'        => false,
-				'offset'            => '',
-				'search'            => '',
-			);
-
-			$terms = get_terms( 'product_cat', $args);
-			$found_products = array();
-
-			if ( $terms ) {
-				foreach ( $terms as $term ) {
-					$found_products[ $term->term_id ] = rawurldecode( $term->name );
-				}
-			}
-
-			wp_send_json( $found_products );
 		}
 
 		/**

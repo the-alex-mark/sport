@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 2.4.2 = Released on 13 October 2020
+
+* New: Support for WooCommerce 4.6.x
+* New: Template for YITH WooCommerce Compare Widget
+* Update: Plugin framework
+* Update: Language files
+* Fix: "Excluded categories" option save
+
 = 2.4.1 = Released on 18 September 2020
 
 * New: Support for WooCommerce 4.5.x

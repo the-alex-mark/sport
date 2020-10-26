@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Compare\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "compare-premium\n"
-"POT-Creation-Date: 2020-09-18 14:37:27+00:00\n"
+"POT-Creation-Date: 2020-10-13 14:19:56+00:00\n"
 "PO-Revision-Date: 2020-05-04 16:39:23+0000\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -14,25 +14,25 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 
-#: includes/class.yith-woocompare-admin-premium.php:187
+#: includes/class.yith-woocompare-admin-premium.php:92
 msgid "Comparison Table"
 msgstr "Vergelijkingstabel"
 
-#: includes/class.yith-woocompare-admin-premium.php:188
+#: includes/class.yith-woocompare-admin-premium.php:93
 msgid "Social Network Sites Sharing"
 msgstr "Social network sites delen"
 
-#: includes/class.yith-woocompare-admin-premium.php:189
+#: includes/class.yith-woocompare-admin-premium.php:94
 #: includes/class.yith-woocompare-frontend-premium.php:1171
 #: plugin-options/related-options.php:25 plugin-options/style-options.php:191
 msgid "Related Products"
 msgstr "Gerelateerde producten"
 
-#: includes/class.yith-woocompare-admin-premium.php:190
+#: includes/class.yith-woocompare-admin-premium.php:95
 msgid "Style"
 msgstr "Stijl"
 
-#: includes/class.yith-woocompare-admin-premium.php:191
+#: includes/class.yith-woocompare-admin-premium.php:96
 msgid "Build Shortcode"
 msgstr "Bouw shortcode"
 
@@ -98,7 +98,7 @@ msgstr "Bekijk vergelijking"
 #: includes/class.yith-woocompare-frontend.php:237
 #: includes/class.yith-woocompare-frontend.php:514
 #: includes/class.yith-woocompare.php:168 plugin-options/general-options.php:64
-#: widgets/class.yith-woocompare-widget.php:51
+#: templates/yith-compare-widget.php:42
 msgid "Compare"
 msgstr "Vergelijk"
 
@@ -122,8 +122,7 @@ msgid "Category Filter"
 msgstr "Categorie Filter"
 
 #: includes/class.yith-woocompare-frontend-premium.php:1402
-#: plugin-options/table-options.php:206
-#: widgets/class.yith-woocompare-widget.php:50
+#: plugin-options/table-options.php:206 templates/yith-compare-widget.php:41
 msgid "Clear all"
 msgstr "Alles wissen"
 
@@ -147,7 +146,8 @@ msgstr "Toegevoegd"
 msgid "Product Comparison"
 msgstr "Product vergelijk"
 
-#: includes/class.yith-woocompare-frontend.php:729
+#: includes/class.yith-woocompare-frontend.php:730
+#: templates/yith-compare-widget.php:46
 msgid "No products to compare"
 msgstr "Geen producten om te vergelijken"
 
@@ -308,19 +308,23 @@ msgstr "Vergelijken op categorie"
 msgid "Compare products by category."
 msgstr "Vergelijk producten op categorie."
 
-#: plugin-options/general-options.php:124
+#: plugin-options/general-options.php:130
 msgid "Exclude category"
 msgstr "Categorie uitsluiten"
 
-#: plugin-options/general-options.php:125
+#: plugin-options/general-options.php:131
 msgid "Choose category to exclude from the comparison."
 msgstr "Kies de categorie om uit te sluiten van vergelijking."
 
-#: plugin-options/general-options.php:132
+#: plugin-options/general-options.php:133
+msgid "Search for a category"
+msgstr ""
+
+#: plugin-options/general-options.php:140
 msgid "Reverse exclusion list"
 msgstr "Omgekeerde uitsluitingen lijst"
 
-#: plugin-options/general-options.php:133
+#: plugin-options/general-options.php:141
 msgid "Only categories in the exclusion list will have the compare feature"
 msgstr ""
 "Alleen categorieën in de uitsluitingen lijst hebben de vergelijken functie"
@@ -641,7 +645,7 @@ msgstr "Info velden producten"
 
 #: plugin-options/table-options.php:90
 #: widgets/class.yith-woocompare-counter-widget.php:62
-#: widgets/class.yith-woocompare-widget.php:69
+#: widgets/class.yith-woocompare-widget.php:66
 msgid "Title"
 msgstr "Titel"
 
@@ -832,7 +836,7 @@ msgstr ""
 msgid "YITH WooCommerce Compare Widget"
 msgstr "YITH WooCommerce Compare Widget"
 
-#: widgets/class.yith-woocompare-widget.php:76
+#: widgets/class.yith-woocompare-widget.php:73
 msgid "Hide if compare table is empty"
 msgstr "Verberg als vergelijkingstabel leeg is"
 

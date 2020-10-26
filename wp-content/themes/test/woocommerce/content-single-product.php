@@ -60,8 +60,8 @@ foreach ($category_ids as $id) {
 			
 			<div class="product-row">
 				<?php
-				if ($product_rating > 0)
-					sport_wc_star_rating([ 'rating' => $product_rating ]);
+					if ($product_rating > 0)
+						sport_wc_star_rating([ 'rating' => $product_rating ]);
 				?>
 			</div>
 

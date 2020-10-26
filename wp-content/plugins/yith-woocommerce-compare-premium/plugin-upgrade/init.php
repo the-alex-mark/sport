@@ -1,13 +1,13 @@
 <?php
 /**
  * Framework Name: YITH License & Upgrade Framework
- * Version:  4.1.6
+ * Version:  4.1.7
  * Author: YITHEMES
  * Text Domain: yith-plugin-upgrade-fw
  * Domain Path: /languages/
  *
  * @author YITH
- * @version 4.1.6
+ * @version 4.1.7
  * @package YITH License & Upgrade Framework
  */
 

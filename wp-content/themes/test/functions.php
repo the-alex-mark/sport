@@ -33,3 +33,22 @@ $sport = (object)[
     'wc'             => require 'includes/woocommerce/sport-wc.php',
     'wc_functions'   => require 'includes/woocommerce/sport-wc-functions.php'
 ];
+
+add_filter('comment_form_fields', 'kama_reorder_comment_fields' );
+function kama_reorder_comment_fields($fields) {
+    $new_fields = [];
+    $new_order  = [ 'rating', 'author', 'email', 'comment', 'cookies' ];
+    
+    unset($fields['cookies']);
+	foreach ($new_order as $key) {
+        $new_fields[$key] = $fields[$key];
+        unset($fields[$key]);
+	}
+
+	if ($fields) {
+        foreach ($fields as $key => $value)
+            $new_fields[$key] = $value;
+    }
+    
+	return $new_fields;
+}

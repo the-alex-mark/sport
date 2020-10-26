@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Compare\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "compare-premium\n"
-"POT-Creation-Date: 2020-09-18 14:37:27+00:00\n"
+"POT-Creation-Date: 2020-10-13 14:19:56+00:00\n"
 "PO-Revision-Date: 2020-04-16 08:53:30+0000\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -14,25 +14,25 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 
-#: includes/class.yith-woocompare-admin-premium.php:187
+#: includes/class.yith-woocompare-admin-premium.php:92
 msgid "Comparison Table"
 msgstr "Vergleichstabelle"
 
-#: includes/class.yith-woocompare-admin-premium.php:188
+#: includes/class.yith-woocompare-admin-premium.php:93
 msgid "Social Network Sites Sharing"
 msgstr "TEILEN AUF SOZIALEN NETZWERKEN"
 
-#: includes/class.yith-woocompare-admin-premium.php:189
+#: includes/class.yith-woocompare-admin-premium.php:94
 #: includes/class.yith-woocompare-frontend-premium.php:1171
 #: plugin-options/related-options.php:25 plugin-options/style-options.php:191
 msgid "Related Products"
 msgstr "Ähnliche Produkte"
 
-#: includes/class.yith-woocompare-admin-premium.php:190
+#: includes/class.yith-woocompare-admin-premium.php:95
 msgid "Style"
 msgstr "Stil 2"
 
-#: includes/class.yith-woocompare-admin-premium.php:191
+#: includes/class.yith-woocompare-admin-premium.php:96
 msgid "Build Shortcode"
 msgstr "Shortcode erstellen"
 
@@ -89,7 +89,7 @@ msgstr "Vergleichsliste anzeigen"
 #: includes/class.yith-woocompare-frontend.php:237
 #: includes/class.yith-woocompare-frontend.php:514
 #: includes/class.yith-woocompare.php:168 plugin-options/general-options.php:64
-#: widgets/class.yith-woocompare-widget.php:51
+#: templates/yith-compare-widget.php:42
 msgid "Compare"
 msgstr "Vergleichen"
 
@@ -113,8 +113,7 @@ msgid "Category Filter"
 msgstr "Kategorie-Filter"
 
 #: includes/class.yith-woocompare-frontend-premium.php:1402
-#: plugin-options/table-options.php:206
-#: widgets/class.yith-woocompare-widget.php:50
+#: plugin-options/table-options.php:206 templates/yith-compare-widget.php:41
 msgid "Clear all"
 msgstr "Alles löschen"
 
@@ -137,7 +136,8 @@ msgstr "Hinzugefügt"
 msgid "Product Comparison"
 msgstr "Produktvergleich"
 
-#: includes/class.yith-woocompare-frontend.php:729
+#: includes/class.yith-woocompare-frontend.php:730
+#: templates/yith-compare-widget.php:46
 msgid "No products to compare"
 msgstr "No products added in the comparison table."
 
@@ -299,19 +299,23 @@ msgstr "nach Kategorie vergleichen"
 msgid "Compare products by category."
 msgstr "Vergleichen Produkte nach Kategorien."
 
-#: plugin-options/general-options.php:124
+#: plugin-options/general-options.php:130
 msgid "Exclude category"
 msgstr "Kategorie ausschließen"
 
-#: plugin-options/general-options.php:125
+#: plugin-options/general-options.php:131
 msgid "Choose category to exclude from the comparison."
 msgstr "Wählen Sie eine Kategorie aus dem Vergleich ausschließen."
 
-#: plugin-options/general-options.php:132
+#: plugin-options/general-options.php:133
+msgid "Search for a category"
+msgstr ""
+
+#: plugin-options/general-options.php:140
 msgid "Reverse exclusion list"
 msgstr "AUSSCHLUSSLISTE UMKEHREN"
 
-#: plugin-options/general-options.php:133
+#: plugin-options/general-options.php:141
 msgid "Only categories in the exclusion list will have the compare feature"
 msgstr "Nur Kategorien in der Ausschlussliste haben die Funktionen vergleichen"
 
@@ -631,7 +635,7 @@ msgstr "Produkt-Info-Felder"
 
 #: plugin-options/table-options.php:90
 #: widgets/class.yith-woocompare-counter-widget.php:62
-#: widgets/class.yith-woocompare-widget.php:69
+#: widgets/class.yith-woocompare-widget.php:66
 msgid "Title"
 msgstr "Titel"
 
@@ -812,7 +816,7 @@ msgstr ""
 msgid "YITH WooCommerce Compare Widget"
 msgstr "YITH Woocommerce Compare Widget"
 
-#: widgets/class.yith-woocompare-widget.php:76
+#: widgets/class.yith-woocompare-widget.php:73
 msgid "Hide if compare table is empty"
 msgstr "Ausblenden, wenn vergleichen Tabelle leer ist"
 

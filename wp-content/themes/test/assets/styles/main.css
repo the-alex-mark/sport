@@ -357,12 +357,16 @@ li.cart a .cart-count {
 /* ************************************************************************ */
 /* BREADCRUMBS                                                              */
 /* ************************************************************************ */
+.breadcrumb-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .breadcrumb {
     display: flex;
 	align-items: center;
 	margin-top: 14px;
     margin-bottom: 14px;
-    padding: 0 15px;
+    /* padding: 0 15px; */
 }
 .breadcrumb-item {
 	display: inline-block;
@@ -1067,4 +1071,19 @@ ul.page-numbers a.next {
 ul.page-numbers a.prev:hover,
 ul.page-numbers a.next:hover {
 	border: 1px solid #23A3C4;
+}
+
+
+
+
+
+
+
+
+
+.content.content-article {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--width-article);
 }

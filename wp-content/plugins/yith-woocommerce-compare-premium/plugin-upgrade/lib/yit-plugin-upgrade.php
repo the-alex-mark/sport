@@ -759,13 +759,13 @@ if ( ! class_exists( 'YITH_Plugin_Upgrade' ) ) {
 			}
 
 			$args = array(
-				'plugin'                => $slug,
-				'instance'              => md5( $_SERVER['SERVER_NAME'] ),
-				'license'               => $license,
-				'is_membership_license' => $is_membership_license,
-				'server_ip'             => isset( $_SERVER['SERVER_ADDR'] ) ? $_SERVER['SERVER_ADDR'] : $_SERVER['REMOTE_ADDR'],
-				'version'               => isset( $plugin_info['info']['Version'] ) ? $plugin_info['info']['Version'] : '1.0.0',
-			);
+                'plugin'                => $slug,
+                'instance'              => function_exists('YITH_Plugin_Licence') ? md5( YITH_Plugin_Licence()->get_home_url() ) : md5( $_SERVER['SERVER_NAME'] ),
+                'license'               => $license,
+                'is_membership_license' => $is_membership_license,
+                'server_ip'             => isset($_SERVER['SERVER_NAME']) ? gethostbyname($_SERVER['SERVER_NAME']) : '127.0.0.1',
+                'version'               => isset($plugin_info['info']['Version']) ? $plugin_info['info']['Version'] : '1.0.0',
+            );
 
 			$args = apply_filters( 'yith_get_remove_url_args', $args );
 

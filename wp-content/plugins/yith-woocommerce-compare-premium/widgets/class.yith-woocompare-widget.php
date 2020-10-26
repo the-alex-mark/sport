@@ -41,16 +41,13 @@ if( !class_exists( 'YITH_WOOCOMPARE' ) ) {
             do_action ( 'wpml_register_single_string', 'Widget', 'widget_yit_compare_title_text', $instance['title'] );
             $localized_widget_title = apply_filters ( 'wpml_translate_single_string', $instance['title'], 'Widget', 'widget_yit_compare_title_text' );
 
-            echo $before_widget . $before_title . $localized_widget_title . $after_title; ?>
+            echo $before_widget . $before_title . $localized_widget_title . $after_title;
 
-            <ul class="products-list" data-lang="<?php echo $lang ?>" <?php echo $instance['hide_empty'] ? 'data-hide="1"' : ''; ?> >
-                <?php echo $yith_woocompare->obj->list_products_html(); ?>
-            </ul>
+            $yith_woocompare->obj->get_widget_template( $lang, false, array(
+            		'hide_empty'	=> $instance['hide_empty']
+			) );
 
-            <a href="<?php echo $yith_woocompare->obj->remove_product_url('all') ?>" data-product_id="all" class="clear-all" rel="nofollow"><?php _e( 'Clear all', 'yith-woocommerce-compare' ) ?></a>
-            <a href="<?php echo $yith_woocompare->obj->view_table_url() ?>" class="compare-widget button" rel="nofollow"><?php echo apply_filters( 'yith_woocompare_widget_view_table_button',__( 'Compare', 'yith-woocommerce-compare' )) ?></a>
-
-            <?php echo $after_widget;
+            echo $after_widget;
         }
 
 

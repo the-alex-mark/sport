@@ -28,7 +28,7 @@ if ($total <= 1)
 					'next_text' => '&#9658;',
 					'type'      => 'list',
 					'end_size'  => 3,
-					'mid_size'  => 3,
+					'mid_size'  => 3
 				]
 			)
 		);

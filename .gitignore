@@ -1,0 +1,205 @@
+# #############################################################################
+# Windows                                                                     #
+# #############################################################################
+
+# Файлы кэша
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Файлы дампов
+*.stackdump
+
+# Конфигурационные файлы
+[Dd]esktop.ini
+
+# Корзина, используемая в общих файловых ресурсах
+$RECYCLE.BIN/
+
+# Инсталяционные файлы
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Ярлыки
+*.lnk
+
+
+# #############################################################################
+# Linux                                                                       #
+# #############################################################################
+
+# Файлы резервных копий
+*~
+
+# Временные файлы, которые могут быть созданы, если процесс все еще имеет дескриптор открытого удаленного файла
+.fuse_hidden*
+
+# Настройки каталога KDE
+.directory
+
+# Корзина Linux, который может появиться на любой разделе или диске
+.Trash-*
+
+# Файлы ".nfs" созданные при удалении открытого файла, но доступ к нему все еще осуществляется
+.nfs*
+
+
+# #############################################################################
+# PHPStorm                                                                    #
+# #############################################################################
+
+# Пользовательские файлы
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Генерируемые файлы
+.idea/**/contentModel.xml
+
+# Чувствительные или высокооборотные файлы
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Gradle и Maven с автоматическим импортом
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+cmake-build-*/
+
+# Плагин Mongo Explorer
+.idea/**/mongoSettings.xml
+
+# Файловый формат проекта
+*.iws
+
+# Плагин mpeltonen/sbt-idea
+.idea_modules/
+
+# Плагин JIRA
+atlassian-ide-plugin.xml
+
+# Плвагин Cursive Clojure
+.idea/replstate.xml
+
+# Плагин Crashlytics (для Android Studio и IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Плагин Sonarlint
+.idea/**/sonarlint/
+
+# Плагин SonarQube
+.idea/**/sonarIssues.xml
+
+# Плагин Markdown Navigator
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator-enh.xml
+.idea/**/markdown-navigator/
+
+# Плагин CodeStream
+.idea/codestream.xml
+
+# Rest Client на основе редактора
+.idea/httpRequests
+
+# Сериализованный файл кэша (для Android Studio 3.1+)
+.idea/caches/build_file_checksums.ser
+
+# Ошибки создания файла кэша
+.idea/$CACHE_FILE$
+
+# Прочее
+# *.iml
+# modules.xml
+# .idea/misc.xml
+# *.ipr
+
+
+# #############################################################################
+# Visual Studio Code                                                          #
+# #############################################################################
+
+# Основные
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Игнорирование всей локальной истории файлов
+.history
+
+
+# #############################################################################
+# Git                                                                         #
+# #############################################################################
+
+# Резервное копирование Git
+*.orig
+
+# Использование инструментов слияния для конфликтов
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+
+# #############################################################################
+# WordPress                                                                   #
+# #############################################################################
+
+# Игнорирование всего, кроме каталога "wp-content"
+/*
+!wp-content/
+
+# Описание проекта
+!readme.md
+
+# Игнорирование всего, что находится в каталоге "wp-content", (кроме каталогов "mu-plugins", "plugins", "themes")
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# Плагины
+wp-content/plugins/hello.php
+
+# Темы
+wp-content/themes/twenty*/
+
+# Зависимости
+node_modules/
+
+# Журналы и базы данных
+*.log
+!*.sql
+*.sqlite

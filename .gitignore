@@ -186,8 +186,8 @@ fabric.properties
 
 # Игнорирование всего, что находится в каталоге "wp-content", (кроме каталогов "mu-plugins", "plugins", "themes")
 wp-content/*
+#!wp-content/plugins/
 !wp-content/mu-plugins/
-!wp-content/plugins/
 !wp-content/themes/
 
 # Плагины
@@ -201,5 +201,5 @@ node_modules/
 
 # Журналы и базы данных
 *.log
-!*.sql
+*.sql
 *.sqlite
